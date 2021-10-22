@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es-ES" xml:lang="es-ES">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introducción | Aplicación Web para Recuperación de Información sobre un Sistema Distribuido</title>
+  <meta name="description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introducción | Aplicación Web para Recuperación de Información sobre un Sistema Distribuido" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/images/UCV.png" />
+  <meta property="og:description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introducción | Aplicación Web para Recuperación de Información sobre un Sistema Distribuido" />
+  
+  <meta name="twitter:description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="twitter:image" content="/images/UCV.png" />
+
+<meta name="author" content="José Miguel Avendaño Infante" />
+
+
+<meta name="date" content="2021-10-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section.html"/>
+<link rel="next" href="cross.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Consulta Información</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumen:</a></li>
+<li class="chapter" data-level="" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i>___</a></li>
+<li class="chapter" data-level="1" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduccion.html"><a href="introduccion.html#agradecimientos"><i class="fa fa-check"></i><b>1.1</b> Agradecimientos</a></li>
+<li class="chapter" data-level="1.2" data-path="introduccion.html"><a href="introduccion.html#descripción-del-problema"><i class="fa fa-check"></i><b>1.2</b> Descripción del Problema</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduccion.html"><a href="introduccion.html#i"><i class="fa fa-check"></i><b>1.2.1</b> I</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduccion.html"><a href="introduccion.html#ii"><i class="fa fa-check"></i><b>1.2.2</b> II</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>2</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>2.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="2.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>2.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>3</b> Parts</a></li>
+<li class="chapter" data-level="4" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>4</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>4.1</b> Footnotes</a></li>
+<li class="chapter" data-level="4.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>4.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>5</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>5.1</b> Equations</a></li>
+<li class="chapter" data-level="5.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>5.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="5.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>5.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>6</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>6.1</b> Publishing</a></li>
+<li class="chapter" data-level="6.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>6.2</b> 404 pages</a></li>
+<li class="chapter" data-level="6.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>6.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aplicación Web para Recuperación de Información sobre un Sistema Distribuido</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduccion" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introducción</h1>
+<p>Es conocida la gran disponibilidad de información en distintos formatos que tienen a su disposición los investigadores. Ejemplo de esto son libros en las bibliotecas, o la variedad de documentos que se encuentran accesibles en formatos digitales como artículos publicados en revistas arbitradas, libros, páginas de internet especializadas en algún tema o los repositorios digitales de documentos. Es en esta abundancia donde recaen varios de los problemas a los cuales se enfrenta la labor investiga, sobre todo cuando se realiza la fase exploratoria de selección de aquellos documentos que puedan resultar de mayor interés.</p>
+<p>Es necesario separar los documentos que puedan representar provecho de aquellos que no, sabiendo que para todo investigador el tiempo es un recurso escaso. Es imperativo saber la calidad, entiéndase el reconocimiento que puede tener un documento dentro de una determinada comunidad o cuan asociado puede estar el texto seleccionado con el tema que se investiga.</p>
+<p>El investigador debe contar con herramientas al enfrentarse al proceso de búsqueda de información siendo estas principalmente los <em>Sistemas de Recuperación de Información</em>. Es necesario que estos Sistemas permitan la interacción necesaria para que el investigador plantee lo mejor posible la búsqueda el texto que será buscado al cual denominaremos <strong><em>query</em></strong> dentro de un grupo de documentos al cual denominaremos <strong><em>Corpus</em></strong>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Para ilustrar lo anterior usemos el siguiente ejemplo: supongamos que un ingeniero quiere buscar información sobre la “investigación de operaciones”. Al hacer nuestro <em>query</em> el sistema que usemos va a determinar cuáles documentos dentro de un <em>corpus</em> muy variado en temáticas, hacen mención a ese tema. Es probable que pudiésemos encontrar textos asociados a medicina donde la “investigación de operaciones” tiene un significado y temáticas asociadas muy distintas a la rama del conocimiento que estudia problemas de optimización que se denomina “investigación de operaciones” ya que en diferentes áreas de estudio se pueden tener comprensiones que divergen sobre una misma búsqueda de términos.</p>
+<p>Planteado lo anterior es necesario que el sistema que usemos permita separar de alguna forma la información recuperada para así jerarquizar cuáles son las que resultan de mayor interés al investigador. Incluso, la forma en que representemos los resultados obtenidos de un <em>query</em> pueden aportar conocimiento en sí mismo facilitando la comprensión de los textos, o dando aportes hacia dónde es viable direccionar futuras indagaciones que satisfagan requerimientos del investigador en un proceso que claramente es iterativo y adicionalmente el sistema puede generar la recomendación de otros trabajos que presenten alguna similitud sobre el asunto investigado.</p>
+<p>Estas son algunas de las razones que motivan la creación de Sistemas de <strong><em>Information Retrieval</em></strong> o de <strong>Recuperación de Información</strong> de un conjunto de textos agrupados en un <em>corpus</em>. Estos sistemas permiten acceder y extraer información que originalmente no está estructurada pero que mediante distintas técnicas logran que los textos se puedan representar de forma estructurada facilitando la aplicación de distintos procesos que pertenecen a las ciencias de la computación.</p>
+<p>Dentro de estos Sistemas tenemos que en la Universidad Central de Venezuela se cuenta con uno denominado <strong>Saber UCV</strong> al cual se puede acceder en la dirección <a href="http://saber.ucv.ve/">www.saber.ucv.ve</a> que funciona a modo de repositorio institucional de distintos documentos de textos académicos generados por la comunidad ucevista. Este sistema fue “creado para alojar, gestionar y difundir de manera gratuita y en texto completo: tesis, artículos de investigación, libros, revistas electrónicas, presentaciones que conforman la producción académica” de esta casa de estudios.</p>
+<p>El repositorio Saber UCV es una implementación del software de código abierto llamado <strong>DSpace</strong> que fue creado con la finalidad de ser un repositorio institucional bibiográfico para uso académico de colecciones digitales, <a href="https://duraspace.org/dspace/about/">https://duraspace.org</a>. Este software fue diseñado e implementado en un esfuerzo conjunto entre desarrolladores del <em>Massachusetts Institute of Technology (MIT)</em> y <em>Hewlett-Packard Labs (HP Labs)</em> en el año 2002. En junio de 2021 se lanzó la 7 versión que es la más reciente, no obstante la versión que está implementada en Saber UCV es la 1.7.1.</p>
+<p>Si bien este repositorio con que cuenta la Universidad sirve para realizar procesos de búsqueda de textos (<em>search engine</em>) y/o de recuperación de información, hay algunas características que pueden ser complementadas mediante la propuesta contenida en este documento de Trabajo Especial de Grado.</p>
+<p>La propuesta que acá describimos se denomina <strong>Sistema Complementario Saber UCV (SCSU)</strong> y se soporta sobre una arquitectura distribuida. El SCSU ya está implementado en su primera versión y en este documento se describirán tanto las evaluaciones realizadas para la selección de los distintos componentes como la teoría en la cual se basó su desarrollo.</p>
+<p>Al ya tener implementado el SCSU adicionalmente creemos que puede resultar una aplicación de utilidad para la comunidad universitaria y en general para los investigadores que usan como fuente de información los documentos que reposan en Saber UCV.</p>
+<p>Sobre el Corpus, es decir, los documentos que lo conforman, serán aplicadas técnicas de Minería de Texto y de Procesamiento de Lenguaje Natural para detectar relaciones y extraer conocimiento.</p>
+<p>También el Sistema que mostramos permite obtener indicadores cuantitativos sobre las cantidades de trabajos en distintas categorías (dimensiones) y granularidades, como son clasificaciones de trabajos disponibles por facultades, escuelas, por pre o pos grados y fecha de publicación bajo un diseño que busca la interacción con el usuario mediante el uso de recursos como tablas y grafos que permiten enriquecer la experiencia de recuperación de información.</p>
+<p>En esta propuesta mostraremos las principales consideraciones que se tomaron en el diseño de SCSU, los retos enfrentados y el desempeño que presenta la aplicación.</p>
+<p>Este trabajo está estructurado en un Capítulo__ que expone el Marco Teórico sobre el cual reposa la estructura conceptual de la aplicación. En el Capítulo __ se describirá la propuesta técnica, el objetivo general y específicos junto con el proceso de desarrollo de la aplicación haciendo mención a cada uno de los componentes que forman parte de ella e incluso las evaluaciones y pruebas que se realizaron para elegir una determinada tecnología por sobre otras. En el Capítulo __ se mostrarán los resultados, las conclusiones y recomendaciones posterior a la realización de la aplicación. Igualmente se incluye un apéndice donde se describirá el proceso que se tuvo que cubrir para generar el conjunto de datos sobre el que se generó el <strong>SCSU</strong>.</p>
+<div style="page-break-after: always;"></div>
+<div id="agradecimientos" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Agradecimientos</h2>
+<ul>
+<li><p>Dr. Andres Sanoja primero por aceptar la tutoría y enseñarme qué es la investigación dentro de una comunidad.</p></li>
+<li><p>Dra. Concettina Di Vasta por las más imponentes sesiones de 2 horas 15 minutos llenas de coherencia y conocimiento.</p></li>
+<li><p>Lic. José Mirabal por siempre andar con alguna idea a desarrollar y el tiempo dedicado a escuchar las propuestas de este Proyecto.</p></li>
+<li><p>Dra. Mayrene Colina por su disposición y aporte a la realización de esta investigación.</p></li>
+<li><p>Dra. Haydemar Nuñez por la rigurosidad, por su uso de términos en nuestro idioma español, por hacer</p></li>
+<li><p>Dra. Nuri Hurtado Villasana por tomarse el tiempo de escucharme y brindarme sugerencias en la elaboración de este trabajo.</p></li>
+<li><p>Decano Facultad de Ciencias de la U.C.V. Dr. Ventura Echandía por el interés manifestado hacia esta investigación.</p></li>
+<li><p>Dra. Vanessa Leguizamo por ser una parte vital del funcionamiento de este Postgrado. Por tomarse el tiempo de revisar la solicitud de estudio de un oxidado economista, por ser mi profa, por una permanente disposición, por una calidad humana absoluta.</p></li>
+<li><p>Bibliotecóloga de la Facultad (me falta localizar el nombre): por mantener vivo nuestro repositorio de documentos en la Facultad y por tener el tiempo de atender mis solicitudes de información.</p></li>
+<li><p>Mauricio Sáez Toro del equipo Saber UCV por mantener activo el Sistema Saber UCV y tener el tiempo de haber colaborado con esta investigación.</p></li>
+<li><p>A toda la comunidad de creadores de software libre, en especial a los #useRs por motivarme a adentrarme al mundo de las ciencias de la computación.</p></li>
+<li><p>A mi padre por negarme el Atari e insistir en el Oddysey 2.</p></li>
+<li><p>A todo el personal del Postgrado: sus buenos días, por tener a mano la llave, por ayudar a mantener viva la Academia.</p></li>
+<li><p>A mi madre, obvio, sino no habría ni una sola palabra acá.</p></li>
+</ul>
+<div style="page-break-after: always;"></div>
+</div>
+<div id="descripción-del-problema" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Descripción del Problema</h2>
+<p>Son varios los problemas que representa generar el Sistema propuesto, pero a los fines de delimitar los que propiamente son referentes para mejorar y/o complementar el sistema Saber UCV exclusivamente mencionaremos tres.</p>
+<div id="i" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> I</h3>
+<p>En la <a href="introduccion.html#introduccion">1</a> Introducción de este trabajo fue presentado el repositorio Saber UCV y ahora resulta necesario delimitar sobre cuáles datos, de todos los que se encuentran alojados en él, es con los que vamos a trabajar. Si bien en el sitio web están almacenados artículos de prensa, artículos preimpresos y publicados, fotografías, infografías y tesis de distintos niveles académicos es exclusivamente con este último subconjunto con el cual trabajaremos.</p>
+<p>En la categoría <strong>Tesis</strong> del repositorio se encuentran los trabajos especiales de grado de pre y postgrado junto con las tesis de doctorado. Cada documento de la categoría Tesis, indistintamente del nivel académico al que pertenezca, contiene un texto resumen que es de la misma autoría que el propio documento, es decir que cada trabajo cuenta tanto como con el documento, que generalmente es un archivo anexo en formato <em>word</em> o <em>PDF</em>, y también se dispone de un texto <strong>Resumen</strong> que está contenido dentro de la propia ficha en <em>html</em>.</p>
+<p>Es en esta ficha donde se muestran ciertos detalles sobre el trabajo seleccionado como lo son el título, nombre del autor, las palabras claves, la fecha de publicación y el texto <strong>Resumen</strong>. En la figura <a href="introduccion.html#fig:ficharegistro">1.1</a> podemos ver la ficha que corresponde a un trabajo almacenado en el repositorio. <br></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ficharegistro"></span>
+<img src="images/01-intro/ficha_registro.png" alt="Modelo de ficha registro en Saber UCV" width="60%" />
+<p class="caption">
+Figure 1.1: Modelo de ficha registro en Saber UCV
+</p>
+</div>
+<p><br></p>
+<p>Con los textos <strong>Resumen</strong> de todos los trabajos catalogados como Tesis en el repositorio Saber UCV es con los que conformaremos nuestro <strong><em>Corpus</em></strong> y sobre este conjunto de textos es que se harán los distintos procesamientos de lenguaje natural y minería de texto e indexación conformando una base de datos estructurada que es el insumo necesario para implementar la propuesta descrita en este documento. Igualmente en la base de datos se incluirán datos como el autor, la fecha de publicación y otros que serán especificados en el Capítulo referente a la Propuesta <a href="#propuesta"><strong>??</strong></a>.</p>
+<p>Sobre estos textos resumen, que deben condensar las ideas principales sobre las cuales versa cada trabajo, se aplicarán una serie de procesamientos que estarán destinados a permitir un tipo de <em>query</em> denominado <em>“Full Text Search”</em> o búsqueda de texto completo y acá se hace presente una de las primeras deficiencias que presenta el Sistema Saber UCV ya que aunque en él se pueden ejecutar búsquedas de texto, las técnicas con las que se realizan llevan a que sean generados una gran cantidad de resultados, en especial al usar más de una palabra en la búsqueda, presumimos que por usar el operador lógico <em>OR</em> entre cada una de las palabras solicitadas en el <em>query</em>. Veamos esto con un ejemplo. Supongamos que queremos ver en el sistema Saber UCV los trabajos que un autor de nombre “Jesús Fajardo” ha realizado.</p>
+<p><br></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:busquedasaber"></span>
+<img src="images/01-intro/jesus_saber.png" alt="Búsqueda de un autor &quot;Jesus Fajardo&quot; en www.saber.ucv.ve" width="60%" />
+<p class="caption">
+Figure 1.2: Búsqueda de un autor “Jesus Fajardo” en www.saber.ucv.ve
+</p>
+</div>
+<p><br> Al revisar los resultados que se muestran en la figura <a href="introduccion.html#fig:busquedasaber">1.2</a> podemos apreciar que la primera posición de los 30 resultados que fueron encontrados, no muestra un autor que se llame “Jesús Fajardo” sino el apellido Fajardo. Incluso, al realizar la consulta del vínculo del primer resultado tampoco aparece la palabra “Jesús” dentro de todos los datos que muestra la ficha. Al revisar el segundo resultado vemos que sí coincide con el término que se estaba buscando pero de resto ninguno otro de los 28 resultados incluyen un “Jesús Fajardo”.</p>
+<p>Revisemos otro ejemplo de búsqueda esta vez con cuatro palabras que son “simultánea de múltiples metástasis” las cuales se encuentran en el título del trabajo visto anteriormente en la posición núnero dos que corresponde a Jesús Fajardo.</p>
+<p><br></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:busquedasaber2"></span>
+<img src="images/01-intro/texto_saber.png" alt="Búsqueda de &quot;simultánea de múltiples metástasis&quot; en www.saber.ucv.ve" width="60%" />
+<p class="caption">
+Figure 1.3: Búsqueda de “simultánea de múltiples metástasis” en www.saber.ucv.ve
+</p>
+</div>
+<p><br> La cantidad de resultados asciende a 10.449, cifra similar a la cantidad total de trabajos de la categoría “Tesis” que se encuentran en el repositorio, ya que como fue explicado anteriormente el Sistema Saber UCV debe aplicar el operador lógico <em>OR</em> entre cada una de las palabras al momento de generar el <em>query</em>. A manera de referencia podemos contar que si hubiésemos querido realizar la búsqueda exacta de la frase, con haberle colocado comillas al inicio y al final obtendríamos la referencia al trabajo que previamente sabemos que es el que queremos encontrar.</p>
+<p>El uso de comillas para buscar una frase exacta genera una compensación entre la precisión en la búsqueda, ya que es exacta, cerrando el umbral de encontrar otros resultados que igualmente pudiesen resultar de interés, así que el uso de este método puede presentar desventajas.</p>
+<p>En lo anterior es que radica el primer problema que consideramos necesario resolver al crear el Sistema que acá presentamos, ya que este deberá permitir flexibilizar las búsquedas, en cuanto al umbral mencionado, sin llegar a arrojar resultados que claramente exceden las expectativas de cualquier investigador.</p>
+<p>Con la propuesta del <em>SCSU</em> los resultados que se obtendrán serán más precisos. Para demostrar esto repitamos la búsqueda anterior pero esta vez en el Sistema alternativo.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:busquedaproyectame"></span>
+<img src="images/01-intro/jesus_proyectame.png" alt="Búsqueda de un autor &quot;Jesus Fajardo&quot; en SCSU" width="90%" />
+<p class="caption">
+Figure 1.4: Búsqueda de un autor “Jesus Fajardo” en SCSU
+</p>
+</div>
+<p>Los resultados extraídos sólo apuntan a un autor que es el que estábamos consultando anteriormente y repitiendo la búsqueda de las cuatro palabras “simultánea de múltiples metástasis”, sin el uso de las comillas en la búsqueda, igualmente obtenemos un sólo resultado.</p>
+<p><br></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:busquedaproyectame2"></span>
+<img src="images/01-intro/texto_proyectame.png" alt="Búsqueda de &quot;simultánea de múltiples metástasis&quot; en en SCSU" width="90%" />
+<p class="caption">
+Figure 1.5: Búsqueda de “simultánea de múltiples metástasis” en en SCSU
+</p>
+</div>
+<p><br></p>
+<p>Claro está que no necesariamente se requiere que las búsquedas sean tan ajustadas pero en este caso como usamos cuatro palabras y la cantidad de documentos que se encuentran en en el Sistema alcanzan una cifra cercana a los 10.300 trabajos de grado, únicamente un resultado corresponde con el <em>query</em> realizado.</p>
+<p>La descripción hecha anteriormente de la búsqueda de sendos textos representa la aproximación al primer problema que debe solucionar nuestra propuesta que es mejorar los resultados que se obtengan mediante lo que se exprese en un <em>query</em>.</p>
+<p>El que nos delimitemos exclusivamente a los textos Resumen tiene dos motivaciones de distinto orden siendo la primera el que a los fines de aplicar las distintas técnicas acá propuestas y evaluar la utilidad de las mismas el Resumen constituye un recurso de gran utilidad por lo representativo que es haciendo innecesario extenderse sobre todo el documento ya que esto llevaría a usar más recursos de <em>hardware</em> y podemos adelantar que nuestra propuesta está diseñada para ser fácilmente escalable y aplicada sobre los textos completos contenidos en los archivos de los trabajos especiales de grado. La segunda razón es que trabajar con los textos completos pudiese generar problemas de derechos de autor o <strong><em>copyright</em></strong> ya que cada autor de un trabajo especial de grado al consignarlo ante la Universidad Central de Venezuela firma un documento de orden legal donde se autoriza la publicación exclusivamente en el sistema Saber UCV más no para otro tipo de análisis o exhibición. Posibles acuerdos para que esta propuesta sea adopta como un sistema por la propia Universidad Central de Venezuela resolvería fácilmente lo anterior, no obstante no forma parte del objeto del presente estudio evaluar la viabilidad de tal incorporación.</p>
+</div>
+<div id="ii" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> II</h3>
+<p>Al tener delimitado el problema de los <em>querys</em> podemos presentar el segundo desafío que se nos presenta para lograr optimizar las búsquedas de información y es la falta de una etiqueta que categorice las áreas de conocimiento, entendamos la profesión o el nombre del posgrado al que pertenece cada trabajo que se encuentra en el repositorio.</p>
+<p>Del proceso de investigación realizado para este trabajo, el cual será descrito a detalle en el Apéndice A <a href="#apendicea"><strong>??</strong></a>, obtuvimos los datos contenidos en el cuadro <a href="introduccion.html#tab:pretable">1.1</a>.</p>
+<p><br></p>
+<template id="adfb6461-b6d1-4b9c-946d-dbdc143bbfa7"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-01ad5910{}.cl-01a67f6e{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-01a6807c{font-family:'Helvetica';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-01a693b4{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-01a693d2{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-01a6d676{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d6c6{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d6f8{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d720{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d73e{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d75c{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d77a{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d784{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d798{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d7ac{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d7b6{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d7ca{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d7e8{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d7fc{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d81a{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01a6d842{width:239.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-01ad5910'>
+<caption class="Table Caption">
+<p><span id="tab:pretable">Table 1.1: </span>Total carreras de pregrado por Facultad</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-01a6d842"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad</span></p></td><td class="cl-01a6d81a"><p class="cl-01a693d2"><span class="cl-01a67f6e">Cantidad</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-01a6d676"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Agronomia</span></p></td><td class="cl-01a6d6c6"><p class="cl-01a693d2"><span class="cl-01a67f6e">1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d798"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Arquitectura y Urbanismo</span></p></td><td class="cl-01a6d7ac"><p class="cl-01a693d2"><span class="cl-01a67f6e">1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d7b6"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Ciencias</span></p></td><td class="cl-01a6d7ca"><p class="cl-01a693d2"><span class="cl-01a67f6e">6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d7fc"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Ciencias Economicas y Sociales</span></p></td><td class="cl-01a6d7e8"><p class="cl-01a693d2"><span class="cl-01a67f6e">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d7fc"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Ciencias Juridicas y Politicas</span></p></td><td class="cl-01a6d7e8"><p class="cl-01a693d2"><span class="cl-01a67f6e">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d7b6"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Ciencias Veterinarias</span></p></td><td class="cl-01a6d7ca"><p class="cl-01a693d2"><span class="cl-01a67f6e">1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d6f8"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Farmacia</span></p></td><td class="cl-01a6d720"><p class="cl-01a693d2"><span class="cl-01a67f6e">1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d798"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Humanidades y Educacion</span></p></td><td class="cl-01a6d7ac"><p class="cl-01a693d2"><span class="cl-01a67f6e">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d676"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Ingenieria</span></p></td><td class="cl-01a6d6c6"><p class="cl-01a693d2"><span class="cl-01a67f6e">13</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d6f8"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Medicina</span></p></td><td class="cl-01a6d720"><p class="cl-01a693d2"><span class="cl-01a67f6e">5</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d73e"><p class="cl-01a693b4"><span class="cl-01a67f6e">Facultad de Odontologia</span></p></td><td class="cl-01a6d75c"><p class="cl-01a693d2"><span class="cl-01a67f6e">1</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01a6d784"><p class="cl-01a693b4"><span class="cl-01a6807c">Total</span></p></td><td class="cl-01a6d77a"><p class="cl-01a693d2"><span class="cl-01a6807c">51</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="e976c883-3bdf-4d54-8b5f-d25e6dd18dfa"></div>
+<script>
+var dest = document.getElementById("e976c883-3bdf-4d54-8b5f-d25e6dd18dfa");
+var template = document.getElementById("adfb6461-b6d1-4b9c-946d-dbdc143bbfa7");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<p><br></p>
+<p>En cada Facultad de la Universidad vemos en la cuadro <a href="introduccion.html#tab:pretable">1.1</a> la cantidad de carreras de pregrado que están adscritas que en total ascienden a 51 las carreras.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>A nivel de postgrado se nos presentan las cifras contenidas en el cuadro <a href="introduccion.html#tab:posttable">1.2</a>.</p>
+<p><br></p>
+<template id="db13247f-1983-4492-8c59-3ae31c52013d"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-01df3854{}.cl-01d69884{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-01d69938{font-family:'Helvetica';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-01d6abb2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-01d6abee{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-01d6f95a{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6f9aa{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6f9fa{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fa2c{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fa4a{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fa68{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fa9a{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fac2{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6faf4{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fb30{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fb62{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fb8a{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fbbc{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fbf8{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fc20{width:64.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-01d6fc52{width:272.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-01df3854'>
+<caption class="Table Caption">
+<p><span id="tab:posttable">Table 1.2: </span>Total postgrados por Facultad o Centro</p>
+</caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-01d6fc52"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad</span></p></td><td class="cl-01d6fc20"><p class="cl-01d6abee"><span class="cl-01d69884">Cantidad</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-01d6f9aa"><p class="cl-01d6abb2"><span class="cl-01d69884">Centro de Estudios del Desarrollo Cendes</span></p></td><td class="cl-01d6f95a"><p class="cl-01d6abee"><span class="cl-01d69884">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fb30"><p class="cl-01d6abb2"><span class="cl-01d69884">Centro de Estudios Integrales El Ambiente Cenamb</span></p></td><td class="cl-01d6faf4"><p class="cl-01d6abee"><span class="cl-01d69884">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fa4a"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Agronomia</span></p></td><td class="cl-01d6fa68"><p class="cl-01d6abee"><span class="cl-01d69884">21</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fa2c"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Arquitectura y Urbanismo</span></p></td><td class="cl-01d6f9fa"><p class="cl-01d6abee"><span class="cl-01d69884">16</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6f9aa"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Ciencias</span></p></td><td class="cl-01d6f95a"><p class="cl-01d6abee"><span class="cl-01d69884">34</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fbf8"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Ciencias Economicas y Sociales</span></p></td><td class="cl-01d6fbbc"><p class="cl-01d6abee"><span class="cl-01d69884">36</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fbf8"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Ciencias Juridicas y Politicas</span></p></td><td class="cl-01d6fbbc"><p class="cl-01d6abee"><span class="cl-01d69884">19</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6f9aa"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Ciencias Veterinarias</span></p></td><td class="cl-01d6f95a"><p class="cl-01d6abee"><span class="cl-01d69884">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fac2"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Farmacia</span></p></td><td class="cl-01d6fa9a"><p class="cl-01d6abee"><span class="cl-01d69884">12</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fa2c"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Humanidades y Educacion</span></p></td><td class="cl-01d6f9fa"><p class="cl-01d6abee"><span class="cl-01d69884">52</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fa4a"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Ingenieria</span></p></td><td class="cl-01d6fa68"><p class="cl-01d6abee"><span class="cl-01d69884">55</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fac2"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Medicina</span></p></td><td class="cl-01d6fa9a"><p class="cl-01d6abee"><span class="cl-01d69884">85</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fb30"><p class="cl-01d6abb2"><span class="cl-01d69884">Facultad de Odontologia</span></p></td><td class="cl-01d6faf4"><p class="cl-01d6abee"><span class="cl-01d69884">13</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-01d6fb8a"><p class="cl-01d6abb2"><span class="cl-01d69938">Total</span></p></td><td class="cl-01d6fb62"><p class="cl-01d6abee"><span class="cl-01d69938">361</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="133f3b6c-37d0-4d59-9465-e923e35503c3"></div>
+<script>
+var dest = document.getElementById("133f3b6c-37d0-4d59-9465-e923e35503c3");
+var template = document.getElementById("db13247f-1983-4492-8c59-3ae31c52013d");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Conjunto cerrado de textos o de datos destinado a la investigación científica.<a href="introduccion.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>esta cifra puede variar si se toma en cuenta que existen escuelas de pregrado donde funcionan dos carreras distintas como es el caso de la Escuela de Administración y Contaduría o la Escuela de Estadística y Ciencias Actuariales, ya que ellas otorgan títulos distintos como el de Administrador o Contador y el el otro caso el título de Actuario o de Estadístico.<a href="introduccion.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cross.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "whatsapp"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"lib_dir": "book_assets",
+"split_by": "section",
+"config": {
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+}
+});
+});
+</script>
+
+</body>
+
+</html>
