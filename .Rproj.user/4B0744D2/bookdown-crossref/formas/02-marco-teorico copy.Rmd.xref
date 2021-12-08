@@ -1,0 +1,33 @@
+h1:teorico Marco teórico-referencial:
+h2:alghist Reseña histórica:
+h2:recuperación-de-información Recuperación de Información:
+h2:sistemas-de-recuperación-de-información Sistemas de Recuperación de Información :
+h2:ejemplos-de-irs Ejemplos de IRS:
+h2:modelos-de-recuperación-de-información Modelos de Recuperación de Información:
+h3:recuperación-boleana Recuperación boleana:
+h2:rank Scoring Model:
+h2:modelo-de-espacio-vectorial Modelo de Espacio Vectorial:
+h3:learning-to-rank Learning to rank:
+h3:modelos-de-representaciones-de-texto Modelos de representaciones de texto:
+h2:bd Bases de datos:
+h2:fts Full Text Search:
+h2:steaming Steaming:
+h2:indexación Indexación:
+h3:tiopos-indexaciones-en-texto Tiopos Indexaciones en texto:
+h4:general-inverted-gin-posting-list General Inverted GIN, Posting List
+h4:otros-tipos-de-indexación Otros tipos de indexación:
+h4:tendencias-actuales-sistemas-de-información Tendencias actuales Sistemas de Información:
+h2:coocurrencia Coocurrencias:
+h2:mapas-de-conocimiento Mapas de conocimiento:
+h2:textmin Minería de Texto:
+h2:nlproc NLP:
+h3:ner NER:
+h3:etiquetado-parte-del-discurso-part-of-speech-tagging Etiquetado Parte del Discurso 
+h2:casos-estudio Casos estudio:
+h3:google-scholar Google Scholar:
+h3:dspace Dspace:
+h2:sistemas-distribuidos Sistemas Distribuidos
+h3:contenedores Contenedores:
+h2:revisión-literatura-en-venezuela.-trabajos-similares Revisión literatura en Venezuela. Trabajos similares
+h2:similitud Similitud de documentos:
+

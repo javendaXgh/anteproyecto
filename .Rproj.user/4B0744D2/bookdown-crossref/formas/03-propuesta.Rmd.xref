@@ -1,0 +1,23 @@
+h1:propuesta_tec Propuesta
+h2:objetivo-general Objetivo General:
+h2:objetivos-específicos Objetivos Específicos
+fig:esquema Esquema General
+h2:esquema-de-la-aplicación-web Esquema de la Aplicación WEB:
+fig:esquemadocker Diagrama Aplicación
+h3:componentes Componentes:
+h3:navegador-web 1 - Navegador web:
+h3:servidor 2 - Servidor:
+h3:docker-compose 3 - Docker Compose:
+h3:nginx 4 - Nginx:
+h3:cerbot 5 - Cerbot:
+h3:shinyproxy 6 - Shinyproxy:
+h3:contenedor-con-r-shiny-web-app-framework 7 - Contenedor con :
+h3:contenedor-con-postgresql 8 - Contenedor con PostgreSQL:
+h3:contenedor-con-r-imagen-servicios 9 - Contenedor con :
+h4:text-mining-y-nlp Text Mining y NLP:
+h5:tokenización Tokenización:
+h5:lematización Lematización:
+h4:poblado-base-de-datos Poblado base de datos:
+h4:similitud-de-textos Similitud de textos:
+h3:contenedor-con-python-spacy 10 - Contenedor con :
+

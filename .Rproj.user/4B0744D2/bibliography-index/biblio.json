@@ -1,0 +1,1170 @@
+{
+    "sources": [
+        {
+            "URL": "http://link.springer.com/10.1007/11880592_38",
+            "author": [
+                {
+                    "family": "Abe",
+                    "given": "Toru"
+                },
+                {
+                    "family": "Chiba",
+                    "given": "Yuu"
+                },
+                {
+                    "family": "Suoya"
+                },
+                {
+                    "family": "Li",
+                    "given": "Baoning"
+                },
+                {
+                    "family": "Kinoshita",
+                    "given": "Tetsuo"
+                }
+            ],
+            "editor": [
+                {
+                    "family": "Ng",
+                    "given": "Hwee Tou"
+                },
+                {
+                    "family": "Leong",
+                    "given": "Mun-Kew"
+                },
+                {
+                    "family": "Kan",
+                    "given": "Min-Yen"
+                },
+                {
+                    "family": "Ji",
+                    "given": "Donghong"
+                }
+            ],
+            "id": "abe2006",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "note": "Series Title: Lecture Notes in Computer Science DOI: 10.1007/11880592_38",
+            "page": "497-507",
+            "publisher": "Springer Berlin Heidelberg",
+            "publisher-place": "Berlin, Heidelberg",
+            "title": "An academic information retrieval system based on multiagent framework",
+            "type": "chapter",
+            "volume": "4182"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sánchez",
+                    "given": "J."
+                }
+            ],
+            "genre": "PhD thesis",
+            "id": "Sánchez2008",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "publisher-place": "Caracas, Venezuela",
+            "title": "Elaboración de un prototipo de buscador de documentos académicos de la facultad de ciencias",
+            "type": "thesis"
+        },
+        {
+            "author": [
+                {
+                    "family": "Goodrich",
+                    "given": "Michael T."
+                },
+                {
+                    "family": "Tamassia",
+                    "given": "Roberto"
+                },
+                {
+                    "family": "Goldwasser",
+                    "given": "Michael H."
+                }
+            ],
+            "id": "goodrich2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "publisher": "Wiley",
+            "publisher-place": "Hoboken, NJ",
+            "title": "Data structures and algorithms in python",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-1-4614-3223-4",
+            "editor": [
+                {
+                    "family": "Aggarwal",
+                    "given": "Charu C."
+                },
+                {
+                    "family": "Zhai",
+                    "given": "ChengXiang"
+                }
+            ],
+            "id": "miningt2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "language": "eng",
+            "note": "DOI: 10.1007/978-1-4614-3223-4",
+            "publisher": "Springer",
+            "publisher-place": "New York Heidelberg",
+            "title": "Mining text data",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Manning",
+                    "given": "Christopher D."
+                },
+                {
+                    "family": "Raghavan",
+                    "given": "Prabhakar"
+                },
+                {
+                    "family": "Schütze",
+                    "given": "Hinrich"
+                }
+            ],
+            "id": "manning2008",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "note": "OCLC: ocn190786122",
+            "publisher": "Cambridge University Press",
+            "publisher-place": "New York",
+            "title": "Introduction to information retrieval",
+            "type": "book"
+        },
+        {
+            "DOI": "10.2200/s00752ed1v01y201701icr055",
+            "URL": "http://dx.doi.org/10.2200/S00752ED1V01Y201701ICR055",
+            "author": [
+                {
+                    "family": "Kraft",
+                    "given": "Donald H."
+                },
+                {
+                    "family": "Colvin",
+                    "given": "Erin"
+                }
+            ],
+            "container-title": "Synthesis Lectures on Information Concepts, Retrieval, and Services",
+            "id": "kraft2017",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        1,
+                        20
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "i-63",
+            "title": "Fuzzy Information Retrieval",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "DOI": "10.1007/978-1-4614-3223-4",
+            "editor": [
+                {
+                    "family": "Aggarwal",
+                    "given": "Charu C."
+                },
+                {
+                    "family": "Zhai",
+                    "given": "ChengXiang"
+                }
+            ],
+            "id": "miningt2012a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "language": "eng",
+            "note": "DOI: 10.1007/978-1-4614-3223-4",
+            "publisher": "Springer",
+            "publisher-place": "New York Heidelberg",
+            "title": "Mining text data",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-3-319-93935-3",
+            "author": [
+                {
+                    "family": "Balog",
+                    "given": "Krisztian"
+                }
+            ],
+            "collection-number": "39",
+            "collection-title": "The information retrieval series",
+            "edition": "1st ed. 2018",
+            "id": "balog2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "DOI: 10.1007/978-3-319-93935-3",
+            "publisher": "Springer International Publishing : Imprint: Springer",
+            "publisher-place": "Cham",
+            "title": "Entity-oriented search",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-1-4614-3223-4",
+            "editor": [
+                {
+                    "family": "Aggarwal",
+                    "given": "Charu C."
+                },
+                {
+                    "family": "Zhai",
+                    "given": "ChengXiang"
+                }
+            ],
+            "id": "miningt2012b",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "language": "eng",
+            "note": "DOI: 10.1007/978-1-4614-3223-4",
+            "publisher": "Springer",
+            "publisher-place": "New York Heidelberg",
+            "title": "Mining text data",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Eisenstein",
+                    "given": "Jacob"
+                }
+            ],
+            "collection-title": "Adaptive computation and machine learning",
+            "id": "eisenstein2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "The MIT Press",
+            "publisher-place": "Cambridge, Massachusetts",
+            "title": "Introduction to natural language processing",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Knuth",
+                    "given": "Donald Ervin"
+                }
+            ],
+            "edition": "3rd ed",
+            "id": "knuth1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "publisher": "Addison-Wesley",
+            "publisher-place": "Reading, Mass",
+            "title": "The art of computer programming",
+            "type": "book"
+        },
+        {
+            "URL": "https://thegradient.pub/the-benderrule-on-naming-the-languages-we-study-and-why-it-matters/",
+            "id": "theben2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019,
+                        9,
+                        15
+                    ]
+                ]
+            },
+            "language": "en",
+            "title": "The #BenderRule: On Naming the Languages We Study and Why It Matters",
+            "title-short": "The #BenderRule",
+            "type": ""
+        },
+        {
+            "DOI": "10.18359/rfce.2186",
+            "URL": "http://dx.doi.org/10.18359/rfce.2186",
+            "author": [
+                {
+                    "family": "Dueñas",
+                    "given": "Marco"
+                },
+                {
+                    "family": "Rojas",
+                    "given": "Diana"
+                },
+                {
+                    "family": "Morales",
+                    "given": "María Eugenia"
+                }
+            ],
+            "container-title": "Revista Facultad de Ciencias Económicas",
+            "id": "dueñas2011",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011,
+                        12,
+                        31
+                    ]
+                ]
+            },
+            "page": "77-90",
+            "title": "Propuesta metodológica para realizar mapas de conocimiento",
+            "type": "article-journal",
+            "volume": "20"
+        },
+        {
+            "URL": "https://es.wikipedia.org/w/index.php?title=DSpace&oldid=138002853",
+            "id": "dspace2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        8,
+                        30
+                    ]
+                ]
+            },
+            "language": "es",
+            "note": "Page Version ID: 138002853",
+            "title": "DSpace",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Luraschi",
+                    "given": "Javier"
+                },
+                {
+                    "family": "Kuo",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Ruiz",
+                    "given": "Edgar"
+                }
+            ],
+            "edition": "First edition",
+            "id": "luraschi2019",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Beijing [China] ; Sebastopol, CA",
+            "title": "Mastering spark with r: The complete guide to large-scale analysis and modeling",
+            "title-short": "Mastering spark with r",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sommerville",
+                    "given": "Ian"
+                }
+            ],
+            "edition": "Tenth edition",
+            "id": "sommerville2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "OCLC: ocn907941065",
+            "publisher": "Pearson",
+            "publisher-place": "Boston",
+            "title": "Software engineering",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Manning",
+                    "given": "Christopher D."
+                },
+                {
+                    "family": "Raghavan",
+                    "given": "Prabhakar"
+                },
+                {
+                    "family": "Schütze",
+                    "given": "Hinrich"
+                }
+            ],
+            "id": "manning2008a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "note": "OCLC: ocn190786122",
+            "publisher": "Cambridge University Press",
+            "publisher-place": "New York",
+            "title": "Introduction to information retrieval",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Luraschi",
+                    "given": "Javier"
+                },
+                {
+                    "family": "Kuo",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Ruiz",
+                    "given": "Edgar"
+                }
+            ],
+            "edition": "First edition",
+            "id": "luraschi2019a",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "publisher": "O’Reilly Media",
+            "publisher-place": "Beijing [China] ; Sebastopol, CA",
+            "title": "Mastering spark with r: The complete guide to large-scale analysis and modeling",
+            "title-short": "Mastering spark with r",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Zhang",
+                    "given": "Jin"
+                }
+            ],
+            "collection-title": "The information retrieval series",
+            "id": "zhang2008",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "note": "OCLC: ocn173239487",
+            "publisher": "Springer",
+            "publisher-place": "Berlin",
+            "title": "Visualization for information retrieval",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Zhai",
+                    "given": "ChengXiang"
+                },
+                {
+                    "family": "Massung",
+                    "given": "Sean"
+                }
+            ],
+            "collection-number": "#12",
+            "collection-title": "ACM books",
+            "edition": "First Edition",
+            "id": "zhai2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "OCLC: ocn957355971",
+            "publisher": "ACM Books",
+            "publisher-place": "New York",
+            "title": "Text data management and analysis: A practical introduction to information retrieval and text mining",
+            "title-short": "Text data management and analysis",
+            "type": "book"
+        },
+        {
+            "edition": "1st edition",
+            "id": "machine2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "Springer Science+Business Media",
+            "publisher-place": "New York, NY",
+            "title": "Machine learning for text",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Charu C. Aggarwal"
+                }
+            ],
+            "edition": "1st edition",
+            "id": "charuc.aggarwal2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "Springer Science+Business Media",
+            "publisher-place": "New York, NY",
+            "title": "Machine learning for text",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-3-319-73531-3",
+            "author": [
+                {
+                    "family": "Aggarwal",
+                    "given": "Charu C."
+                }
+            ],
+            "edition": "1st ed. 2018",
+            "id": "aggarwal2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "DOI: 10.1007/978-3-319-73531-3",
+            "publisher": "Springer International Publishing : Imprint: Springer",
+            "publisher-place": "Cham",
+            "title": "Machine learning for text",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-1-4614-3223-4",
+            "editor": [
+                {
+                    "family": "Aggarwal",
+                    "given": "Charu C."
+                },
+                {
+                    "family": "Zhai",
+                    "given": "ChengXiang"
+                }
+            ],
+            "id": "miningt2012c",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "language": "eng",
+            "note": "DOI: 10.1007/978-1-4614-3223-4",
+            "publisher": "Springer",
+            "publisher-place": "New York Heidelberg",
+            "title": "Mining text data",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=udpipe",
+            "author": [
+                {
+                    "family": "Wijffels",
+                    "given": "Jan"
+                },
+                {
+                    "family": "BNOSAC"
+                },
+                {
+                    "family": "Linguistics",
+                    "given": "Institute of Formal"
+                },
+                {
+                    "family": "Applied"
+                },
+                {
+                    "family": "Physics",
+                    "given": "Faculty of Mathematics"
+                },
+                {
+                    "dropping-particle": "and",
+                    "family": "Prague",
+                    "given": "Charles University in"
+                },
+                {
+                    "family": "Republic",
+                    "given": "Czech"
+                },
+                {
+                    "family": "Straka",
+                    "given": "Milan"
+                },
+                {
+                    "family": "Straková",
+                    "given": "Jana"
+                }
+            ],
+            "id": "wijffels2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        6,
+                        1
+                    ]
+                ]
+            },
+            "title": "Udpipe: Tokenization, parts of speech tagging, lemmatization and dependency parsing with the ’UDPipe’ ’NLP’ toolkit",
+            "title-short": "Udpipe",
+            "type": "book"
+        },
+        {
+            "URL": "http://saber.ucv.ve/handle/10872/9418",
+            "author": [
+                {
+                    "family": "Guevara",
+                    "given": "José R."
+                }
+            ],
+            "genre": "PhD thesis",
+            "id": "guevara2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015,
+                        5,
+                        25
+                    ]
+                ]
+            },
+            "language": "es",
+            "note": "Accepted: 2015-05-25T14:29:29Z",
+            "title": "Desarrollo de un Motor de Búsquedas para la recuperación de documentos académicos de la Facultad de Ciencias",
+            "type": "thesis"
+        },
+        {
+            "DOI": "10.1145/367390.367400",
+            "URL": "http://dx.doi.org/10.1145/367390.367400",
+            "author": [
+                {
+                    "family": "Fredkin",
+                    "given": "Edward"
+                }
+            ],
+            "container-title": "Communications of the ACM",
+            "id": "fredkin1960",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        1960,
+                        9
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "490-499",
+            "title": "Trie memory",
+            "type": "article-journal",
+            "volume": "3"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mahapatra",
+                    "given": "Ajit Kumar"
+                },
+                {
+                    "family": "Biswas",
+                    "given": "Sitanath"
+                }
+            ],
+            "container-title": "International Journal of Computer Science Issues",
+            "id": "Mahapatra2011",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011,
+                        7
+                    ]
+                ]
+            },
+            "page": "",
+            "title": "Inverted indexes: Types and techniques",
+            "title-short": "Inverted indexes",
+            "type": "article-journal",
+            "volume": "8"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hernández Orallo",
+                    "given": "José"
+                },
+                {
+                    "family": "Ramírez Quintana",
+                    "given": "María José"
+                },
+                {
+                    "family": "Ferri Ramírez",
+                    "given": "César"
+                }
+            ],
+            "id": "hernándezorallo2004",
+            "issued": {
+                "date-parts": [
+                    [
+                        2004
+                    ]
+                ]
+            },
+            "language": "es-ES",
+            "note": "OCLC: 989816167",
+            "publisher": "Pearson Educación",
+            "publisher-place": "Madrid",
+            "title": "Introducción a la minería de datos.",
+            "type": "book"
+        },
+        {
+            "ISBN": "0470864125",
+            "abstract": "Natural language processing (NLP) refers to computer systems that analyze, attempt to understand, or produce one or more human languages, such as English, Japanese, Italian, or Russian. The input might be text, spoken language, or keyboard input. The task might be to translate to another language, to comprehend and represent the content of text, to build a database or generate summaries, or to maintain a dialogue with a user as part of an interface for database/information retrieval (q.v.). This article addresses issues in natural language comprehension and generation from text or keyboard input. Similar techniques can be used for spoken language by adding a system for speech recognition (see SPEECH RECOGNITION AND SYNTHESIS).",
+            "author": [
+                {
+                    "family": "Allen",
+                    "given": "James F."
+                }
+            ],
+            "container-title": "Encyclopedia of computer science",
+            "id": "10.5555/1074100.1074630",
+            "issued": {
+                "date-parts": [
+                    [
+                        2003
+                    ]
+                ]
+            },
+            "page": "1218-1222",
+            "publisher": "John Wiley; Sons Ltd.",
+            "publisher-place": "GBR",
+            "title": "Natural language processing",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.3115/v1/P14-5010",
+            "URL": "https://aclanthology.org/P14-5010",
+            "author": [
+                {
+                    "family": "Manning",
+                    "given": "Christopher"
+                },
+                {
+                    "family": "Surdeanu",
+                    "given": "Mihai"
+                },
+                {
+                    "family": "Bauer",
+                    "given": "John"
+                },
+                {
+                    "family": "Finkel",
+                    "given": "Jenny"
+                },
+                {
+                    "family": "Bethard",
+                    "given": "Steven"
+                },
+                {
+                    "family": "McClosky",
+                    "given": "David"
+                }
+            ],
+            "container-title": "Proceedings of 52nd annual meeting of the association for computational linguistics: System demonstrations",
+            "id": "manning-etal-2014-stanford",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014,
+                        6
+                    ]
+                ]
+            },
+            "page": "55-60",
+            "publisher": "Association for Computational Linguistics",
+            "publisher-place": "Baltimore, Maryland",
+            "title": "The Stanford CoreNLP natural language processing toolkit",
+            "type": "paper-conference"
+        },
+        {
+            "DOI": "10.1002/ace.247",
+            "URL": "https://onlinelibrary.wiley.com/doi/10.1002/ace.247",
+            "author": [
+                {
+                    "family": "Lehman",
+                    "given": "Rosemary"
+                }
+            ],
+            "container-title": "New Directions for Adult and Continuing Education",
+            "id": "lehman2007",
+            "issue": "113",
+            "issued": {
+                "date-parts": [
+                    [
+                        2007,
+                        21
+                    ]
+                ]
+            },
+            "language": "en",
+            "page": "57-66",
+            "title": "Learning object repositories",
+            "type": "article-journal",
+            "volume": "2007"
+        },
+        {
+            "URL": "http://saber.ucv.ve/handle/10872/13722",
+            "author": [
+                {
+                    "family": "Rodríguez Laguna",
+                    "given": "José Israel"
+                }
+            ],
+            "genre": "PhD thesis",
+            "id": "rodríguezlaguna2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        3,
+                        16
+                    ]
+                ]
+            },
+            "language": "es",
+            "note": "Accepted: 2016-03-16T17:26:20Z",
+            "title": "Sistema de recomendación para el buscador académico venezolano",
+            "type": "thesis"
+        },
+        {
+            "edition": "5th ed",
+            "editor": [
+                {
+                    "family": "Coulouris",
+                    "given": "George F."
+                }
+            ],
+            "id": "distribu2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "publisher": "Addison-Wesley",
+            "publisher-place": "Boston",
+            "title": "Distributed systems: Concepts and design",
+            "title-short": "Distributed systems",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-3-319-72023-4",
+            "author": [
+                {
+                    "family": "Czaja",
+                    "given": "Ludwik"
+                }
+            ],
+            "collection-number": "27",
+            "collection-title": "Lecture notes in networks and systems",
+            "edition": "1st ed. 2018",
+            "id": "czaja2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "DOI: 10.1007/978-3-319-72023-4",
+            "publisher": "Springer International Publishing : Imprint: Springer",
+            "publisher-place": "Cham",
+            "title": "Introduction to distributed computer systems: Principles and features",
+            "title-short": "Introduction to distributed computer systems",
+            "type": "book"
+        },
+        {
+            "URL": "https://doi.org/10.32614/RJ-2017-065",
+            "author": [
+                {
+                    "family": "Boettiger",
+                    "given": "Carl"
+                },
+                {
+                    "family": "Eddelbuettel",
+                    "given": "Dirk"
+                }
+            ],
+            "container-title": "The R Journal",
+            "id": "RJ-2017-065:2017",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017,
+                        12
+                    ]
+                ]
+            },
+            "page": "527-536",
+            "title": "An introduction to rocker: Docker containers for r",
+            "title-short": "An introduction to rocker",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=shiny",
+            "author": [
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "Cheng",
+                    "given": "Joe"
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Sievert",
+                    "given": "Carson"
+                },
+                {
+                    "family": "Schloerke",
+                    "given": "Barret"
+                },
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Allen",
+                    "given": "Jeff"
+                },
+                {
+                    "family": "McPherson",
+                    "given": "Jonathan"
+                },
+                {
+                    "family": "Dipert",
+                    "given": "Alan"
+                },
+                {
+                    "family": "Borges",
+                    "given": "Barbara"
+                },
+                {
+                    "family": "RStudio"
+                },
+                {
+                    "family": "library)",
+                    "given": "jQuery Foundation (jQuery library and jQuery UI"
+                },
+                {
+                    "family": "inst/www/shared/jquery-AUTHORS.txt)",
+                    "given": "jQuery contributors (jQuery library; authors listed in"
+                },
+                {
+                    "family": "inst/www/shared/jqueryui/AUTHORS.txt)",
+                    "given": "jQuery UI contributors (jQuery UI library; authors listed in"
+                },
+                {
+                    "family": "library)",
+                    "given": "Mark Otto (Bootstrap"
+                },
+                {
+                    "family": "library)",
+                    "given": "Jacob Thornton (Bootstrap"
+                },
+                {
+                    "family": "library)",
+                    "given": "Bootstrap contributors (Bootstrap"
+                },
+                {
+                    "family": "Twitter"
+                },
+                {
+                    "family": "library)",
+                    "given": "Inc (Bootstrap"
+                },
+                {
+                    "dropping-particle": "accessibility",
+                    "family": "plugin)",
+                    "given": "Prem Nawaz Khan (Bootstrap"
+                },
+                {
+                    "dropping-particle": "accessibility",
+                    "family": "plugin)",
+                    "given": "Victor Tsaran (Bootstrap"
+                },
+                {
+                    "dropping-particle": "accessibility",
+                    "family": "plugin)",
+                    "given": "Dennis Lembree (Bootstrap"
+                },
+                {
+                    "dropping-particle": "accessibility",
+                    "family": "plugin)",
+                    "given": "Srinivasu Chakravarthula (Bootstrap"
+                },
+                {
+                    "dropping-particle": "accessibility",
+                    "family": "plugin)",
+                    "given": "Cathy O’Connor (Bootstrap"
+                },
+                {
+                    "family": "PayPal"
+                },
+                {
+                    "dropping-particle": "accessibility",
+                    "family": "plugin)",
+                    "given": "Inc (Bootstrap"
+                },
+                {
+                    "family": "library)",
+                    "given": "Stefan Petre (Bootstrap-datepicker"
+                },
+                {
+                    "family": "library)",
+                    "given": "Andrew Rowls (Bootstrap-datepicker"
+                },
+                {
+                    "family": "font)",
+                    "given": "Dave Gandy (Font-Awesome"
+                },
+                {
+                    "dropping-particle": "js",
+                    "family": "library)",
+                    "given": "Brian Reavis (selectize"
+                },
+                {
+                    "family": "library)",
+                    "given": "Salmen Bejaoui (selectize-plugin-a11y"
+                },
+                {
+                    "family": "library)",
+                    "given": "Denis Ineshin (ion rangeSlider"
+                },
+                {
+                    "dropping-particle": "strftime",
+                    "family": "library)",
+                    "given": "Sami Samhuri (Javascript"
+                },
+                {
+                    "family": "library)",
+                    "given": "SpryMedia Limited (DataTables"
+                },
+                {
+                    "dropping-particle": "js",
+                    "family": "library)",
+                    "given": "John Fraser (showdown"
+                },
+                {
+                    "dropping-particle": "js",
+                    "family": "library)",
+                    "given": "John Gruber (showdown"
+                },
+                {
+                    "dropping-particle": "js",
+                    "family": "library)",
+                    "given": "Ivan Sagalaev (highlight"
+                },
+                {
+                    "dropping-particle": "implementation from",
+                    "family": "R)",
+                    "given": "R. Core Team (tar"
+                }
+            ],
+            "id": "chang2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        1,
+                        25
+                    ]
+                ]
+            },
+            "title": "Shiny: Web application framework for r",
+            "title-short": "Shiny",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "references.bib"
+    ]
+}

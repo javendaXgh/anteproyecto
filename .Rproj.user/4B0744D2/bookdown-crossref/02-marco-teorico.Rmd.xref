@@ -1,0 +1,25 @@
+h1:teorico Marco teórico-referencial:
+h2:alghist Reseña histórica:
+h2:recuperación-de-información Recuperación de Información:
+h2:SRI Sistemas de Recuperación de Información (SRI) :
+h2:ejemplos-de-irs Ejemplos de IRS:
+fig:busquedasacm Gráfico que acompaña resultados de búsqueda de un término en la biblioteca digital de la Association for Computing Machinery (https://dl.acm.org/)
+h2:modelos-de-recuperación-de-información Modelos de Recuperación de Información:
+h3:recuperación-boleana Recuperación boleana:
+h3:indices-invertidos Indices Invertidos:
+h3:rank Scoring Model:
+h2:procesamientos-de-texto Procesamientos de texto:
+h3:nlproc Procesamiento del Lenguaje Natural (natural language processing- NLP):
+h4:tokenizador Tokenizador:
+h4:ner Entidades Nombradas :
+h4:pos Etiquetado de Partes del Discurso :
+h4:steaming Steaming:
+h2:textmin Minería de Texto:
+fig:coocejem Coocurrencia de Palabras
+h2:sistemas-distribuidos Sistemas Distribuidos:
+h3:contenedores Contenedores:
+h3:orquestador Orquestador:
+h2:similitud Similitud de documentos:
+h4:tendencias-actuales-sistemas-de-información Tendencias actuales Sistemas de Información:
+h4:temas-en-proceso-de-investigación Temas en proceso de investigación:
+

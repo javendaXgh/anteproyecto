@@ -1,0 +1,23 @@
+h1:propuesta-técnica Propuesta Técnica:
+h2:propuestatec Propuesta Técnica:
+h2:objetivogral Objetivo:
+h2:objetivosespe Objetivos Específicos
+h2:esquemas Esquema de la Aplicación WEB:
+fig:esquema Esquema General
+fig:esquemadocker Diagrama Aplicación
+h3:cliente---servidor Cliente - Servidor:
+h4:cliente---navegador-web 1 - Cliente - Navegador web:
+h4:servidor 2 - Servidor:
+h3:contenedores Contenedores:
+h4:docker-compose Docker Compose:
+h4:contenedor-con-nginx Contenedor con Nginx:
+h4:contenedor-con-cerbot Contenedor con Cerbot:
+h4:conshinyproxy Contenedor con Shinyproxy:
+h4:conshiny Contenedor con :
+h4:conposgres Contenedor con PostgreSQL:
+h4:conservicios Contenedor con :
+h5:text-mining-y-nlp Text Mining y NLP:
+h4:conspacy Contenedor con :
+h2:factibilidad Factibilidad:
+h2:cronograma Cronograma:
+
