@@ -1,0 +1,258 @@
+---
+bibliography: references.bib
+---
+
+# Marco teórico-referencial: {#teorico}
+
+En este Capítulo expondremos el marco teórico en que sustentamos los aspectos de mayor relevancia para el desarrollo de la aplicación. Principalmente enunciaremos una serie de conceptos que involucran algoritmos de búsqueda, la recuperación de información, la minería de texto, el procesamiento del lenguaje natural, la estructuración de la base de datos y lo referente a la arquitectura distribuida en que se soporta el SCSU.
+
+Algunos de estos conceptos y conocimientos se superponen ya que responden a dar solución a problemas comunes en el manejo de los textos, no obstante se procurará hacer mención a los aspectos básicos que faciliten comprender lo expuesto en \@ref(propuesta).
+
+## Reseña histórica: {#alghist}
+
+El profesor Donald Knuth señala, dentro del campo de las ciencias de la computación, que la **búsqueda** *es un proceso de recolectar información que se encuentra en la memoria del computador de la forma más rápida posible, esto cuando tenemos una cantidad N de registros y nuestro problema es encontrar el registro apropiado de acuerdo a un criterio de búsqueda* [@knuth1997] (p. 392) .
+
+Iniciamos con esta cita porque la recuperación de información gira en torno a un problema central que es la **búsqueda**. A continuación mencionaremos una serie de algoritmos que abordan este problema, no necesariamente resultando óptimos para dar solución a lo planteado en \@ref(p2).
+
+En la década de 1940 cuando aparecieron las computadoras las búsquedas no representaban mayor problema ya que estas máquinas disponían de poca memoria *RAM* pudiendo almacenar solo moderadas cantidades de datos. En realidad estaban diseñadas para realizar cómputos y arrojar los resultados más no para tenerlos almacenados en memoria.
+
+No obstante con el desarrollo del almacenamiento en memoria *RAM* o en dispositivos de almacenamiento permanentemente ya en la década de 1950 empezaron a aparecer los problemas de búsqueda y los primeras investigaciones para afrontarla. En la década de 1960 se adoptan por ejemplo estrategias basadas en arboles.
+
+Los primeros algoritmos que sirvieron para localizar la aparición de una frase dentro de un texto, o expresado de forma más abstracta, como la detección de una subcadena *P* dentro de otra cadena *T*, fueron los algoritmos de *Pattern-Matching* [@goodrich2013] (p. 584). Así tenemos dentro de la literatura un algoritmo de *Fuerza Bruta* donde dado un texto T y una subcadena P, se va recorriendo cada elemento de la cadena T para detectar la aparición de la subcadena P. Si bien este algoritmo no presentaba el mejor desempeño, ya que en su ejecución se daban ciclos anestados, creó una forma válida de enfrentar el problema de la búsqueda de subcadenas de texto.
+
+Posteriormente en 1977 el problema se enfrenta con un nuevo algoritmo que es el de *Boyer-Moore* en el cual se implementan dos heurísticas ( *looking-glass y* *character-Jump)* ya que se permite ir realizando algunos saltos en la búsqueda ante la no coincidencia de la subcadena con la cadena y el orden en el que se va realizando la comparación se invierte lo cual permitió obtener un mejor desempeño . Continuamos este breve recorrido con el algoritmo *Knuth-Morris-Pratt* que se introdujo en 1976. En este procedimiento como novedad tenemos que se agregó una función que iba almacenando previas coincidencias parciales en lo que eran fallos previos y así al realizar un desplazamiento tomaba en cuenta cuántos caracteres se podían reusar. De esta forma se logró considerablemente mejorar el rendimiento en los tiempos de ejecución de *O(n+m)* que son asimptóticamente óptimos.
+
+Sobre una modificación al algoritmo *Boyer-Moore* se sustenta la utilidad *grep* de la línea de comandos UNIX que igualmente le da soporte a diversos lenguajes que la usan para ejecutar búsquedas de texto. El problema con este método es que consume un tiempo que más adelante veremos como puede ser disminuido.
+
+Los algoritmos mencionados anteriormente pueden ser usados en procesos de recuperación de información no obstante existen técnicas que pueden mejorar considerablemente los tiempos en la ejecución de las rutinas, sin emabargo el uso de ellos no se desecha en ninguno de los procesos planteados.
+
+Otra estrategia que surgió para enfrentar las búsquedas de texto fue el uso de la programación lineal donde bajo la premisa *divida et impera* los problemas que requieren tiempo exponencial para ser resueltos son descompuestos en polinomios y por lo tanto se disminuye la complejidad en tiempo para ser resueltos. Entre este tipo de algoritmos podemos mencionar los de *alineación del ADN y las secuencias de texto* que originalmente se planteó para resolver problemas de alineación de cadenas de ADN de forma parcial o total dentro de una cadena mayor. Posteriormente se identificó que este tipo de procedimiento era extrapolable a los subcadenas de texto. Una de las versiones es la denomimanada ***Smith--Waterman*** que resultó de gran utilidad para resolver el problema planteado en \@ref(clasificacion) lo cual explicaremos a detalle en ?????.
+
+Un gran paso para aproximarnos a la aparición de los sistemas de recuperación de información lo representó el enfoque que presentan los algoritmos *Tries*. Este nombre proviene del proceso de *Information Retrieval* y principalmente se basa en hacer una serie de preprocesamientos a los textos para que al momento de ejecutar la búsqueda de texto, es decir, de la subcadena dentro de la cadena, ya tengamos una parte del trabajo realizado previamente y no tener que ejecutarlo todo "on the fly", es decir, sobre la marcha.
+
+Un *Trie* [@fredkin1960] es una estructura de datos que se crea para almacenar textos para así poder ejecutar más rápido la coincidencia en la búsqueda. En nuestra propuesta del SCSU todos los textos van siendo procesados con distintas técnicas a medida que son insertados en la base de datos. Esto claramente representa una mejora en el desempeño en los tiempos de búsqueda.
+
+## Recuperación de Información:
+
+El eje central sobre el cual gira el proceso de recuperación de información (RI) es satisfacer las necesidades de información relevante que sean expresadas por un usuario mediante una consulta (***query***) de texto. El investigador Charu Aggarwal en su libro sobre Minería de Texto [@miningt2012]14 menciona que el objetivo del proceso de RI es conectar la información correcta, con los usuarios correctos en el momento correcto, mientras que otro de los autores con mayor dominio sobre el tema, Christopher Manning en su libro *Information Retrieval* indica que "es el proceso de encontrar materiales (generalmente documentos) de una naturaleza no estructurada (generalmente texto) que satisface una necesidad de información dentro de grades colecciones (normalmente almacenada en computadores)" [@manning2008] (p. 25).
+
+Satisfacer una necesidad de recuperación de información no sólo se circunscribe a un problema **búsqueda** de un texto dentro de un corpus ya que en la mayoría de los casos se deberá cumplir con ciertos criterios, o restricciones, como por ejemplo que esté dentro de un período de fechas, o que comprendido en un subconjunto del corpus a lo que llamamos búsquedas multi atributo.
+
+La información que se recolecte en una búsqueda tendrá distintos aspectos que aportarán peso en el orden en que serán presentadas al usuario y no sólo vendrá dado por la aparición de las palabras sino también por otros elementos como lo puede ser la aparición de la frase del ***query*** dentro del título o por otra parte la cantidad de veces que esta se repita dentro un determinado documento que compone el Corpus. Igual puede aportar un peso mayor a la recuperación de un texto las referencias que contengan otros documentos a un determinado documento. 
+
+Incluso es válido incorporar documentos, en los resultados que arroje la búsqueda,  que propiamente no coincidan con los términos buscados sino que contengan términos que sean sinónimos o también añadiendo a los resultados documentos que presenten alguna similitud con el texto del ***query***.  Lo que acabamos de mencionar incorporará formalmente dentro del proceso de extracción de información algo de imprecisión con la intención última de enriquecer el proceso de ***Information Retrieval*** [@kraft2017]. 
+
+Evaluando el proceso con cierto nivel de abstracción tenemos que el proceso de recuperación de información está compuesto principalmente por un *query*, por un corpus y por una función de *ranking* para ordenar los documentos recuperados de mayor importancia a menor.
+
+
+El desarrollo de los algoritmos expuestos en \@ref(alghist) sumado a la necesidad de resolver los problemas asociados a la búsqueda de un texto dentro de un Corpus con múltiples atributos en tiempos aceptables y la abundante cantidad de información digital potenciada por el uso generalizado de los computadores abonó las condiciones para la creación de los **Sistemas de Recuperación de Información**.
+
+## Sistemas de Recuperación de Información :
+
+Los Sistemas de Recuperación de Información (*Information Retrieval Systems-IRS*) son los dispositivo (software y/o hardware) que median entre un potencial usuario que requiere información y la colección de documentos que puede contener la información solicitada [@kraft2017] 1. El IRS se encargará de la representación, el almacenamiento y el acceso a los datos que estén estructurados y se tendrá presente que las búsquedas que sobre él recaigan tendrán distintos costos siendo uno de estos el tiempo que tardé en efectuarse.
+
+
+Es de nuestro conocimiento que generalmente los datos estructurados son gestionados mediante un sistema de base de datos pero el el caso de los textos estos se gestionan por medio de un motor de búsqueda motivado a que en un estado crudo los mismos carecen de estructura [@miningt2012] (p. 2). Son los motores de búsqueda (*search engines*) los que permiten que un usuario pueda encontrar fácilmente la información que resulte de utilidad mediante un *query*.
+
+El SCSU está diseñado como un IRS donde se pueden ejecutar querys que son procesados y los resultados que se obtienen son sometidos a una función de ranking que será expuesta en ????.
+
+## Ejemplos de IRS:
+
+Continuando nuestro recorrido y asociando un poco más con el tema de este Trabajo mencionaremos las páginas del proyecto denominado Arvix alojado en www.arvix.com que es un repositorio de trabajos de investigación o el portal de la Asociation Computery Machine (ACM) que incorpora motores de búsqueda con particulares características facilitando la labor de investigación y extracción de información ante una determinada necesidad.
+
+## Modelos de Recuperación de Información:
+
+### Recuperación boleana:
+
+Ante una búsqueda de información se recorre linealmente todo el documento para retornar un valor boleano indicando la presencia o no del término buscado. Es uno de los primeros modelos que se uso y está asociado a técnicas de *grepping* [@manning2008] (p.3) , incluso está presente como un comando en la consola UNIX.
+
+El usuario final obtendrá como respuesta a su *query* solo aquellos textos que contengan el término. Es un modelo muy cercano a los típicos *querys* de bases de datos con el uso de operadores "AND" , "OR" y "NOT". En el procesamiento de los textos se genera una matriz de incidencia binaria termino-documento, donde cada término que conforma el vocabulario ocupa una fila *i* de la matriz mientras que cada columna *j* se asocia a un documento. La presencia de el término *i* en el documento *j* se denotará con un valor verdadero o *1*.
+
+Este modelo si bien representa una buena aproximación a la generación de *querys* más rápidos presenta una gran desventaja y es que al crecer la cantidad de documentos y el vocabulario se obtiene una matriz dispersa de una alta dimensionalidad que hace poco efectiva su implementación.
+
+Este modelo apareció entre 1960 y 1970. Los documentos y los *querys* son vistos como conjuntos de términos indexados que luego fueron llamados "bolsa de términos" *(bag of terms)*. Las deficiencias de este modelo recaen en que los resultados no tienen ningún ranking. Si por ejemplo el término sobre el cual se realiza el *query* aparece 100 veces en un documento y en otro aparece sólo una vez, en la presentación de los resultados ambos documentos aparecerán al mismo nivel, ninguno tendrá alguna preferencia sobre el otro.
+
+En este modelo se pierde el contexto semántico de las palabras ya que incluso se pierde el orden en que aparecen las palabras en cada texto.
+
+Este modelo es sobre el cual suponemos que se ejecutan las busquedas en el sistema Saber UCV mientras que nuestra propuesta del SBSU propone una versión de recuperación de información que aplica métodos de más reciente creación que permiten mejorar el desempeño (tiempo) y calidad de los resultados.
+
+## Scoring Model: {#rank}
+
+(PENDIENTE POR DESARROLLAR)
+
+Es un modelo aplicado en amplias colecciones de documentos donde es necesario solo mostrar al usuario que realizad una búsqueda una fracción de los documentos encontrados pero es necesario que estos sean los de mayor *score*, puntuación. de acuerdo a distintos criterios que permitan determinar cuales son los que tienen mayor relevancia.
+
+## Modelo de Espacio Vectorial:
+
+(PENDIENTE POR DESARROLLAR)
+
+Otro de los modelos de Information Retrieval. Falta por enunciar
+
+### Learning to rank:
+
+(PENDIENTE POR DESARROLLAR)
+
+Otro de los modelos de Information Retrieval. Falta por enunciar
+
+Las dos técnicas mencionadas anteriormente se pueden considerar dentro del área del aprendizaje automático (*machine learning*) aprendizaje no supervisado[^marco-teorico-1] en esta variante sí se usa una aproximación que aplica el aprendizaje supervisado [^marco-teorico-2] donde el entrenamiento del algoritmo servirá para predecir cuáles documentos resultan relevantes, sin embargo este modelo no será usado en el presente trabajo.
+
+[^marco-teorico-1]: el tipo de aprendizaje donde no es necesario suministrar una etiqueta en el conjunto de datos a cada observación bien sea de tipo valor numérico o categórico. En este tipo de aprendizaje el algoritmo será el que logre...
+
+[^marco-teorico-2]: a diferencia del aprendizaje no supervisado en este caso si se acompaña cada observación de una etiqueta Yi para cada observación Xi que sirve para el entrenamiento. Definición incompleta
+
+Adicionalmente podemos introducir el criterio de búsqueda "approximate text searching" que permite flexibilizar la coincidencia entre el texto requerido y el resultado
+
+Al final ocurre en la búsqueda indexada un tradeoff entre el espacio de búsqueda y el tiempo de ejecución de la búsqueda.
+
+### Modelos de representaciones de texto:
+
+(PENDIENTE POR DESARROLLAR)
+
+Uno de los principales problemas lo representa la forma en que estructuraremos los textos
+
+## Bases de datos: {#bd}
+
+(PENDIENTE POR DESARROLLAR)
+
+La aproximación se hace con base en el almacenamiento de textos. Se menciona el crecimiento del size de las tablas al aplicar los ts_vector.
+
+También se menciona que el crecimiento de los repositorios de datos son tan grandes que se encuentrar distribuidos en varias computadoras y eso lleva a que también se puedan distribuir las bases de datos con el uso de tecnologías como spark, hadoop, Apache Storm.
+
+## Full Text Search: {#fts}
+
+(PENDIENTE POR DESARROLLAR) "Las estructuras de datos construidas para la búsqueda en textos, llamadas *índices* son usadas para acelerar la búsqueda" no obstante esto causa un problema de espacio ya que no solo el texto se tiene que guardar sino también su índice que puede incrementar entre un 20% y 200% el espacio de almacenamiento. Data persistente
+
+## Steaming: {#steaming}
+
+## Indexación:
+
+Cuando se dispone de grandes colecciones de documentos las cuales en algunos casos tienen que reposar distribuidas en clusteres de computadores, se hace necesario la creación de índices mediante el proceso de indexación. En el caso de los textos los métodos con los que se crean estos índices es distinto al de otro tipo de datos.
+
+Principios de indexación en textos.
+
+### Tiopos Indexaciones en texto:
+
+(PENDIENTE POR DESARROLLAR)
+
+#### General Inverted GIN, Posting List
+
+(PENDIENTE POR DESARROLLAR)
+
+#### Otros tipos de indexación:
+
+(PENDIENTE POR DESARROLLAR) Breve mención a RUM y VODKA
+
+#### Tendencias actuales Sistemas de Información:
+
+Si bien anteriormente las búsquedas de información dentro de un conjunto de textos se procesaba determinando la aparición o no de palabras, teniendo por ejemplo el algoritmo de cadenas de búsqueda de cadenas Boyer-Moore buscar ejemplo de un algortimo o de frases dentro de un determinado texto este método ha ido evolucionando para llegar hoy en día a un elevado nivel de abstracción ya que a partir de la necesidad de obtener una determinada información, es decir, de aquello que necesitamos buscar que consiste en hacer *match* con un objeto de información hemos pasando de los motores de búsqueda ( *search engines* ) a motores de respuestas ( *answering engines* ) [@balog2018] donde el sistema ante un determinada consulta del usuario va a retornar una serie de resultados que pretenden enriquecer el resultado mostrando la identificación de entidades, hechos y cualquier otro dato estructurado que esté de forma explícita, o incluso implícita, mencionado dentro de los textos que conforman el conjunto.
+
+Para lograr la generación de estos resultados se han tenido que conformar las llamadas bases de conocimiento o *knowlodege bases* que son repositorios donde previo a la búsqueda de la información dentro del sistema, se logra ir estructurando la organización de la información alrededor de objetos o datos específicos que se denominan **entidades**. Estos conceptos y métodos se asocian directamente a los que también se proponen, de manera más amplia, en la denominada *web semántica* [^marco-teorico-3] no obstante con el uso de distintas técnicas....
+
+[^marco-teorico-3]: Se basa en la idea de añadir [metadatos](https://es.wikipedia.org/wiki/Metadato "Metadato") [semánticos](https://es.wikipedia.org/wiki/Sem%C3%A1ntica "Semántica") y [ontológicos](https://es.wikipedia.org/wiki/Ontolog%C3%ADa_(Inform%C3%A1tica) "Ontología (Informática)") a la [*World Wide Web*](https://es.wikipedia.org/wiki/World_Wide_Web "World Wide Web")*.* Esas informaciones adicionales ---que describen el contenido, el significado y la relación de los datos--- se deben proporcionar de manera formal, para que así sea posible evaluarlas automáticamente por máquinas de procesamiento. Tomado de [Wikipedia](https://es.wikipedia.org/wiki/Web_sem%C3%A1ntica "Web Semántica")
+
+Es oportuno mencionar algunos proyectos basados en estas técnicas que cuentan con páginas de internet que han logrado generar extensas *knowledg bases* como por ejemplo:
+
+-   DBpedia: se encuentra en la dirección [www.www.dbpedia.org.com](www.dbpedia.com) es un proyecto ase puede acceder a una red global y unificada de grafos de conocimiento la cual cubre más de 20 idiomas y principalmente genera sus grafos de conocimiento a partir de las publicaciones del Proyecto Wikipedia[^marco-teorico-4].
+
+-   Se mencionan dos páginas similares
+
+[^marco-teorico-4]: **Wikipedia** es una enciclopedia libre, políglota y editada de manera colaborativa que se propone crear una enciclopedia en la internet. Tomado de [definición Wikipedia](https://es.wikipedia.org/wiki/Wikipedia)
+
+En cuanto al estado del arte existen distintas librerías y modelos de representación de documentos, palabras y caracteres.
+
+Una de las características es el gran crecimiento en los parametros de los modelos que representan los textos, incluso creciendo a un ritmo mayor que los modelos de otras áreas como el área de computación visual.
+
+Otro de los métodos usados para el almacenamiento o la indexación es crear agrupamientos *(clusters)* de aquellos documentos que compartan algunas características, por ejemplo, en la temática que aborden. Otra de las innovaciones que se están añadiendo a los sistemas de recuperación de información es generar resúmenes con técnicas de procesamiento de lenguaje natural soportadas en el uso de arquitecturas de aprendizaje profundo *(deep learning)* .
+
+Otra de las tendencias es que los resultados ante una búsqueda son personalizados ya que existen mecanismos como la sesión de usuario o las *cookies* que guardan información contextual permitiendo que ante un mismo *query* en distintos equipos los resultados sean distintos.
+
+## Coocurrencias: {#coocurrencia}
+
+## Mapas de conocimiento:
+
+(PENDIENTE POR DESARROLLAR)
+
+## Minería de Texto: {#textmin}
+
+La extracción de ideas útiles derivadas de textos mediante la aplicación de algoritmos estadísticos y computacionales se conoce con el nombre de minería de texto, analítica de texto o aprendizaje automático para textos (text mining, text analytics, machine learning from text).
+
+El uso de las técnicas de minería de texto ha ganado atención en recientes años motivado a las grandes cantidades de textos digitales que están disponibles. La minería de texto, o *text mining* surge para dar respuesta a la necesidad de tener métodos y algoritmos que permitan procesar estos datos no estructurados [@miningt2012] . Una vez que mediante el proceso de recuperación de información tenemos un cúmulo de textos es posible que necesitemos dar un paso más allá y usar un conjunto de técnicas que nos permitan analizar y digerir estos textos, mediante la detección de patrones.
+
+Uno de los desafíos al trabajar con textos es darles estructura para que resulte viable trabajar con ellos desde la perspectiva de procesos computacionales. Una de las primeras fases consiste en agrupar todos los textos en un Corpus. Posteriormente se procederá a conformar una matriz dispersa de una alta dimensionalidad que se denominará *"Sparce Term-Document Matrix)* de tamaño *n X d,* donde *n* es el número total de documentos y *d* es la cantidad de términos (palabras distintas) presentes entre todos los documentos. Formalmente sabemos que la entrada *(i,j)* de nuestra matriz es la frecuencia (cantidad de veces que aparece) de la palabra *j* en el documento *i* .
+
+El problema de la alta dimensionalidad de la matriz mencionada motiva ir aplicando otras técnicas que en principio puedan colaborar a reducir la dimensionalidad por medio de los atributos, es decir, disminuyendo el vocabulario.
+
+Igualmente a nivel de minería de texto se hace deseable poder contar con la identificación semántica de cada una de las palabras que conforman nuestro vocabulario para así obtener representaciones que aportan un mayor significado. Para lograr esto resulta efectivo aplicar sobre nuestro Corpus modelos de Procesamiento de Lenguaje Natural que serán descritos a continuación. Previo a dar paso acotamos que las distintas técnicas de procesamiento por estar enmarcadas y pensadas para actuar en un sistema hacen que una pueda ser insumo de otra o viceversa.
+
+## NLP: {#nlproc}
+
+(PENDIENTE POR DESARROLLAR)
+
+contrastamos con text mining . Señalar retos que surgen al aplicarse en lenguajes distintos al inglés. El lenguaje es la forma más natural de codificar el conicimiento de los humanos y como consecuencia codificamos en los textos este conocimiento.
+
+### NER:
+
+(PENDIENTE POR DESARROLLAR)
+
+Son los procesos que perminten la extracción de distintas entidades contenidas dentro de los textos. Las entidades son: nombres, lugares, organizaciones. También permite detectar relaciones entre entidades
+
+### Etiquetado Parte del Discurso *(Part-of-speech tagging):*
+
+Una de las técnicas usadas en el Procesamiento del Lenguaje Natural es el part-of-speech (POS) y consiste en identificar teniendo presente que la sintaxis es un conjunto de principios y reglas que hacen que las secuencias de palabras sean gramáticalmente aceptables, es decir que tengan sentido para los hablantes de un determinado idioma. El POS es asignar un rol sintáctico a cada palabra dentro de una frase [@eisenstein2019]. Los roles sintácticos principales que resultan de interés en la elaboración de este trabajo son los sustantivos, adjetivos y verbos.
+
+-   Los sustantivos tienden a describir entidades y conceptos.
+
+-   Los verbos generalmente señalan eventos y acciones.
+
+-   Los adjetivos describen propiedades de las entidades
+
+Igualmente dentro del POS se identifican otros roles sintácticos como los adverbios, nombres propios, interjecciones entre otros.
+
+En distintos análisis que se pueden efectuar en los textos el proceso de POS ayuda a comprender los textos al aplicar técnicas de minería de texto ya que no sólo son palabras los que tendremos para procesar sino también la función que estas ejercen
+
+## Casos estudio:
+
+(PENDIENTE POR DESARROLLAR)
+
+En esta sección se espondran un par de casos de aplicaciones que son sistemas de extracción de información.
+
+### Google Scholar:
+
+Sistema de google para búsqueda de textos académicos
+
+### Dspace:
+
+Software que da soporte a saber UCV pero se mencionarán las funcionalidades generales que tiene no necesariamente implementadas en la versión que tiene la Universidad Central de Venezuela.
+
+## Sistemas Distribuidos
+
+(PENDIENTE POR DESARROLLAR)
+
+Mencionar aspectos conceptuales de los sistemas distribuidos para dar paso a la arquitectura de contenedores
+
+### Contenedores:
+
+Explicación de la contenerización y el uso de lahyers en cada contenedor asociando a Docker.
+
+## Revisión literatura en Venezuela. Trabajos similares
+
+(PENDIENTE POR DESARROLLAR)
+
+Se hizo una revisión de desarrollos de sistemas de extracción de información o buscadores en Saber U.C.V encotrando uno de bastante utilidad llamado busconet que era una propuesta de buscador para los textos de la facultad de ciencias. Otro trabajo de Minería de Texto realizado en el Postgrado de Ciencias de la Computación sobre un conjunto de datos de twits para realizar análisis de tópicos Y un tercer trabajo a nivel teórico de minería de texto por parte del equipo de investigadores de CENDITEL
+
+## Similitud de documentos: {#similitud}
+
+(PENDIENTE POR DESARROLLAR)
+
+Es una técnica que permite detectar cuán se puede parecer un documento al resto de los documentos contenidos en un corpus. Un ejemplo de esta técnica es el uso de la similitud coseno que se explica con esta formula.
+
+```{=tex}
+\begin{equation}
+\cos ({\bf t},{\bf e})= {{\bf t} {\bf e} \over \|{\bf t}\| \|{\bf e}\|} = \frac{ \sum_{i=1}^{n}{{\bf t}_i{\bf e}_i} }{ \sqrt{\sum_{i=1}^{n}{({\bf t}_i)^2}} \sqrt{\sum_{i=1}^{n}{({\bf e}_i)^2}} }
+\end{equation}
+```
+<br>
+
+Este es uno de los método preferidos ya que funciona de forma muy aceptable en los textos. Igual existen otras medidas como el índice jaccard.
+
+En la comparación de la similitud tiene mucha importancia el método que adoptemos en la representación de los textos.

@@ -1,0 +1,206 @@
+# Propuesta {#propuesta_tec}
+Generar una aplicación web distribuida donde se puedan hacer *querys* sobre los textos que conforman el *corpus*, textos que serán obtenidos y actualizados mediante técnicas de *web crawling* del repositorio Saber UCV. La aplicación permitirá generar procesos de extracción  de información que se mostrarán en tablas interactivas así como en la generación de gráficos y grafos de co-ocurrencias de palabras. Adicionalmente se mostrarán recomendaciones de textos basados en la similitud que presente un documento con otro.
+
+Debemos acotar que se decidió optar por la estrategia de hacer el web crawling a los documentos contenidos en Saber UCBV por la falta de personal a cargo de tal sistema no haciendo viable la obtención de la base de datos y también por tal sistema no tener aún a disposición una API. Esto se decidió luego de una reunión en diciembre 2019 con el encargado de dicho software.
+
+## Objetivo General:
+
+Implementar un software que brinde una solución para la búsqueda de información sobre los trabajos de investigación que se encuentran el Repositorio SABER UCV usando técnicas de *Information Retrieval* para que los resultados sean óptimos, es decir, los de mayor utilidad, relevantes ante la necesidad de información que motiva el hacer la búsqueda.
+
+Para el procesamiento de las búsquedas será usado un sistema distribuido con distintos componentes que permitan la ingesta, procesamiento y transformación de los datos, el alojamiento de los mismos y procesamiento de las búsquedas para su posterior representación en los resultados.
+
+Los trabajos de investigación que se considerarán como el conjunto de datos que forman parte exclusiva del alcance de este trabajo son aquellos que están como textos en formatos html, pdf, word quedando por fuera cualquier otro como imágenes. Los textos con los cuales trabajaremos se encuentran almacenados en un repositorio centralizado. Para una parte del procesamiento de los textos será necesario trabajar con los archivos adjuntos a cada trabajo (incluir cuadro de estructura del repositorio) mientras que para otra parte sólo se usarán los abstracts, resumenes de cada trabajo que se encuentran en formato html.
+
+Los textos serán procesados con distintas técnicas para ir pudiendo generar un conjunto de datos estructurado que sea posible realizarle distintos procesos computacionales.
+
+Una vez que los datos se encuentren estructurados deben ser aplicadas técnicas de Procesamiento de Lenguaje Natural para así, entre otros beneficios, ir disminuyendo el espacio de búsqueda que es lo planteado en el objetivo original de este trabajo: una solución para la búsqueda de información.
+
+Al referirnos a los *resultados que debe brindar la búsqueda* nos referimos a términos o palabras asociados a distintas investigaciones. A modo de ejemplo podemos tener palabras claves, el nombre de un investigador, un tema, una dependencia académica de la Universidad o un rango de fecha por mencionar las principales.
+
+Cada uno de los ejemplos mencionados constituye una estrategia particular o la intersección de varias estrategias. 
+
+El Sistema propuesto está diseñado para ir actualizando de forma dinámica el conjunto de datos que se encuentra en el Repositorio Saber.ucv, pudiendo entenderlo como un espejo con procesos independientes.
+
+La arquitectura usada es el modelo cliente-servidor donde el cliente ingresa a una aplicación web y formula la petición de busqueda y los servicios de backend ejecutan los distintos procesamientos para arrojar los resultados.
+
+Algunos beneficios colaterales que brinda la aplicación es que complementa las estadísticas sobre los trabajos de investigación que se realizan en la Universidad Central de Venezuela y permite, mediante técnicas de representación gráfica de coocurrencias de palabras, tener una noción complementaria de las distintas áreas de conocimiento.
+
+El mayor reto asociado al desarrollo de este trabajo es encontrar las técnicas más idóneas, previa evaluación de las distintas disponibles para lograr hacer de la manera más eficiente y práctica los resultados para cada búsqueda y así convertirse en una herramienta que sea de utilidad para los investigadores y logre mostrar las distintas áreas de conocimiento que forman parte de los saberes de la Universidad Central de Venezuela. Para lograrlo es necesario usar las técnicas que en la actualidad formar parte del “estado del arte” haciendo necesario la revisión de distintas técnicas y para cada uno evaluar su desempeño, no olvidando el reto que representa que los textos de entrada, es decir, los textos de las investigaciones que son el principal, por no decir, el exclusivo insumo de entrada, se encuentran en el idioma español y como se demostrará más adelante, esto representa aplicar métodos de procesamiento que están en función de la lengua nativa y muchas veces los algoritmos y métodos más novedosos no están aún disponibles para nuestra lengua nativa que es el español.
+
+Mediante un query recolectar toda la información que pueda resultar de interés y que se considere de mayor importancia ante una necesidad en una investigación.
+
+## Objetivos Específicos
+
+- Querys en distintas dimensiones siendo una de estas el tiempo. Las otras son las distintas jerarquías (pregrado, especializaciones, maestría y/o doctorado), facultado ,carreras o postgrado.
+- Que la aplicación se implemente en un sistema distribuido.
+- Que los datos reposen en una base de datos y se consulten mediante un manejador de base de datos.
+- Que se puedan ver mediante grafos las palabras co-ocurrentes.
+- Generar recomendaciones de textos basados en la similitud que presente uno con los otros con rankings.
+- En los documentos extraídos contar con enlaces a los documentos que reposan en Saber UCV.
+- Permitir la concurrencia de accesos al sistema.
+- Contar con el certificado SSL para acceso seguro por parte de los visitantes.
+- En la representación de coocurrencias mediante grafos filtrar documentos interactivamente al hacer click con el mouse sobre los arcos que unen par de nodos donde cada uno representa la co-ocurrencia de una dupla de palabras. El filtro generará un query sobre los documentos que contienen esa determinada co-ocurrencia.
+
+Podemos representar el Sistema y sus interacciones tanto como con el usuario final como con el sistema Saber UCV mediante un esquema representado en la figura \@ref(fig:esquema)
+
+```{r, esquema, echo=FALSE, out.width='100%',fig.cap='Esquema General'}
+knitr::include_graphics(rep("formas/diagramageneral.png"))
+```
+
+
+En la figura \@ref(fig:esquema) se muestra como el SCSU está diseñado para que mediante técnicas de scraping se pueda extraer la información del repositorio Saber UCV. Posteriormente el sistema ante la consulta del usuario va a extraer los datos que sean relevantes para generar conocimiento mediante la aplicación de técnicas de minería de texto y procesamiento del lenguaje natural para la generación de jerarquías, rankings, coocurrencias de las palabras más mencionadas y recomendaciones de texto según similitudes.
+
+## Esquema de la Aplicación WEB:
+El SCSU se implementa mediante el uso de Docker. Veamos en la figura \@ref(fig:esquemadocker) un esquema con la representación de los contenedores.
+
+```{r, esquemadocker, echo=FALSE, out.width='90%',fig.cap='Diagrama Aplicación'}
+knitr::include_graphics(rep("formas/diagrama_docker2.png"))
+```
+
+
+
+Garantiza la reproducibilidad y portabilidad. Se eligió docker como herramienta de implementación de toda la solución ya que sabemos que al crear un contenedor disponemos de una forma de empaquetar la aplicación y todas las dependencias con un procedimiento estandarizado permitiendo que se pueda ejecutar la aplicación en cualquier parte, es decir en cualquier máquina que cuente con el hardware necesario
+A lo anterior se añaden elementos de seguridad que las hacen estar menos expuestas a ataques a que corriera directamente en el servidor la aplicación. Esto principalmente se deriva al uso de las primitivas de seguridad como el “linux kernel namespace”  dentro del contenedor to sandbox different
+applications running on the same computers and control groups (cgroups) in order to
+avoid the noisy-neighbor problem, where one bad application is using all the available
+resources of a server and starving all other applications. GBIEL SCHNEKER Learn Docker, p
+
+
+### Componentes:
+
+### 1 - Navegador web:
+El cliente desde el navegador web de su preferencia ingresa al enlace https://proyecta.me/. El sistema no está diseñado para usarse desde dispositivos móviles aunque igualmente es viable el acceso.
+
+### 2 - Servidor:
+Actualmente el sistema está implementado en un servidor de la empresa DigitalOcean con las siguientes características:
+
+- 1 CPU virtual
+- 2 GB de memoria RAM
+- 50 GB de disco duro
+
+y está configurado con el dominio proyecta.me
+
+En este servidor está instalado el software docker.
+
+### 3 - Docker Compose:
+Funciona como un orquestador para correr aplicaciones distribuidas en múltiples contenedores usando un archivo en formato yml donde se establecen las imágenes, los puertos y los volumenes que serán usados y compartidos por cada uno de los contenedores.
+
+### 4 - Nginx:
+
+Es el servidor web que sirve para redireccionar las peticiones del puerto 80 al puerto 8090. Mediante este contenedor también se define el certificado SSL para permitir conexiones por el protocolo HTTPS.
+
+Este contenedor fue generado desde una imagen de NGINX sin ninguna modificación posterior.
+
+
+### 5 - Cerbot:
+Permite la obtención del certificado SSL
+
+Este contenedor fue generado desde una imagen de CERBOT sin ninguna modificación posterior.
+
+### 6 - Shinyproxy:
+Es una implementación del servidor Spring boot que dará servicio a las aplicaciones desarrolladas en shiny. Con el uso de este middleware se obtienen las siguientes ventajas:
+
+- Ante cada petición de acceso a proyecta.me se despliega un workspace completamente aislado, es decir, un contenedor distinto. Ya que las aplicaciones desarrolladas en shiny son mono thread esta estrategia representa una ventaja ya que se puede controlar los recursos de memoria y cpu asignados.
+- Permite establecer login en el uso de la aplicación y grupos de usarios con distintos métodos de autenticación. Si bien en estos momentos la aplicación es de libre acceso en algún momento se pudiese restringir y no sería necesaria ninguna modificación en la arquitectura más allá de cambiar el archivo de configuración.
+- Uso de una tecnología estable y probada.
+
+Es necesario destacar que originalmente Shiny como framework cuenta con su propio servidor pero para tener acceso a ciertas funcionalidades es necesario pagar directamente a la Fundación RStudio Software. El acceso mediante login no está disponible en la versión libre. Ciertas configuraciones de librerías e incluso la propia contenerización de la aplicación no es posible usando el servicio pago, así que la propuesta acá adoptada si bien representa un mayor esfuerzo en la configuración claramente representa una serie de ventajas por todas las adaptaciones que es posible realizar al sistema teniendo un mayor control sobre el mismo.
+
+Este contenedor funciona en el puerto 2375.
+
+Este contenedor fue generado desde la imagen Shinyproxy sin ninguna modificación.
+
+### 7 - Contenedor con "R Shiny Web App framework":
+En este contenedor es donde reposa la aplicación web con todas las librerías necesarias para generar todas las visualizaciones y procesos de búsqueda. Como comentamos anteriormente, cada vez que ocurre desde el navegador del cliente una petición de acceso se crea una replica de este contenedor con todos los elementos necesarios para que la app funcione correctamente. En caso de presentar alguna falla incluso el sistema sería tolerante a fallas porque se pueden seguir recibiendo peticiones que replicarían una imagen nueva del contenedor sin afectar al que presentase la falla, o viceversa.
+
+Desde este contenedor se realiza el acceso de lectura al contenedor que contiene PostgreSQL donde reposan todos la base de dato que contiene los textos ya procesados. Por los momentos no hay escritura de datos en las tablas pero está contemplado que se registren los querys formulados en alguna tabla junto con los textos revisados para generar métricas de calidad del sistema y de uso.
+
+La imagen que se usa en este servidor fue definida a medida con todos los recursos necesarios.
+
+Posteriormente serán descritas todas las librerías que se encuentran incluidas en este contenedor.
+
+Varios de los procesos que se ejecutan en este contenedor ocurren al momento de recibir un *query* no obstante todos los procesos que puedan ser pre computados se trata de ejecutarlos previamente en el contenedor "R Servicios" para lograr la disminución de los tiempos.
+
+Funcionalidades principales:
+**ENTRADAS**
+
+- Contiene un campo para la entrada de texto que generará el query. 
+- Contiene un selector para indicar si se quiere generar la coocurrencia de palabras
+- Contiene tablas para seleccionar:
+  1) Nivel académico del trabajo. Opciones (pregrado, especialización, maestría, doctorado)
+  2) Facultad o Centro de adscripción. Opciones: 11 Facultades más un centro (CENDES)
+  3) Nombre del pregrado o postgrado. En total son 412 las opciones
+  
+  Cada una de las tablas anteriores se actualiza según e vayan seleccionando las relaciones y la disponibilidades. Por ejemplo, al seleccionar pregrado solo se mostraran los nombres de las carreras de pregrado, pero si se selecciona también el nombre de la Facultad sólo se mostraran las carreras de pregrado dentro de la Facultad seleccionada. Para una determinada tabla también se permiten selecciones múltiples dando una total flexibilidad al momento de ejecutar los *querys*.
+
+**SALIDAS**
+- Ante el query se genera una tabla con la librería reactable que está en javascript. En la misma se contiene cada uno de los documentos con los distintos atributos disponibles: autor, fecha, palabras claves, texto resumen. Adicionalmente se contiene un enlace al repositorio Saber UCV donde se encuentra alojado el respectivo trabajo. Igualmente se presentan los textos que tienen mayor similitud con el texto seleccionado.
+
+- Un gráfico con la frecuencia por año de los trabajos extraídos mediante el *query*. El gráfico se generá con la librería apexcharter que es un wraper para Javascript por lo cual el gráfico tiene ciertas interactividades. Con el hoover muestra el valor de cada columna y permite descargar los valores numéricos que lo generan.
+
+- Gráfico de coocurrencia interactivo de palabras: se genera mediante la librería de VisNetwork que también es un wrapper de javascript. Este gráfico permite seleccionar un arco de unión entre dos palabras coocurrentes. Al realizar la selección se filtran un subconjunto de los documentos que contienen las palabras. Los documentos filtrados se muestran en una tabla contigua también generada en reactable donde sólo se incluye el texto resumen de cada trabajo. En entregaas futuras será mencionado el diseño y funcionamiento a detalle de esta visualización.
+
+- Gráfico de coocurrencia estático de palabras: mediante la librería ggraph son generados un par de gráficos. El primero con la misma coocurrencia de palabras vista anteriormente pero esta vez generada en una visualización estática. El segundo gráfico también muestra la coocurrencia pero solo de palabras que ocurren una seguida de otra. 
+
+
+Con la librería UdPipe se generan las estructuras de datos necesarias para generar los grafos (arcos y nodos).
+
+
+### 8 -  Contenedor con PostgreSQL:
+En este contenedor tenemos una imagen de PostgreSQL versión 13.3. No fue realizada ninguna otra modificación distinta a la definición de usuarios y poblado desde base de datos incluyendo un volumen compartido para garantizar que tengamos "datos persistentes. Este contenedor recibe consultas del contenedor "R Shiny Web App framework" y escritura desde el contenedor "R imagen Servicios".
+
+En este contenedor ocurre la indexación de la base de datos, la implementación de los ranks. Se cuenta con dos tablas principalmente no relacionales.
+
+En una se encuentran los textos y el Ts-vector mientras que la otra tabla contiene otro procesamiento que se le hace a los textos clasificando cada una de las palabras mediante el *part of speach* y registrando el documento al que está asociada.
+
+Uno de los procesos que ejecuta postgreSQL en la generación del Ts Vector es aplicar sobre cada palabra el algoritmo de Porter llamado Snowball para generar el stemming. El proceso de indexación y el TS vector son los que soportan el *Full Text Seach*.
+
+
+
+### 9 - Contenedor con "R Imagen Servicios":
+En este contenedor se creo una imagen con todos los servicios necesarios para realizar el web crawling, procesamientos de textos y archivos descargados desde Saber.UCV, poblado y escritura en base de dato, programación de rutinas de actualización y demás servicios que se debe ejecutar periódicamente.
+
+Posteriormente serán descritas todas las librerías que se encuentran incluidas en este contenedor pero en cuanto a procesos mencionaremos los siguientes:
+
+#### Text Mining y NLP:
+Generalmente las distintas librerías que permiten realizar procesos de NLP también hacen procesos de Text Mining parcial o totalmente. En este trabajo de investigación fueron evaluadas múltiples librerías como Spacy, Quanteda, OPENLP, CoreNLP, Freeling y Udpipe.
+
+En una futura entrega se hará una breve mención a cada una y la razón por la cual se adoptó Spacy para varios de los procesos de NLP.
+
+Para ejecutar Spacy es necesario usar los archivos que se encuentran en el contenedor "Python Spacy" donde está instalada la libraría Spacy que corre en Python y donde también reposa el modelo de machine learning entrenado con textos en español llamado "es-core-news-small".
+
+Procesos que se ejecutan en Spacy:
+
+##### Tokenización: 
+Basicamente separar el documento en palabras. Al obtener las palabras como entidades separadas de un texto nos permite calcular la frecuencia de uso de las mismas. Se va a elaborar un cuadro comparativo de resultados entre distintos tokenizadores con una muestra aleatoria.
+
+##### Lematización: 
+proceso en que se consigue el lema de una palabra entendiendo que el lema es la forma que por convenio se acepta como representante de todas las formas flexionadas de una misma palabra.
+
+Al buscar el lema  se tiene presente la función sintáctica que tiene la palabra, es decir que se evalúa el contexto en el que ocurre ejecutándose de forma automática con spacy ya que esta librería contiene un modelo entrenado de machine learning.
+
+Junto con este proceso de hacer la lematización se hace el etiquetado de la *Part Of Speach*.
+
+Una vez que se ejecuta este proceso en la base de datos son registradas los tokens (palabras) junto con su correspondiente lema, la part os speach y el número de documento a la cual pertenece.
+
+
+#### Poblado  base de datos:
+Otro de los procesos que se ejecuta en este contenedor es el web crawling para el poblado inicial de la base de datos con los textos de los Resumenes. Estos fuero obtenidos mediante un proceso que se detalla en el \@ref(apendicea). Cuando fue realizado el proceso de *scrapy* a Saber.UCV fueron descargados estos datos mediante la metadata y las etiquetas de html permitiendo tener estructurados estos datos. Igualmente se descargan los archivos para realizar la lectura de los primeros 1750 caracteres por cada archivo y en caso de aplicar se concatenan estas lecturas por documento. Posteriormente es realizado el proceso para categorizar cada trabajo especial de grado a una determinada carrera de pregrado o a un postgrado. Cuando el proceso de *pattern matching* no es exitoso se aplica una sub rutina que incluye el algorimo Smith–Waterman para alineación de sub cadenas de texto. 
+Luego se hace el registro del documento en la base de datos.
+
+
+Adicional a guardar los textos se complementa con otros atributos. Dentro del dominio del *Information Retrieval* los datos bibliográficos como el título, el autor, la fecha de publicación, "catalogación descriptiva" y las "palabras claves" establecidas por los autores de cada trabajo, ayudando con ellas a la "catalogación temática" [@kraft2017] 2. 
+
+#### Similitud de textos:
+Cuando se tiene la lematización de las palabras obtenida con Spacy se genera una matriz de tipo Td-Idf que permite subsecuentemente generar el cálculo de similitud de los documentos. 
+
+Td-Idf es donde se busca obtener una normalización con base en la frecuencia (frequency based normalization) o inverse document frequency (idf) . La representación final multiplica la term frequency por la idf para generar la tf-idf.
+
+Este cálculo de similitud se realiza con la libraría Quanteda.texstats y se usa la medida de similitud coseno ya que varios autores la sitúan como una de las mejores formas de comparar la similitud entre un documento y otro.
+
+
+
+### 10 -  Contenedor con "Python Spacy":
+Se creó una imagen que contiene un ubuntu con python, spacy y un modelo de Spacy instalado. Su función es ser mediante un volumen compartido ser llamado desde el contenedor "R Imagen Servicios".
+
+
