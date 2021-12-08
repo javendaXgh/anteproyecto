@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es-ES" xml:lang="es-ES">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Propuesta | Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea</title>
+  <meta name="description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Propuesta | Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/images/UCV.png" />
+  <meta property="og:description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Propuesta | Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea" />
+  
+  <meta name="twitter:description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="twitter:image" content="/images/UCV.png" />
+
+<meta name="author" content="José Miguel Avendaño Infante" />
+
+
+<meta name="date" content="2021-11-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="teorico.html"/>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Consulta Información</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumen:</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#propuesta"><i class="fa fa-check"></i><b>0.1</b> Propuesta:</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i><b>0.2</b> Objetivo:</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#intro"><i class="fa fa-check"></i><b>0.3</b> Sistemas de Recuperación de Información:</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#saber"><i class="fa fa-check"></i><b>0.4</b> Saber UCV:</a>
+<ul>
+<li class="chapter" data-level="0.4.1" data-path="index.html"><a href="index.html#delimitación-de-documentos-con-los-cuales-se-trabajará"><i class="fa fa-check"></i><b>0.4.1</b> Delimitación de documentos con los cuales se trabajará:</a></li>
+</ul></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#problema"><i class="fa fa-check"></i><b>0.5</b> Planteamiento del Problema:</a>
+<ul>
+<li class="chapter" data-level="0.5.1" data-path="index.html"><a href="index.html#clasificacion"><i class="fa fa-check"></i><b>0.5.1</b> I. No se posee clasificación de los documentos:</a></li>
+<li class="chapter" data-level="0.5.2" data-path="index.html"><a href="index.html#p2"><i class="fa fa-check"></i><b>0.5.2</b> II. Problemas en los resultados que generan los <strong><em>Querys</em></strong>:</a></li>
+</ul></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#antecedentes"><i class="fa fa-check"></i><b>0.6</b> Antecedentes:</a></li>
+<li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#estructura"><i class="fa fa-check"></i><b>0.7</b> Estructura del Trabajo:</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="teorico.html"><a href="teorico.html"><i class="fa fa-check"></i><b>1</b> Marco teórico-referencial:</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="teorico.html"><a href="teorico.html#alghist"><i class="fa fa-check"></i><b>1.1</b> Reseña histórica:</a></li>
+<li class="chapter" data-level="1.2" data-path="teorico.html"><a href="teorico.html#recuperación-de-información"><i class="fa fa-check"></i><b>1.2</b> Recuperación de Información:</a></li>
+<li class="chapter" data-level="1.3" data-path="teorico.html"><a href="teorico.html#SRI"><i class="fa fa-check"></i><b>1.3</b> Sistemas de Recuperación de Información (SRI) :</a></li>
+<li class="chapter" data-level="1.4" data-path="teorico.html"><a href="teorico.html#ejemplos-de-irs"><i class="fa fa-check"></i><b>1.4</b> Ejemplos de IRS:</a></li>
+<li class="chapter" data-level="1.5" data-path="teorico.html"><a href="teorico.html#modelos-de-recuperación-de-información"><i class="fa fa-check"></i><b>1.5</b> Modelos de Recuperación de Información:</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="teorico.html"><a href="teorico.html#recuperación-boleana"><i class="fa fa-check"></i><b>1.5.1</b> Recuperación boleana:</a></li>
+<li class="chapter" data-level="1.5.2" data-path="teorico.html"><a href="teorico.html#indices-invertidos"><i class="fa fa-check"></i><b>1.5.2</b> Indices Invertidos:</a></li>
+<li class="chapter" data-level="1.5.3" data-path="teorico.html"><a href="teorico.html#rank"><i class="fa fa-check"></i><b>1.5.3</b> Scoring Model:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="teorico.html"><a href="teorico.html#modelo-de-espacio-vectorial"><i class="fa fa-check"></i><b>1.6</b> Modelo de Espacio Vectorial:</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="teorico.html"><a href="teorico.html#learning-to-rank"><i class="fa fa-check"></i><b>1.6.1</b> Learning to rank:</a></li>
+<li class="chapter" data-level="1.6.2" data-path="teorico.html"><a href="teorico.html#modelos-de-representaciones-de-texto"><i class="fa fa-check"></i><b>1.6.2</b> Modelos de representaciones de texto:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="teorico.html"><a href="teorico.html#bd"><i class="fa fa-check"></i><b>1.7</b> Bases de datos:</a></li>
+<li class="chapter" data-level="1.8" data-path="teorico.html"><a href="teorico.html#fts"><i class="fa fa-check"></i><b>1.8</b> Full Text Search:</a></li>
+<li class="chapter" data-level="1.9" data-path="teorico.html"><a href="teorico.html#procesamientos-de-texto"><i class="fa fa-check"></i><b>1.9</b> Procesamientos de texto:</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="teorico.html"><a href="teorico.html#nlproc"><i class="fa fa-check"></i><b>1.9.1</b> NLP:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="teorico.html"><a href="teorico.html#indexación"><i class="fa fa-check"></i><b>1.10</b> Indexación:</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="teorico.html"><a href="teorico.html#tiopos-indexaciones-en-texto"><i class="fa fa-check"></i><b>1.10.1</b> Tiopos Indexaciones en texto:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="teorico.html"><a href="teorico.html#coocurrencia"><i class="fa fa-check"></i><b>1.11</b> Coocurrencias:</a></li>
+<li class="chapter" data-level="1.12" data-path="teorico.html"><a href="teorico.html#textmin"><i class="fa fa-check"></i><b>1.12</b> Minería de Texto:</a></li>
+<li class="chapter" data-level="1.13" data-path="teorico.html"><a href="teorico.html#casos-estudio"><i class="fa fa-check"></i><b>1.13</b> Casos estudio:</a>
+<ul>
+<li class="chapter" data-level="1.13.1" data-path="teorico.html"><a href="teorico.html#google-scholar"><i class="fa fa-check"></i><b>1.13.1</b> Google Scholar:</a></li>
+<li class="chapter" data-level="1.13.2" data-path="teorico.html"><a href="teorico.html#dspace"><i class="fa fa-check"></i><b>1.13.2</b> Dspace:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.14" data-path="teorico.html"><a href="teorico.html#sistemas-distribuidos"><i class="fa fa-check"></i><b>1.14</b> Sistemas Distribuidos</a>
+<ul>
+<li class="chapter" data-level="1.14.1" data-path="teorico.html"><a href="teorico.html#contenedores"><i class="fa fa-check"></i><b>1.14.1</b> Contenedores:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="teorico.html"><a href="teorico.html#revisión-literatura-en-venezuela.-trabajos-similares"><i class="fa fa-check"></i><b>1.15</b> Revisión literatura en Venezuela. Trabajos similares</a></li>
+<li class="chapter" data-level="1.16" data-path="teorico.html"><a href="teorico.html#similitud"><i class="fa fa-check"></i><b>1.16</b> Similitud de documentos:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="index.html"><a href="index.html#propuesta"><i class="fa fa-check"></i><b>2</b> Propuesta</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="propuesta.html"><a href="propuesta.html"><i class="fa fa-check"></i><b>2.1</b> Objetivo General:</a></li>
+<li class="chapter" data-level="2.2" data-path="propuesta.html"><a href="propuesta.html#objetivos-específicos"><i class="fa fa-check"></i><b>2.2</b> Objetivos Específicos</a></li>
+<li class="chapter" data-level="2.3" data-path="propuesta.html"><a href="propuesta.html#esquema-de-la-aplicación-web"><i class="fa fa-check"></i><b>2.3</b> Esquema de la Aplicación WEB:</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="propuesta.html"><a href="propuesta.html#componentes"><i class="fa fa-check"></i><b>2.3.1</b> Componentes:</a></li>
+<li class="chapter" data-level="2.3.2" data-path="propuesta.html"><a href="propuesta.html#navegador-web"><i class="fa fa-check"></i><b>2.3.2</b> 1 - Navegador web:</a></li>
+<li class="chapter" data-level="2.3.3" data-path="propuesta.html"><a href="propuesta.html#servidor"><i class="fa fa-check"></i><b>2.3.3</b> 2 - Servidor:</a></li>
+<li class="chapter" data-level="2.3.4" data-path="propuesta.html"><a href="propuesta.html#docker-compose"><i class="fa fa-check"></i><b>2.3.4</b> 3 - Docker Compose:</a></li>
+<li class="chapter" data-level="2.3.5" data-path="propuesta.html"><a href="propuesta.html#nginx"><i class="fa fa-check"></i><b>2.3.5</b> 4 - Nginx:</a></li>
+<li class="chapter" data-level="2.3.6" data-path="propuesta.html"><a href="propuesta.html#cerbot"><i class="fa fa-check"></i><b>2.3.6</b> 5 - Cerbot:</a></li>
+<li class="chapter" data-level="2.3.7" data-path="propuesta.html"><a href="propuesta.html#shinyproxy"><i class="fa fa-check"></i><b>2.3.7</b> 6 - Shinyproxy:</a></li>
+<li class="chapter" data-level="2.3.8" data-path="propuesta.html"><a href="propuesta.html#contenedor-con-r-shiny-web-app-framework"><i class="fa fa-check"></i><b>2.3.8</b> 7 - Contenedor con “R Shiny Web App framework”:</a></li>
+<li class="chapter" data-level="2.3.9" data-path="propuesta.html"><a href="propuesta.html#contenedor-con-postgresql"><i class="fa fa-check"></i><b>2.3.9</b> 8 - Contenedor con PostgreSQL:</a></li>
+<li class="chapter" data-level="2.3.10" data-path="propuesta.html"><a href="propuesta.html#contenedor-con-r-imagen-servicios"><i class="fa fa-check"></i><b>2.3.10</b> 9 - Contenedor con “R Imagen Servicios”:</a></li>
+<li class="chapter" data-level="2.3.11" data-path="propuesta.html"><a href="propuesta.html#contenedor-con-python-spacy"><i class="fa fa-check"></i><b>2.3.11</b> 10 - Contenedor con “Python Spacy”:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="propuesta.html"><a href="propuesta.html#factibilidad"><i class="fa fa-check"></i><b>2.4</b> Factibilidad:</a></li>
+<li class="chapter" data-level="2.5" data-path="propuesta.html"><a href="propuesta.html#cronograma"><i class="fa fa-check"></i><b>2.5</b> Cronograma:</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="propuesta" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Propuesta</h1>
+<p>Generar una aplicación web distribuida donde se puedan hacer <em>querys</em>
+sobre los textos que conforman el <em>corpus</em>, textos que serán obtenidos y
+actualizados mediante técnicas de <em>web crawling</em> del repositorio Saber
+UCV. La aplicación permitirá generar procesos de extracción de
+información que se mostrarán en tablas interactivas así como en la
+generación de gráficos y grafos de co-ocurrencias de palabras.
+Adicionalmente se mostrarán recomendaciones de textos basados en la
+similitud que presente un documento con otro.</p>
+<p>Debemos acotar que se decidió optar por la estrategia de hacer el web
+crawling a los documentos contenidos en Saber UCBV por la falta de
+personal a cargo de tal sistema no haciendo viable la obtención de la
+base de datos y también por tal sistema no tener aún a disposición una
+API. Esto se decidió luego de una reunión en diciembre 2019 con el
+encargado de dicho software.</p>
+<div id="objetivo-general" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Objetivo General:</h2>
+<p>Implementar un software que brinde una solución para la búsqueda de
+información sobre los trabajos de investigación que se encuentran el
+Repositorio SABER UCV usando técnicas de <em>Information Retrieval</em> para
+que los resultados sean óptimos, es decir, los de mayor utilidad,
+relevantes ante la necesidad de información que motiva el hacer la
+búsqueda.</p>
+<p>Para el procesamiento de las búsquedas será usado un sistema distribuido
+con distintos componentes que permitan la ingesta, procesamiento y
+transformación de los datos, el alojamiento de los mismos y
+procesamiento de las búsquedas para su posterior representación en los
+resultados.</p>
+<p>Los trabajos de investigación que se considerarán como el conjunto de
+datos que forman parte exclusiva del alcance de este trabajo son
+aquellos que están como textos en formatos html, pdf, word quedando por
+fuera cualquier otro como imágenes. Los textos con los cuales
+trabajaremos se encuentran almacenados en un repositorio centralizado.
+Para una parte del procesamiento de los textos será necesario trabajar
+con los archivos adjuntos a cada trabajo (incluir cuadro de estructura
+del repositorio) mientras que para otra parte sólo se usarán los
+abstracts, resumenes de cada trabajo que se encuentran en formato html.</p>
+<p>Los textos serán procesados con distintas técnicas para ir pudiendo
+generar un conjunto de datos estructurado que sea posible realizarle
+distintos procesos computacionales.</p>
+<p>Una vez que los datos se encuentren estructurados deben ser aplicadas
+técnicas de Procesamiento de Lenguaje Natural para así, entre otros
+beneficios, ir disminuyendo el espacio de búsqueda que es lo planteado
+en el objetivo original de este trabajo: una solución para la búsqueda
+de información.</p>
+<p>Al referirnos a los <em>resultados que debe brindar la búsqueda</em> nos
+referimos a términos o palabras asociados a distintas investigaciones. A
+modo de ejemplo podemos tener palabras claves, el nombre de un
+investigador, un tema, una dependencia académica de la Universidad o un
+rango de fecha por mencionar las principales.</p>
+<p>Cada uno de los ejemplos mencionados constituye una estrategia
+particular o la intersección de varias estrategias.</p>
+<p>El Sistema propuesto está diseñado para ir actualizando de forma
+dinámica el conjunto de datos que se encuentra en el Repositorio
+Saber.ucv, pudiendo entenderlo como un espejo con procesos
+independientes.</p>
+<p>La arquitectura usada es el modelo cliente-servidor donde el cliente
+ingresa a una aplicación web y formula la petición de busqueda y los
+servicios de backend ejecutan los distintos procesamientos para arrojar
+los resultados.</p>
+<p>Algunos beneficios colaterales que brinda la aplicación es que
+complementa las estadísticas sobre los trabajos de investigación que se
+realizan en la Universidad Central de Venezuela y permite, mediante
+técnicas de representación gráfica de coocurrencias de palabras, tener
+una noción complementaria de las distintas áreas de conocimiento.</p>
+<p>El mayor reto asociado al desarrollo de este trabajo es encontrar las
+técnicas más idóneas, previa evaluación de las distintas disponibles
+para lograr hacer de la manera más eficiente y práctica los resultados
+para cada búsqueda y así convertirse en una herramienta que sea de
+utilidad para los investigadores y logre mostrar las distintas áreas de
+conocimiento que forman parte de los saberes de la Universidad Central
+de Venezuela. Para lograrlo es necesario usar las técnicas que en la
+actualidad formar parte del “estado del arte” haciendo necesario la
+revisión de distintas técnicas y para cada uno evaluar su desempeño, no
+olvidando el reto que representa que los textos de entrada, es decir,
+los textos de las investigaciones que son el principal, por no decir, el
+exclusivo insumo de entrada, se encuentran en el idioma español y como
+se demostrará más adelante, esto representa aplicar métodos de
+procesamiento que están en función de la lengua nativa y muchas veces
+los algoritmos y métodos más novedosos no están aún disponibles para
+nuestra lengua nativa que es el español.</p>
+<p>Mediante un query recolectar toda la información que pueda resultar de
+interés y que se considere de mayor importancia ante una necesidad en
+una investigación.</p>
+</div>
+<div id="objetivos-específicos" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Objetivos Específicos</h2>
+<ul>
+<li>Querys en distintas dimensiones siendo una de estas el tiempo. Las
+otras son las distintas jerarquías (pregrado, especializaciones,
+maestría y/o doctorado), facultado ,carreras o postgrado.</li>
+<li>Que la aplicación se implemente en un sistema distribuido.</li>
+<li>Que los datos reposen en una base de datos y se consulten mediante
+un manejador de base de datos.</li>
+<li>Que se puedan ver mediante grafos las palabras co-ocurrentes.</li>
+<li>Generar recomendaciones de textos basados en la similitud que
+presente uno con los otros con rankings.</li>
+<li>En los documentos extraídos contar con enlaces a los documentos que
+reposan en Saber UCV.</li>
+<li>Permitir la concurrencia de accesos al sistema.</li>
+<li>Contar con el certificado SSL para acceso seguro por parte de los
+visitantes.</li>
+<li>En la representación de coocurrencias mediante grafos filtrar
+documentos interactivamente al hacer click con el mouse sobre los
+arcos que unen par de nodos donde cada uno representa la
+co-ocurrencia de una dupla de palabras. El filtro generará un query
+sobre los documentos que contienen esa determinada co-ocurrencia.</li>
+</ul>
+<p>Podemos representar el Sistema y sus interacciones tanto como con el
+usuario final como con el sistema Saber UCV mediante un esquema
+representado en la figura <a href="propuesta.html#fig:esquema">2.1</a></p>
+<div class="figure"><span style="display:block;" id="fig:esquema"></span>
+<img src="formas/diagramageneral.png" alt="Esquema General" width="100%" />
+<p class="caption">
+Figure 2.1: Esquema General
+</p>
+</div>
+<p>En la figura <a href="propuesta.html#fig:esquema">2.1</a> se muestra como el SCSU está diseñado
+para que mediante técnicas de scraping se pueda extraer la información
+del repositorio Saber UCV. Posteriormente el sistema ante la consulta
+del usuario va a extraer los datos que sean relevantes para generar
+conocimiento mediante la aplicación de técnicas de minería de texto y
+procesamiento del lenguaje natural para la generación de jerarquías,
+rankings, coocurrencias de las palabras más mencionadas y
+recomendaciones de texto según similitudes.</p>
+</div>
+<div id="esquema-de-la-aplicación-web" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Esquema de la Aplicación WEB:</h2>
+<p>El SCSU se implementa mediante el uso de Docker. Veamos en la figura
+<a href="propuesta.html#fig:esquemadocker">2.2</a> un esquema con la representación de los
+contenedores.</p>
+<div class="figure"><span style="display:block;" id="fig:esquemadocker"></span>
+<img src="formas/diagrama_docker2.png" alt="Diagrama Aplicación" width="90%" />
+<p class="caption">
+Figure 2.2: Diagrama Aplicación
+</p>
+</div>
+<p>Garantiza la reproducibilidad y portabilidad. Se eligió docker como
+herramienta de implementación de toda la solución motivado a que al
+crear un contenedor disponemos de una forma práctica y segura para empaquetar la aplicación y todas las dependencias con un procedimiento estandarizado permitiendo
+que se pueda ejecutar la aplicación en cualquier ambiente en la nube, en un datacenter o computadora local , es decir en cualquier máquina que cuente con el hardware necesario. A lo anterior se
+añaden elementos de seguridad que las hacen estar menos expuestas a
+ataques a que corriera directamente en el servidor la aplicación. Esto
+principalmente se deriva al uso de las primitivas de seguridad como el
+“linux kernel namespace” dentro del contenedor to sandbox different
+applications running on the same computers and control groups (cgroups)
+in order to avoid the noisy-neighbor problem, where one bad application
+is using all the available resources of a server and starving all other
+applications. GBIEL SCHNEKER Learn Docker, p</p>
+<div id="componentes" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Componentes:</h3>
+</div>
+<div id="navegador-web" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> 1 - Navegador web:</h3>
+<p>El cliente desde el navegador web de su preferencia ingresa al enlace
+<a href="https://proyecta.me/" class="uri">https://proyecta.me/</a>. El sistema no está diseñado para usarse desde
+dispositivos móviles aunque igualmente es viable el acceso.</p>
+</div>
+<div id="servidor" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> 2 - Servidor:</h3>
+<p>Actualmente el sistema está implementado en un servidor de la empresa
+DigitalOcean con las siguientes características:</p>
+<ul>
+<li>1 CPU virtual</li>
+<li>2 GB de memoria RAM</li>
+<li>50 GB de disco duro</li>
+</ul>
+<p>y está configurado con el dominio proyecta.me</p>
+<p>En este servidor está instalado el software docker.</p>
+</div>
+<div id="docker-compose" class="section level3" number="2.3.4">
+<h3><span class="header-section-number">2.3.4</span> 3 - Docker Compose:</h3>
+<p>Funciona como un orquestador para correr aplicaciones distribuidas en
+múltiples contenedores usando un archivo en formato yml donde se
+establecen las imágenes, los puertos y los volumenes que serán usados y
+compartidos por cada uno de los contenedores.</p>
+</div>
+<div id="nginx" class="section level3" number="2.3.5">
+<h3><span class="header-section-number">2.3.5</span> 4 - Nginx:</h3>
+<p>Es el servidor web que sirve para redireccionar las peticiones del
+puerto 80 al puerto 8090. Mediante este contenedor también se define el
+certificado SSL para permitir conexiones por el protocolo HTTPS.</p>
+<p>Este contenedor fue generado desde una imagen de NGINX sin ninguna
+modificación posterior.</p>
+</div>
+<div id="cerbot" class="section level3" number="2.3.6">
+<h3><span class="header-section-number">2.3.6</span> 5 - Cerbot:</h3>
+<p>Permite la obtención del certificado SSL</p>
+<p>Este contenedor fue generado desde una imagen de CERBOT sin ninguna
+modificación posterior.</p>
+</div>
+<div id="shinyproxy" class="section level3" number="2.3.7">
+<h3><span class="header-section-number">2.3.7</span> 6 - Shinyproxy:</h3>
+<p>Es una implementación del servidor Spring boot que dará servicio a las
+aplicaciones desarrolladas en shiny. Con el uso de este middleware se
+obtienen las siguientes ventajas:</p>
+<ul>
+<li>Ante cada petición de acceso a proyecta.me se despliega un workspace
+completamente aislado, es decir, un contenedor distinto. Las
+aplicaciones desarrolladas en shiny son monothread y adoptar esta estrategia
+representa una ventaja motivado a que se pueden controlar los recursos de
+memoria y cpu asignados.</li>
+<li>Permite establecer login en el uso de la aplicación y grupos de
+usarios con distintos métodos de autenticación. Si bien en estos
+momentos la aplicación es de libre acceso en algún momento se
+pudiese restringir y no sería necesaria ninguna modificación en la
+arquitectura más allá de cambiar el archivo de configuración.</li>
+<li>Uso de una tecnología estable y probada.</li>
+</ul>
+<p>Es necesario destacar que originalmente Shiny como framework cuenta con
+su propio servidor pero para tener acceso a ciertas funcionalidades es
+necesario pagar directamente a la Fundación RStudio Software. El acceso
+mediante login no está disponible en la versión libre. Ciertas
+configuraciones de librerías e incluso la propia contenerización de la
+aplicación no es posible usando el servicio pago, así que la propuesta
+acá adoptada si bien representa un mayor esfuerzo en la configuración
+claramente representa una serie de ventajas por todas las adaptaciones
+que es posible realizar al sistema teniendo un mayor control sobre el
+mismo.</p>
+<p>Este contenedor funciona en el puerto 2375.</p>
+<p>Este contenedor fue generado desde la imagen Shinyproxy sin ninguna
+modificación.</p>
+</div>
+<div id="contenedor-con-r-shiny-web-app-framework" class="section level3" number="2.3.8">
+<h3><span class="header-section-number">2.3.8</span> 7 - Contenedor con “R Shiny Web App framework”:</h3>
+<p>En este contenedor es donde reposa la aplicación web con todas las
+librerías necesarias para generar todas las visualizaciones y procesos
+de búsqueda. Como comentamos anteriormente, cada vez que ocurre desde el
+navegador del cliente una petición de acceso se crea una replica de este
+contenedor con todos los elementos necesarios para que la app funcione
+correctamente. En caso de presentar alguna falla incluso el sistema
+sería tolerante a fallas porque se pueden seguir recibiendo peticiones
+que replicarían una imagen nueva del contenedor sin afectar al que
+presentase la falla, o viceversa.</p>
+<p>Desde este contenedor se realiza el acceso de lectura al contenedor que
+contiene PostgreSQL donde reposan todos la base de dato que contiene los
+textos ya procesados. Por los momentos no hay escritura de datos en las
+tablas pero está contemplado que se registren los querys formulados en
+alguna tabla junto con los textos revisados para generar métricas de
+calidad del sistema y de uso.</p>
+<p>La imagen que se usa en este servidor fue definida a medida con todos
+los recursos necesarios.</p>
+<p>Posteriormente serán descritas todas las librerías que se encuentran
+incluidas en este contenedor.</p>
+<p>Varios de los procesos que se ejecutan en este contenedor ocurren al
+momento de recibir un <em>query</em> no obstante todos los procesos que puedan
+ser pre computados se trata de ejecutarlos previamente en el contenedor
+“R Servicios” para lograr la disminución de los tiempos.</p>
+<p>Funcionalidades principales: <strong>ENTRADAS</strong></p>
+<ul>
+<li><p>Contiene un campo para la entrada de texto que generará el query.</p></li>
+<li><p>Contiene un selector para indicar si se quiere generar la
+coocurrencia de palabras</p></li>
+<li><p>Contiene tablas para seleccionar:</p>
+<ol style="list-style-type: decimal">
+<li>Nivel académico del trabajo. Opciones (pregrado,
+especialización, maestría, doctorado)</li>
+<li>Facultad o Centro de adscripción. Opciones: 11 Facultades más un
+centro (CENDES)</li>
+<li>Nombre del pregrado o postgrado. En total son 412 las opciones</li>
+</ol>
+<p>Cada una de las tablas anteriores se actualiza según e vayan
+seleccionando las relaciones y la disponibilidades. Por ejemplo, al
+seleccionar pregrado solo se mostraran los nombres de las carreras
+de pregrado, pero si se selecciona también el nombre de la Facultad
+sólo se mostraran las carreras de pregrado dentro de la Facultad
+seleccionada. Para una determinada tabla también se permiten
+selecciones múltiples dando una total flexibilidad al momento de
+ejecutar los <em>querys</em>.</p></li>
+</ul>
+<p><strong>SALIDAS</strong> - Ante el query se genera una tabla con la librería
+reactable que está en javascript. En la misma se contiene cada uno de
+los documentos con los distintos atributos disponibles: autor, fecha,
+palabras claves, texto resumen. Adicionalmente se contiene un enlace al
+repositorio Saber UCV donde se encuentra alojado el respectivo trabajo.
+Igualmente se presentan los textos que tienen mayor similitud con el
+texto seleccionado.</p>
+<ul>
+<li><p>Un gráfico con la frecuencia por año de los trabajos extraídos
+mediante el <em>query</em>. El gráfico se generá con la librería
+apexcharter que es un wraper para Javascript por lo cual el gráfico
+tiene ciertas interactividades. Con el hoover muestra el valor de
+cada columna y permite descargar los valores numéricos que lo
+generan.</p></li>
+<li><p>Gráfico de coocurrencia interactivo de palabras: se genera mediante
+la librería de VisNetwork que también es un wrapper de javascript.
+Este gráfico permite seleccionar un arco de unión entre dos palabras
+coocurrentes. Al realizar la selección se filtran un subconjunto de
+los documentos que contienen las palabras. Los documentos filtrados
+se muestran en una tabla contigua también generada en reactable
+donde sólo se incluye el texto resumen de cada trabajo. En entregaas
+futuras será mencionado el diseño y funcionamiento a detalle de esta
+visualización.</p></li>
+<li><p>Gráfico de coocurrencia estático de palabras: mediante la librería
+ggraph son generados un par de gráficos. El primero con la misma
+coocurrencia de palabras vista anteriormente pero esta vez generada
+en una visualización estática. El segundo gráfico también muestra la
+coocurrencia pero solo de palabras que ocurren una seguida de otra.</p></li>
+</ul>
+<p>Con la librería UdPipe se generan las estructuras de datos necesarias
+para generar los grafos (arcos y nodos).</p>
+</div>
+<div id="contenedor-con-postgresql" class="section level3" number="2.3.9">
+<h3><span class="header-section-number">2.3.9</span> 8 - Contenedor con PostgreSQL:</h3>
+<p>En este contenedor tenemos una imagen de PostgreSQL versión 13.3. No fue
+realizada ninguna otra modificación distinta a la definición de usuarios
+y poblado desde base de datos incluyendo un volumen compartido para
+garantizar que tengamos “datos persistentes. Este contenedor recibe
+consultas del contenedor”R Shiny Web App framework” y escritura desde
+el contenedor “R imagen Servicios”.</p>
+<p>En este contenedor ocurre la indexación de la base de datos, la
+implementación de los ranks. Se cuenta con dos tablas principalmente no
+relacionales.</p>
+<p>En una se encuentran los textos y el Ts-vector mientras que la otra
+tabla contiene otro procesamiento que se le hace a los textos
+clasificando cada una de las palabras mediante el <em>part of speach</em> y
+registrando el documento al que está asociada.</p>
+<p>Uno de los procesos que ejecuta postgreSQL en la generación del Ts
+Vector es aplicar sobre cada palabra el algoritmo de Porter llamado
+Snowball para generar el stemming. El proceso de indexación y el TS
+vector son los que soportan el <em>Full Text Seach</em>.</p>
+</div>
+<div id="contenedor-con-r-imagen-servicios" class="section level3" number="2.3.10">
+<h3><span class="header-section-number">2.3.10</span> 9 - Contenedor con “R Imagen Servicios”:</h3>
+<p>En este contenedor se creó una imagen con todos los servicios necesarios
+para realizar el web crawling, procesamientos de textos y archivos
+descargados desde Saber.UCV, poblado y escritura en base de dato,
+programación de rutinas de actualización y demás servicios que se debe
+ejecutar periódicamente. La imagen usada es la del proyecto <strong><em>Rocker</em></strong>
+<span class="math display">\[@RJ-2017-065:2017\]</span> la cual es una versión ampliamente probada y
+optimizada en, y por, la comunidad de usuarios de R.</p>
+<p>Posteriormente serán descritas todas las librerías que se encuentran
+incluidas en este contenedor pero en cuanto a procesos mencionaremos los
+siguientes:</p>
+<div id="text-mining-y-nlp" class="section level4" number="2.3.10.1">
+<h4><span class="header-section-number">2.3.10.1</span> Text Mining y NLP:</h4>
+<p>Generalmente las distintas librerías que permiten realizar procesos de
+NLP también hacen procesos de Text Mining parcial o totalmente. En este
+trabajo de investigación fueron evaluadas múltiples librerías como
+Spacy, Quanteda, OPENLP, CoreNLP, Freeling y Udpipe.</p>
+<p>En una futura entrega se hará una breve mención a cada una y la razón
+por la cual se adoptó Spacy para varios de los procesos de NLP.</p>
+<p>Para ejecutar Spacy es necesario usar los archivos que se encuentran en
+el contenedor “Python Spacy” donde está instalada la libraría Spacy que
+corre en Python y donde también reposa el modelo de machine learning
+entrenado con textos en español llamado “es-core-news-small”.</p>
+<p>Procesos que se ejecutan en Spacy:</p>
+<div id="tokenización" class="section level5" number="2.3.10.1.1">
+<h5><span class="header-section-number">2.3.10.1.1</span> Tokenización:</h5>
+<p>Basicamente separar el documento en palabras. Al obtener las palabras
+como entidades separadas de un texto nos permite calcular la frecuencia
+de uso de las mismas. Se va a elaborar un cuadro comparativo de
+resultados entre distintos tokenizadores con una muestra aleatoria.</p>
+</div>
+<div id="lematización" class="section level5" number="2.3.10.1.2">
+<h5><span class="header-section-number">2.3.10.1.2</span> Lematización:</h5>
+<p>proceso en que se consigue el lema de una palabra entendiendo que el
+lema es la forma que por convenio se acepta como representante de todas
+las formas flexionadas de una misma palabra.</p>
+<p>Al buscar el lema se tiene presente la función sintáctica que tiene la
+palabra, es decir que se evalúa el contexto en el que ocurre
+ejecutándose de forma automática con spacy motivado a que esta librería contiene
+un modelo entrenado con machine learning que permite hacer tal detección con una efectividad elevada.</p>
+<p>Junto con este proceso de hacer la lematización se hace el etiquetado de
+la <em>Part Of Speach</em>.</p>
+<p>Una vez que se ejecuta este proceso en la base de datos son registradas
+los tokens (palabras) junto con su correspondiente lema, la part os
+speach y el número de documento a la cual pertenece.</p>
+</div>
+</div>
+<div id="poblado-base-de-datos" class="section level4" number="2.3.10.2">
+<h4><span class="header-section-number">2.3.10.2</span> Poblado base de datos:</h4>
+<p>Otro de los procesos que se ejecuta en este contenedor es el web
+crawling para el poblado inicial de la base de datos con los textos de
+los Resumenes. Estos fuero obtenidos mediante un proceso que se detalla
+en el <a href="#apendicea"><strong>??</strong></a>. Cuando fue realizado el proceso de <em>scrapy</em> a
+Saber.UCV fueron descargados estos datos mediante la metadata y las
+etiquetas de html permitiendo tener estructurados estos datos.
+Igualmente se descargan los archivos para realizar la lectura de los
+primeros 1750 caracteres por cada archivo y en caso de aplicar se
+concatenan estas lecturas por documento. Posteriormente es realizado el
+proceso para categorizar cada trabajo especial de grado a una
+determinada carrera de pregrado o a un postgrado. Cuando el proceso de
+<em>pattern matching</em> no es exitoso se aplica una sub rutina que incluye el
+algorimo Smith–Waterman para alineación de sub cadenas de texto. Luego
+se hace el registro del documento en la base de datos.</p>
+<p>Adicional a guardar los textos se complementa con otros atributos.
+Dentro del dominio del <em>Information Retrieval</em> los datos bibliográficos
+como el título, el autor, la fecha de publicación, “catalogación
+descriptiva” y las “palabras claves” establecidas por los autores de
+cada trabajo, ayudando con ellas a la “catalogación temática”
+<span class="citation">(<a href="#ref-kraft2017" role="doc-biblioref">Kraft y Colvin 2017</a>)</span> 2.</p>
+</div>
+<div id="similitud-de-textos" class="section level4" number="2.3.10.3">
+<h4><span class="header-section-number">2.3.10.3</span> Similitud de textos:</h4>
+<p>Cuando se tiene la lematización de las palabras obtenida con Spacy se
+genera una matriz de tipo Td-Idf que permite subsecuentemente generar el
+cálculo de similitud de los documentos.</p>
+<p>Td-Idf es donde se busca obtener una normalización con base en la
+frecuencia (frequency based normalization) o inverse document frequency
+(idf) . La representación final multiplica la term frequency por la idf
+para generar la tf-idf.</p>
+<p>Este cálculo de similitud se realiza con la libraría Quanteda.texstats y
+se usa la medida de similitud coseno ya que varios autores la sitúan
+como una de las mejores formas de comparar la similitud entre un
+documento y otro.</p>
+</div>
+</div>
+<div id="contenedor-con-python-spacy" class="section level3" number="2.3.11">
+<h3><span class="header-section-number">2.3.11</span> 10 - Contenedor con “Python Spacy”:</h3>
+<p>Se creó una imagen que contiene un ubuntu con python, spacy y un modelo
+de Spacy instalado. Su función es ser mediante un volumen compartido ser
+llamado desde el contenedor “R Imagen Servicios”.</p>
+</div>
+</div>
+<div id="factibilidad" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Factibilidad:</h2>
+<p>Para la propuesta del SCSU se hizo una evaluación de la factibilidad del
+desarrollo del proyecto que consistió en hacer pruebas de <strong><em>web
+crawling</em></strong> sobre el repositorio Saber UCV yal no ser viable la
+obtención del conjunto de datos por otro medio. Igualmente se realizaron
+pruebas sobre el hardware disponible con arquitecturas similares a la
+que se propondrá más adelante en nuestro desarrollo.</p>
+<p>Estas pruebas fueron exitosas por lo cual no se estima que exista algún
+factor que impida la implementación del Sistema acá expuesto.</p>
+</div>
+<div id="cronograma" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Cronograma:</h2>
+<p>El cronograma de desarrollo propuesto es el siguiente:</p>
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Kraft, Donald H., y Erin Colvin. 2017. <span>«Fuzzy Information Retrieval»</span>. <em>Synthesis Lectures on Information Concepts, Retrieval, and Services</em> 9 (1): i-63. <a href="https://doi.org/10.2200/s00752ed1v01y201701icr055">https://doi.org/10.2200/s00752ed1v01y201701icr055</a>.
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-kraft2017" class="csl-entry">
+Kraft, Donald H., y Erin Colvin. 2017. <span>«Fuzzy Information Retrieval»</span>. <em>Synthesis Lectures on Information Concepts, Retrieval, and Services</em> 9 (1): i-63. <a href="https://doi.org/10.2200/s00752ed1v01y201701icr055">https://doi.org/10.2200/s00752ed1v01y201701icr055</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="teorico.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "whatsapp"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"lib_dir": "book_assets",
+"split_by": "section",
+"config": {
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
