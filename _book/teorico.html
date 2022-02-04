@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es-ES" xml:lang="es-ES">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Marco teórico-referencial: | Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea</title>
+  <meta name="description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Marco teórico-referencial: | Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/images/UCV.png" />
+  <meta property="og:description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Marco teórico-referencial: | Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea" />
+  
+  <meta name="twitter:description" content="Proyecto de Trabajo Especial de Grado" />
+  <meta name="twitter:image" content="/images/UCV.png" />
+
+<meta name="author" content="José Miguel Avendaño Infante" />
+
+
+<meta name="date" content="2022-02-03" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduccion.html"/>
+<link rel="next" href="propuesta-técnica.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Consulta Información</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumen:</a></li>
+<li class="chapter" data-level="" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i>___</a></li>
+<li class="chapter" data-level="1" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduccion.html"><a href="introduccion.html#propuesta"><i class="fa fa-check"></i><b>1.1</b> Propuesta:</a></li>
+<li class="chapter" data-level="1.2" data-path="introduccion.html"><a href="introduccion.html#intro"><i class="fa fa-check"></i><b>1.2</b> Sistemas de Recuperación de Información:</a></li>
+<li class="chapter" data-level="1.3" data-path="introduccion.html"><a href="introduccion.html#saber"><i class="fa fa-check"></i><b>1.3</b> Saber UCV:</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="introduccion.html"><a href="introduccion.html#delimitación-de-documentos-con-los-cuales-se-trabajará"><i class="fa fa-check"></i><b>1.3.1</b> Delimitación de documentos con los cuales se trabajará:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduccion.html"><a href="introduccion.html#requerimiento"><i class="fa fa-check"></i><b>1.4</b> Requerimiento inicial:</a></li>
+<li class="chapter" data-level="1.5" data-path="introduccion.html"><a href="introduccion.html#problema"><i class="fa fa-check"></i><b>1.5</b> Planteamiento del Problema:</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="introduccion.html"><a href="introduccion.html#clasificacion"><i class="fa fa-check"></i><b>1.5.1</b> I. No se posee clasificación de los documentos:</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduccion.html"><a href="introduccion.html#p2"><i class="fa fa-check"></i><b>1.5.2</b> II. Problemas en los resultados que generan los <strong><em>Querys</em></strong>:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduccion.html"><a href="introduccion.html#antecedentes"><i class="fa fa-check"></i><b>1.6</b> Antecedentes:</a></li>
+<li class="chapter" data-level="1.7" data-path="introduccion.html"><a href="introduccion.html#estructura"><i class="fa fa-check"></i><b>1.7</b> Estructura del Trabajo:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="teorico.html"><a href="teorico.html"><i class="fa fa-check"></i><b>2</b> Marco teórico-referencial:</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="teorico.html"><a href="teorico.html#alghist"><i class="fa fa-check"></i><b>2.1</b> Reseña histórica:</a></li>
+<li class="chapter" data-level="2.2" data-path="teorico.html"><a href="teorico.html#infret"><i class="fa fa-check"></i><b>2.2</b> Recuperación de Información:</a></li>
+<li class="chapter" data-level="2.3" data-path="teorico.html"><a href="teorico.html#SRI"><i class="fa fa-check"></i><b>2.3</b> Sistemas de Recuperación de Información (SRI) :</a></li>
+<li class="chapter" data-level="2.4" data-path="teorico.html"><a href="teorico.html#ejemplos-de-irs"><i class="fa fa-check"></i><b>2.4</b> Ejemplos de IRS:</a></li>
+<li class="chapter" data-level="2.5" data-path="teorico.html"><a href="teorico.html#modelos-de-recuperación-de-información"><i class="fa fa-check"></i><b>2.5</b> Modelos de Recuperación de Información:</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="teorico.html"><a href="teorico.html#recuperación-boleana"><i class="fa fa-check"></i><b>2.5.1</b> Recuperación boleana:</a></li>
+<li class="chapter" data-level="2.5.2" data-path="teorico.html"><a href="teorico.html#invind"><i class="fa fa-check"></i><b>2.5.2</b> Índices Invertidos:</a></li>
+<li class="chapter" data-level="2.5.3" data-path="teorico.html"><a href="teorico.html#rank"><i class="fa fa-check"></i><b>2.5.3</b> Scoring Model:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="teorico.html"><a href="teorico.html#procesamientos-de-texto"><i class="fa fa-check"></i><b>2.6</b> Procesamientos de texto:</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="teorico.html"><a href="teorico.html#nlproc"><i class="fa fa-check"></i><b>2.6.1</b> Procesamiento del Lenguaje Natural (natural language processing- NLP):</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="teorico.html"><a href="teorico.html#textmin"><i class="fa fa-check"></i><b>2.7</b> Minería de Texto:</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="teorico.html"><a href="teorico.html#coocurrencia"><i class="fa fa-check"></i><b>2.7.1</b> Coocurrencia de Palabras:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="teorico.html"><a href="teorico.html#similitud"><i class="fa fa-check"></i><b>2.8</b> Similitud de documentos:</a></li>
+<li class="chapter" data-level="2.9" data-path="teorico.html"><a href="teorico.html#sistemas-distribuidos"><i class="fa fa-check"></i><b>2.9</b> Sistemas Distribuidos:</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="teorico.html"><a href="teorico.html#contenedores"><i class="fa fa-check"></i><b>2.9.1</b> Contenedores:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="teorico.html"><a href="teorico.html#orquestador"><i class="fa fa-check"></i><b>2.9.2</b> Orquestador:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="teorico.html"><a href="teorico.html#tendencias-actuales-sistemas-de-información"><i class="fa fa-check"></i><b>2.10</b> Tendencias actuales Sistemas de Información:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html"><i class="fa fa-check"></i><b>3</b> Propuesta Técnica:</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#propuestatec"><i class="fa fa-check"></i><b>3.1</b> Propuesta Técnica:</a></li>
+<li class="chapter" data-level="3.2" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#objetivogral"><i class="fa fa-check"></i><b>3.2</b> Objetivo:</a></li>
+<li class="chapter" data-level="3.3" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#objetivosespe"><i class="fa fa-check"></i><b>3.3</b> Objetivos Específicos</a></li>
+<li class="chapter" data-level="3.4" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#esquemas"><i class="fa fa-check"></i><b>3.4</b> Esquema de la Aplicación WEB:</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#cliente---servidor"><i class="fa fa-check"></i><b>3.4.1</b> Cliente - Servidor:</a></li>
+<li class="chapter" data-level="3.4.2" data-path="teorico.html"><a href="teorico.html#contenedores"><i class="fa fa-check"></i><b>3.4.2</b> Contenedores:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#factibilidad"><i class="fa fa-check"></i><b>3.5</b> Factibilidad:</a></li>
+<li class="chapter" data-level="3.6" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#cronograma"><i class="fa fa-check"></i><b>3.6</b> Cronograma:</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="teorico" class="section level1" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Marco teórico-referencial:</h1>
+<p>En este Capítulo se muestra el marco teórico en que se sustentan los aspectos de mayor relevancia para el desarrollo de la Solución. Principalmente se enuncian una serie de conceptos que involucran algoritmos de búsqueda, la recuperación de información, la minería de texto, el procesamiento del lenguaje natural, la estructuración de la base de datos y lo referente a la arquitectura distribuida en que se soporta la SSCSU.</p>
+<div id="alghist" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Reseña histórica:</h2>
+<p>El profesor Donald Knuth señala, dentro del campo de las ciencias de la computación, que la <strong>búsqueda</strong> <em>es el proceso de recolectar información que se encuentra en la memoria del computador de la forma más rápida posible, esto cuando tenemos una cantidad N de registros y nuestro problema es encontrar el registro apropiado de acuerdo a un criterio de búsqueda</em> <span class="citation">(<a href="#ref-knuth1997" role="doc-biblioref">Knuth 1997</a>)</span> (p. 392) .</p>
+<p>Iniciamos con esta cita porque la recuperación de información gira en torno a un problema central de las ciencias de la computación que es la <strong>búsqueda</strong>. A continuación mencionaremos una serie de algoritmos que abordan este problema, no necesariamente resultando óptimos para dar solución a lo planteado en <a href="introduccion.html#p2">1.5.2</a>.</p>
+<p>En la década de 1940 cuando aparecieron las computadoras, las búsquedas no representaban mayor problema debido a que estas máquinas disponían de poca memoria <em>RAM</em> pudiendo almacenar sólo moderadas cantidades de datos. Ellas estaban diseñadas para realizar cómputos y arrojar los resultados más no para tenerlos almacenados en memoria.</p>
+<p>No obstante con el desarrollo del almacenamiento en memoria <em>RAM</em> o en dispositivos de almacenamiento permanentemente, ya en la década de 1950 empezaron a aparecer los problemas de <strong>búsqueda</strong> y los primeras investigaciones para afrontarla. En la década de 1960 se adoptan por ejemplo estrategias basadas en arboles.</p>
+<p>Los primeros algoritmos que sirvieron para localizar la aparición de una frase dentro de un texto, o expresado de forma más abstracta, como la detección de una subcadena <em>P</em> dentro de otra cadena <em>T</em>, fueron los algoritmos de <em>Pattern-Matching</em> <span class="citation">(<a href="#ref-goodrich2013" role="doc-biblioref">Goodrich, Tamassia, y Goldwasser 2013</a>)</span> (p. 584).</p>
+<p>Así nos encontramos en la literatura con el algoritmo <em>Fuerza Bruta</em> donde dado un texto T y una subcadena P, se va recorriendo cada elemento de la cadena T para detectar la aparición de la subcadena P. Si bien este algoritmo no presentaba el mejor desempeño, por contar con ciclos anestados en su ejecución, creó una forma válida de enfrentar el problema de la búsqueda de subcadenas de texto.</p>
+<p>El algoritmo <em>Knuth-Morris-Pratt</em> que se introdujo en 1976 tenía como novedad que se agregó una función que iba almacenando “previas coincidencias parciales” en lo que eran fallos previos y así al realizar un desplazamiento tomaba en cuenta cuántos caracteres se podían reusar. De esta forma se logró considerablemente mejorar el rendimiento en los tiempos de ejecución de <em>O(n+m)</em> que son asintóticamente óptimos.</p>
+<p>Posteriormente en 1977 el problema se enfrenta con un nuevo algoritmo que es el de <em>Boyer-Moore</em> en el cual se implementan dos heurísticas (<em>looking-glass y</em> <em>character-Jump)</em> que permiten ir realizando algunos saltos en la búsqueda, ante la no coincidencia de la subcadena con la cadena y adicionalmente, el orden en el que se va realizando la comparación se invierte. Estas modificaciones permitieron obtener un mejor desempeño.</p>
+<p>Sobre una modificación al algoritmo <em>Boyer-Moore</em> se sustenta la utilidad <em>grep</em> de la línea de comandos UNIX que igualmente le da soporte a diversos lenguajes que la usan para ejecutar búsquedas de texto con un proceso que comúnmente es conocido como <em>grepping</em>. Esta utilidad fue ampliamente usada para resolver parcialmente lo expuesto en <a href="introduccion.html#clasificacion">1.5.1</a>.</p>
+<p>Los algoritmos mencionados anteriormente pueden ser usados en procesos de recuperación de información en conjunto con técnicas que pueden mejorar considerablemente los tiempos en la ejecución de las rutinas siendo una de estas el preprocesamiento de los textos, <em>eg</em>. remover determinados caracteres, aplicar el algoritmo de porter, entre otras más.</p>
+<p>Una estrategia que surgió para enfrentar las búsquedas de texto, fue el uso de la programación lineal donde bajo la premisa <em>divida et impera</em> los problemas que requieren tiempo exponencial para ser resueltos son descompuestos en polinomios y por lo tanto se disminuye la complejidad en tiempo para ser resueltos. Entre este tipo de algoritmos podemos mencionar los de <em>alineación del ADN .</em> Originalmente el algoritmo se desarrolló para resolver problemas de alineación de cadenas de ADN de forma parcial o total dentro de una cadena mayor. Posteriormente se identificó que este tipo de procedimiento era extrapolable a los subcadenas de texto. Una de las versiones de estos algoritmos es la denominada <strong><em>Smith-Waterman</em></strong> que resultó de gran utilidad para resolver el problema planteado en <a href="introduccion.html#clasificacion">1.5.1</a> ya que la estrategia de usar la utilidad <em>grep</em> fue infructuosa en algunos casos.</p>
+<p>Un gran paso para aproximarnos a la aparición de los Sistemas de Recuperación de Información lo representó el enfoque que presentan los algoritmos <em>Tries</em>. Este nombre proviene del proceso de <em>Information Retrieval</em> y principalmente se basa en hacer una serie de preprocesamientos a los textos para que al momento de ejecutar la búsqueda de texto, es decir, de la subcadena dentro de la cadena, ya tengamos una parte del trabajo realizado previamente y no tener que ejecutarlo todo <em>“on the fly”</em>, es decir, sobre la marcha.</p>
+<p>Un <em>Trie</em> <span class="citation">(<a href="#ref-fredkin1960" role="doc-biblioref">Fredkin 1960</a>)</span> es una estructura de datos que se crea para almacenar textos para así poder ejecutar más rápido la coincidencia en la búsqueda. En la propuesta de la SSCSU todos los textos van siendo procesados con distintas técnicas a medida que son insertados en la base de datos. Esto claramente representa una mejora en el desempeño con la disminución en los tiempos de búsqueda.</p>
+</div>
+<div id="infret" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Recuperación de Información:</h2>
+<p>El eje central sobre el cual gira el proceso de recuperación de información (RI) es satisfacer las necesidades de información relevante que sean expresadas por un usuario mediante una consulta (<strong><em>query</em></strong>) de texto. El investigador Charu Aggarwal en su libro sobre Minería de Texto <span class="citation">(<a href="#ref-miningt2012" role="doc-biblioref">Aggarwal y Zhai 2012b</a>)</span> (p.14) menciona que el objetivo del proceso de RI es conectar la información correcta, con los usuarios correctos en el momento correcto, mientras que otro de los autores con mayor dominio sobre el tema, Christopher Manning en su libro <em>Information Retrieval</em> indica que “es el proceso de encontrar materiales (generalmente documentos) de una naturaleza no estructurada (generalmente texto) que satisface una necesidad de información dentro de grandes colecciones (normalmente almacenada en computadores)” <span class="citation">(<a href="#ref-manning2008" role="doc-biblioref">Manning, Raghavan, y Schütze 2008</a>)</span> (p. 25).</p>
+<p>Satisfacer una necesidad de recuperación de información no sólo se circunscribe a un problema <strong>búsqueda</strong> de un texto dentro de un <em>corpus</em>. En la mayoría de los casos se deberá cumplir con ciertos criterios, o restricciones, como por ejemplo que el <em>query</em> esté dentro de un período de fechas, o que se encuentre comprendido en un subconjunto del corpus que es a lo que se denomina <strong>búsqueda múlti atributo</strong>.</p>
+<p>La información que se recolecte en una búsqueda tendrá distintos aspectos que aportarán peso en el orden en que sea presentada al usuario y no sólo vendrá dado por la aparición de las palabras sino también por otros elementos como lo puede ser la aparición de la frase del <strong><em>query</em></strong> dentro del título, la proximidad (la cercanía entre dos palabras) que tengan los términos que conforman el <em>query</em> o por otra parte la frecuencia que una palabra, o varias, se repitan dentro un determinado documento que compone el <em>corpus</em>. Igual puede aportar un peso mayor a la recuperación de un documento las referencias (citas) que contengan otros documentos a ese determinado documento. El fin último será la extracción de los documentos que resulten de mayor relevancia para el usuario.</p>
+<p>Incluso es válido incorporar documentos, en los resultados que arroje la búsqueda, que propiamente no coincidan con los términos buscados sino que contengan términos que sean sinónimos o también añadiendo a los resultados documentos que presenten alguna similitud con el texto del <strong><em>query</em></strong>. Lo que acabamos de mencionar incorporará formalmente dentro del proceso de extracción de información algo de imprecisión con la intención última de enriquecer el proceso de <strong><em>Information Retrieval</em></strong> <span class="citation">(<a href="#ref-kraft2017" role="doc-biblioref">Kraft y Colvin 2017</a>)</span>.</p>
+<p>Evaluando el proceso con cierto nivel de abstracción tenemos que el proceso de recuperación de información está compuesto principalmente por: un <em>query</em>, por un corpus y por una función de <em>ranking</em> para ordenar los documentos recuperados de mayor importancia a menor.</p>
+<p>El desarrollo de los algoritmos expuestos en <a href="teorico.html#alghist">2.1</a> sumado a la necesidad de resolver los problemas asociados a la búsqueda de un texto dentro de un <em>corpus</em> con múltiples atributos en tiempos aceptables y la abundante cantidad de información digital, potenciada por el uso generalizado de los computadores, abonó las condiciones para la creación de los <strong>Sistemas de Recuperación de Información</strong>.</p>
+</div>
+<div id="SRI" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Sistemas de Recuperación de Información (SRI) :</h2>
+<p>Los Sistemas de Recuperación de Información (<em>Information Retrieval Systems-IRS</em>) son los dispositivo (software y/o hardware) que median entre un potencial usuario que requiere información y la colección de documentos que puede contener la información solicitada <span class="citation">(<a href="#ref-kraft2017" role="doc-biblioref">Kraft y Colvin 2017</a>)</span> 1. El SRI se encargará de la representación, el almacenamiento y el acceso a los datos que estén estructurados y se tendrá presente que las búsquedas que sobre él recaigan tendrán distintos costos siendo uno de estos el tiempo que tarde en efectuarse.</p>
+<p>Es de nuestro conocimiento que generalmente los datos estructurados son gestionados mediante un sistema de base de datos pero en el caso de los textos estos se gestionan por medio de un motor de búsqueda motivado a que los textos en un estado crudo carecen de estructura <span class="citation">(<a href="#ref-miningt2012" role="doc-biblioref">Aggarwal y Zhai 2012b</a>)</span> (p. 2). Son los motores de búsqueda (<em>search engines</em>) los que permiten que un usuario pueda encontrar fácilmente la información que resulte de utilidad mediante un <em>query</em>.</p>
+<p>El SSCSU está diseñado como un IRS donde se pueden ejecutar querys que son procesados y los resultados que se obtienen son sometidos a una función de ranking que será expuesta en una fase posterior del desarrollo de esta investigación.</p>
+</div>
+<div id="ejemplos-de-irs" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Ejemplos de IRS:</h2>
+<p>Profundizando en el tema de esta Investigación mencionaremos un par de páginas de internet que funcionan coomo IRS.</p>
+<ol style="list-style-type: decimal">
+<li><p>Una es el proyecto denominado Arvix alojado en <a href="https://arxiv.org/" class="uri">https://arxiv.org/</a>, que es un repositorio de trabajos de investigación. Al momento del usuario hacer un requerimiento de información, adicional al texto de la búsqueda, se pueden indicar distintos filtros a aplicar como puede ser el área del conocimiento (física, matemática, computación, etc.). Igualmente se puede indicar si se quiere buscar sólo dentro del título de una investigación, o el autor, en el <em>abstract, o</em> en las referencias, por ejemplo.</p>
+<p>Al ejecutar una búsqueda pueden ser recuperados miles de documentos y la interacción con el sistema permite ver que se genera un <em>ranking</em> en la exhibición de los resultados obtenidos. El primero de estos <em>rankings</em> se ordena con base en la fecha de publicación, pero es viable que se ordenaran los documentos por la relevancia que presentan.</p></li>
+<li><p>También tenemos el portal de la Asociation Computery Machine (ACM) que incorpora motores de búsqueda con particulares características facilitando la labor de investigación y extracción de información ante una determinada necesidad. Esto lo decimos porque los resultados de una búsqueda son acompañados de distintas representaciones gráficas que le dan un valor adicional a la representación de los resultados. En la figura <a href="teorico.html#fig:busquedasacm">2.1</a> vemos una de estas representaciones que incluye la frecuencia de aparición del <em>query</em> en el tiempo.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:busquedasacm"></span>
+<img src="images/02-marco-teorico/busquedaacm.png" alt="Gráfico que acompaña resultados de búsqueda de un término en la biblioteca digital de la Association for Computing Machinery (https://dl.acm.org/)" width="40%" />
+<p class="caption">
+Figura 2.1: Gráfico que acompaña resultados de búsqueda de un término en la biblioteca digital de la Association for Computing Machinery (<a href="https://dl.acm.org/" class="uri">https://dl.acm.org/</a>)
+</p>
+</div>
+</div>
+<div id="modelos-de-recuperación-de-información" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Modelos de Recuperación de Información:</h2>
+<div id="recuperación-boleana" class="section level3" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Recuperación boleana:</h3>
+<p>Ante una búsqueda de información se recorre linealmente todo el documento para retornar un valor boleano indicando la presencia o no del término buscado. Es uno de los primeros modelos que se uso y está asociado a técnicas de <em>grepping</em> <span class="citation">(<a href="#ref-manning2008" role="doc-biblioref">Manning, Raghavan, y Schütze 2008</a>)</span> (p.3). El desarrollo de este modelo apareció entre 1960 y 1970.</p>
+<p>El usuario final obtendrá como respuesta a su <em>query</em> sólo aquellos textos que contengan el término. Es un modelo muy cercano a los típicos <em>querys</em> de bases de datos con el uso de operadores “AND”, “OR” y “NOT”. En el procesamiento de los textos se genera una matriz de incidencia binaria término-documento, donde cada término que conforma el vocabulario, ocupa una fila <em>i</em> de la matriz mientras que cada columna <em>j</em> se asocia a un documento. La presencia de el término <em>i</em> en el documento <em>j</em> se denotará con un valor verdadero o un “<strong>1</strong>”.</p>
+<p>La recuperación boleana si bien representa una buena aproximación a la generación de <em>querys</em> más rápidos, presenta una gran desventaja y es que al crecer la cantidad de documentos y el vocabulario, se obtiene una matriz dispersa de una alta dimensionalidad que hace poco efectiva su implementación.</p>
+<p>Los documentos y los <em>querys</em> son vistos como conjuntos de términos indexados, que luego fueron llamados “bolsa de términos” <em>(bag of terms)</em>. Las deficiencias de este modelo recaen en que los resultados, no tienen ningún ranking. Si por ejemplo el término sobre el cual se realiza el <em>query</em> aparece 100 veces en un documento y en otro aparece sólo una vez, en la presentación de los resultados ambos documentos aparecerán al mismo nivel, no pudiendo mostrar preferencia del uno sobre el otro.</p>
+<p>Otra de las desventajas es que no se registra el contexto semántico de las palabras, incluso se pierde el orden en que aparecen las palabras en cada texto.</p>
+<p>Este modelo se presume que en el cual se basa la implementación de Saber UCV y por eso es que en general se termina presentando el problema de que al usar el operador <em>AND</em> en las búsquedas exactas mencionadas en <a href="introduccion.html#query">1.5.2.1</a> se obtiene una alta <strong><em>precision</em></strong><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> en los resultados pero un bajo <strong><em>recall</em></strong><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> mientras que al usar el operador <em>OR</em> da una baja <strong><em>precisión</em></strong> y un gran <strong><em>recall</em></strong>.</p>
+<p>Con la propuesta del SSBSU se quiere una versión de recuperación de información que aplica métodos de mayor eficiencia, que permiten mejorar el desempeño (tiempo) y la calidad de los resultados.</p>
+</div>
+<div id="invind" class="section level3" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Índices Invertidos:</h3>
+<p>Se denominan índices invertidos porque en vez de guardar los documentos con las palabras que en ellos aparecen, en estos se procede a guardar cada palabra y se indica los documentos en los cuales se encuentra y adicionalmente se puede registrar la posición en que aparece cada palabra con distintas granularidades, pudiendo ser estas: dentro del documento, del capítulo, del párrafo o de la oración. También pueden contener la frecuencia con que se presenta determinada palabra. Toda esta información nos permite mejorar los tiempos de búsqueda pero con ciertos costos.</p>
+<p>El primero es el espacio en disco que implica guardar estos datos adicionales, que puede oscilar del 5% al 100% del valor inicial de almacenamiento, mientras que el segundo costo lo representa el esfuerzo computacional de actualizarlos una vez que se incorporan nuevos documentos <span class="citation">(<a href="#ref-Mahapatra2011" role="doc-biblioref">Mahapatra y Biswas 2011</a>)</span>.</p>
+<p>Existen diversos tipos de <strong>Índices Invertidos</strong> y constantemente se están realizando investigaciones que permitan mejorar su desempeño motivado en que sobre ellos recae gran parte de la efectividad que podamos obtener ejecutando los <em>querys</em>. Algunos ejemplos de estos índices son el <em>Generalized Inverted Index</em> (GIN), también está el RUM<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> o el VODKA<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>que es otra implementación con menos literatura sobre posibles usos pero con métodos disponibles para su uso en manejadores de base de datos como PostgreSQL.</p>
+<p>El espacio que ocupa la implementación de estos índices se puede ver afectado, por un lado tenemos que se puede reducir mediante el preprocesamiento que hagamos a las palabras buscando su raiz con el stemming {#steaming} o removiendo las stop words (las palabras que no generan mayor valor semántico como: la, el, tu).</p>
+<p>Por otra parte el peso total se puede incrementar a medida que decidamos tener una granularidad más fina en el registro de las palabras y su ubicación dentro de los documentos. En el transcurso del desarrollo de nuestra investigación indicaremos en cuánto se incremento el espacio de almacenamiento en disco con la aplicación de este índice y la granularidad que se adoptó junto con el valor del costo en espacio de almacenamiento.</p>
+<p>Continuando con los índices inversos hay estrategias que significan la adopción de generar dos índices inversos para un sistema, conteniendo uno de estos la lista de documentos y la frecuencia de la palabra, mientras que el otro registra la lista con las posiciones de la palabra.</p>
+<p>El uso de los índices invertidos permite la denominada “búsqueda de texto completa” (<em>full text search</em>) que es uno de los pilares que sustenta a los motores de búsqueda y se entiende por este tipo de búsqueda aquella que permite encontrar documentos que contienen las palabras claves o frases determinadas en el texto del <em>query</em>. Adicionalmente podemos introducir el criterio de búsqueda de texto aproximado <em>(approximate text searching)</em>, que permite flexibilizar la coincidencia entre el texto requerido y el resultado.</p>
+<p>En la Solución que se propone, la optimización en la generación de este índice quedará bajo la administración del propio manejador de base de datos que es <em>postgreSQL</em>.</p>
+<p>Cuando la base de datos que registra el índice invertido crece y no es viable almacenarla en un único computador, es necesario acudir al uso de técnicas que permitan distribuir la base de datos con el uso de tecnologías como <em>Spark, Hadoop, Apache Storm</em> entre otras.</p>
+</div>
+<div id="rank" class="section level3" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Scoring Model:</h3>
+<p>Es un modelo aplicado en amplias colecciones de documentos donde es necesario exclusivamente mostrar al usuario que realizó la búsqueda, una fracción de los documentos encontrados, pero es necesario que estos sean los de mayor puntuación (<em>score</em>), de acuerdo a distintos criterios que permitan determinar cuales son los que tienen mayor relevancia, como lo puede ser la cantidad de veces que se repite una palabra aparecida en el <em>query</em> dentro del documento, o la distancia de aparición de cada una de las palabras que conforman el query (cantidad de palabras que median entre una y otra).</p>
+<p>También se puede asignar un peso mayor en la generación del ranking, si una, o varias, de las palabras que generan el <em>query</em> aparece dentro del título, o en otros campos que se registrasen en la base de datos.</p>
+</div>
+</div>
+<div id="procesamientos-de-texto" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Procesamientos de texto:</h2>
+<p>En esta sección mostramos métodos de trabajo con los textos. Para el idioma español no son de abundante literatura, a diferencia de aquellos que están en el idioma inglés. Incluso hasta hace unos pocos años las herramientas computacionales para el procesamiento de los textos (nlproc) tampoco eran abundantes y sabiendo que son justamente los textos, el insumo que recibe de nuestro sistema de recuperación de información, la calidad en los procesamientos que sobre ellos hagamos, marcarán en gran medida la propia calidad del sistema que tengamos.</p>
+<p>Como decíamos la literatura y herramientas disponibles para el NLP en el idioma español, fueron escasas durante un considerable período. Se tenían disponibles algunas como el coreNLP de la Universidad de Stanford pero no incluía todas las utilidades, tales como la identificación de parte del discurso <em>(Part of Speech Tagging),</em> ni el análisis morfológico (<em>Morphological Analysis)</em> o el reconocimiento de entidades nombradas (<em>Named Entity Recognigtion)</em>, sino algunas pocas como el tokenizador <a href="teorico.html#token">2.6.1.1</a> y el separador de oraciones (Sentences Splitting).</p>
+<p>Casos similares se presentaban con otras herramientas, siendo un caso aparte el esfuerzo del CLiC- Centre de Llenguatge i Computación quienes hicieron la anotación del Corpus AnCora<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> . También la Universidad Politécnica de Cataluña creó la herramienta FreeLing<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> que permitió realizar algunas de las funcionalidades mencionadas en el párrafo anterior. No obstante su integración en cadenas de trabajo y la actualización de sus modelos de entrenamiento, presentan rezagos en comparación a otros modelos que actualmente se están usando, los cuales serán evaluados en el transcurso de esta investigación y serán señalados en un capítulo que aún está por desarrollar.</p>
+<div id="nlproc" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Procesamiento del Lenguaje Natural (natural language processing- NLP):</h3>
+<p>Son las técnicas computacionales desarrolladas para permitir al computador “comprender” el significado de los textos de lenguaje natural. En esta Investigación son aplicadas una serie de estos métodos sobre los textos que componen el Corpus y podemos mencionar las siguientes:</p>
+<div id="token" class="section level4" number="2.6.1.1">
+<h4><span class="header-section-number">2.6.1.1</span> Tokenizador:</h4>
+<p>Básicamente es separar el documento en palabras, o unidades semánticas que tengan algún signficado a las cuales se le llaman <em>tokens</em>. Para el idioma español no representa un mayor reto, ya que se puede usar el espacio como delimitador de palabras, no así en otros idiomas como el chino donde el problema se aborda de manera distinta.</p>
+<p>Al obtener las palabras como entidades separadas de un texto nos permite calcular la frecuencia de uso de las mismas.</p>
+<p>Es común que las librerías de procesamiento de lenguaje natural contengan tokenizadores que presentan un 100% como métrica de precisión en el idioma español.</p>
+</div>
+<div id="ner" class="section level4" number="2.6.1.2">
+<h4><span class="header-section-number">2.6.1.2</span> Entidades Nombradas <em>(named entity reconigtion-NER)</em>:</h4>
+<p>Son los procesos que permiten la extracción de las distintas entidades contenidas dentro de los textos. Las entidades son: nombres, lugares, organizaciones. También permite detectar relaciones entre entidades. Las medidas de precisión en los módulos de NER alcanzan una medida cercana al 89% en modelos entrenados con <em>machine learning</em>, tal es el caso de spacy, que es una de las librerías propuestas para realizar estos procesamientos en nuestro desarrollo.</p>
+</div>
+<div id="pos" class="section level4" number="2.6.1.3">
+<h4><span class="header-section-number">2.6.1.3</span> Etiquetado de Partes del Discurso <em>(Part of speech tagging-POS)</em>:</h4>
+<p>Una de las técnicas usadas en el Procesamiento del Lenguaje Natural es el part-of-speech (POS) y consiste en asignar un rol sintáctico a cada palabra dentro de una frase <span class="citation">(<a href="#ref-eisenstein2019" role="doc-biblioref">Eisenstein 2019</a>)</span> siendo necesario para ello evaluar cómo cada palabra se relaciona con las otras que están contenidas en una oración y así se revela la estructura sintáctica.</p>
+<p>Los roles sintácticos principales de interés en la elaboración de esta Investigación son los sustantivos, adjetivos y verbos.</p>
+<ul>
+<li><p>Los sustantivos tienden a describir entidades y conceptos.</p></li>
+<li><p>Los verbos generalmente señalan eventos y acciones.</p></li>
+<li><p>Los adjetivos describen propiedades de las entidades</p></li>
+</ul>
+<p>Igualmente dentro del POS se identifican otros roles sintácticos como los adverbios, nombres propios, interjecciones entre otros.</p>
+<p>El POS es un procesamiento que sirve de insumo para la coocurrencia de palabras, que es una de las formas en que se representan los resultados de los <em>querys</em> en la SSCSU.</p>
+<p>En el estado del arte este etiquetado alcanza un 98% de precisión.</p>
+</div>
+<div id="steaming" class="section level4" number="2.6.1.4">
+<h4><span class="header-section-number">2.6.1.4</span> Stemming:</h4>
+<p>Es el proceso en que se consigue el lema de una palabra, entendiendo que el lema es la forma que por convenio se acepta como representante de todas las formas flexionadas de una misma palabra.</p>
+<p>Al buscar el lema se tiene presente la función sintáctica que tiene la palabra, es decir que se evalúa el contexto en el que ocurre. Una de las ventajas de aplicar esta técnica es que se reduce el vocabulario del Corpus y eso conlleva a que también se reduce el espacio de búsqueda en los documentos.</p>
+<p>En el estado del arte este etiquetado alcanza un 96% de precisión.</p>
+</div>
+</div>
+</div>
+<div id="textmin" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Minería de Texto:</h2>
+<p>La extracción de ideas útiles derivadas de textos mediante la aplicación de algoritmos estadísticos y computacionales, se conoce con el nombre de minería de texto, analítica de texto o aprendizaje automático para textos (text mining, text analytics, machine learning from text). Se quiere con ella representar el conocimiento en una forma más abstracta y así poder detectar relaciones en los textos.</p>
+<p>El uso de las técnicas de minería de texto ha ganado atención en recientes años motivado a las grandes cantidades de textos digitales que están disponibles. La minería de texto surge para dar respuesta a la necesidad de tener métodos y algoritmos que permitan procesar estos datos no estructurados <span class="citation">(<a href="#ref-miningt2012" role="doc-biblioref">Aggarwal y Zhai 2012b</a>)</span> . Una vez que mediante el proceso de recuperación de información tenemos un cúmulo de textos, es posible que necesitemos dar un paso más allá y usar un conjunto de técnicas que nos permitan analizar y digerir estos textos, mediante la detección de patrones.</p>
+<p>Uno de los desafíos al trabajar con textos es darles estructura para que resulte viable trabajar con ellos desde la perspectiva de procesos computacionales.</p>
+<p>Una de las primeras fases consiste en agrupar todos los textos en un Corpus. Posteriormente se procederá a conformar una matriz dispersa de una alta dimensionalidad que se denominará <em>“Sparce Term-Document Matrix)</em> de tamaño <em>n X d,</em> donde <em>n</em> es el número total de documentos y <em>d</em> es la cantidad de términos o vocabulario (palabras distintas) presentes entre todos los documentos. Formalmente sabemos que la entrada <em>(i,j)</em> de nuestra matriz es la frecuencia (cantidad de veces que aparece) de la palabra <em>j</em> en el documento <em>i</em> .</p>
+<p>El problema de la alta dimensionalidad de la matriz mencionada motiva ir aplicando otras técnicas que en principio puedan colaborar a reducirla por medio de simplificar los atributos, es decir, disminuyendo el vocabulario por ejemplo aplicando el algoritmo de Porter (stemming).</p>
+<p>Igualmente a nivel de minería de texto se hace deseable poder contar con la identificación semántica de cada una de las palabras que conforman nuestro vocabulario, para así obtener representaciones que aportan un mayor significado. Los procesamientos inherentes al NLP mencionados anteriormente son insumo para la minería de texto.</p>
+<div id="coocurrencia" class="section level3" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Coocurrencia de Palabras:</h3>
+<p>En esta investigación se usará una técnica denominada “Coocurrencia de Palabras” para la detección de patrones en los textos. Esto consiste en evaluar las palabras que coocurren dentro de los documentos que conforman el <em>corpus</em> y se puede hacer con distintas granularidades. Por ejemplo: las palabras que coocurren una seguida de otra o las que coocurren dentro de la misma oración, o dentro de un párrafo y así sucesivamente.</p>
+<p>Para la representación visual se usan los grafos representando cada palabra un nodo y la coocurrencia de una palabra con otra implica que se extienda un arco entre ellas. Las palabras dispuestas para representarse en el grafo serán exclusivamente las que tengan la función dentro del discurso (POS) <a href="teorico.html#pos">2.6.1.3</a> de adjetivos y sustantivos, es decir que cada coocurrencia será un sustantivo con el adjetivo que la acompaña, donde es posible tener una relación de un sustantivo con {0,1,…,n} adjetivos.</p>
+<p>La selección de las funciones gramaticales propuestas se hace para disminuir el espacio de representación y se considera que los sustantivos, al contar con el adjetivo que las acompaña, logran hacer una representación que muestra proximidad semántica y se representan los temas (<em>topics</em>) más relevantes <span class="citation">(<a href="#ref-segev2021" role="doc-biblioref">Segev 2021</a>)</span>.</p>
+<p>En el método que se usará en este Sistema se filtrarán las <em>n</em> ( <em>n</em> igual a 100 ), palabras que presenten mayor coocurrencia dentro de los resúmenes filtrados en el <strong><em>query</em></strong>, siendo posible seleccionar la granularidad (todo el texto o en un párrafo).</p>
+<p>En la figura <a href="teorico.html#fig:coocejem">2.2</a> podemos visualizar lo expuesto de una manera gráfica al ver la representación en un grafo de la coocurrencia de palabras sobre los textos de los resúmenes de las Tesis y TEG de la Escuela de Física de la U.C.V.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:coocejem"></span>
+<img src="images/02-marco-teorico/cooc.png" alt="Coocurrencia de Palabras" width="90%" />
+<p class="caption">
+Figura 2.2: Coocurrencia de Palabras
+</p>
+</div>
+</div>
+</div>
+<div id="similitud" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Similitud de documentos:</h2>
+<p>Para poder realizar la recomendación de documentos, una de las técnicas que se usa es medir la similitud que presenta un documento con los otros contenidos en el corpus. Un ejemplo de esta técnica es el uso de la similitud coseno que se explica con esta fórmula.</p>
+<span class="math display">\[\begin{equation}
+\cos ({\bf t},{\bf e})= {{\bf t} {\bf e} \over \|{\bf t}\| \|{\bf e}\|} = \frac{ \sum_{i=1}^{n}{{\bf t}_i{\bf e}_i} }{ \sqrt{\sum_{i=1}^{n}{({\bf t}_i)^2}} \sqrt{\sum_{i=1}^{n}{({\bf e}_i)^2}} }
+\end{equation}\]</span>
+<p><br></p>
+<p>En la fórmula <em>t</em> representa un documento y <em>e</em> representa otro documento. Ambos documentos se asumen que están en un espacio con <em>i</em> atributos, o dimensiones, y la intención es calcular un índice de similitud entre ambos documentos.</p>
+<p>Este es uno de los métodos más usados para detectar similitudes en los textos, aunque existen otras fórmulas para el cálculo de la similitud como es el índice de jaccard.</p>
+<p>El otro elemento de gran importancia en obtención de esta medición, es la representación que se haga del documento. Son distintas las técnicas que existen estando entre ellas la representación mediante “bolsas de palabras” o <em>bag of words</em>. Recientemente se han creado formas más complejas para la representación como lo son los <em>words embeddings</em> que son obtenidos mediante el entrenamiento de redes neuronales de aprendizaje profundo.</p>
+<p>Estas formas de representación de textos serán investigadas más a fondo en futuras fases de la elaboración de este trabajo.</p>
+</div>
+<div id="sistemas-distribuidos" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Sistemas Distribuidos:</h2>
+<p>Los distintos procesos y componentes de la Solución propuesta han sido diseñados e implementados como un sistema distribuido y por eso haremos una mención a este tema.</p>
+<p>Una definición formal que se le puede dar a los sistemas distribuidos es “cuando los componentes de hardware y/o sofware se encuentran localizados en una red de computadores y estos coordinan sus acciones sólo mediante el pase de mensajes” <span class="citation">(<a href="#ref-distribu2012" role="doc-biblioref">Coulouris 2012</a>)</span>.</p>
+<p>Algunas de las principales características que tienen los sistemas distribuidos es la tolerancia a fallos, compartir recursos, concurrencia, ser escalables <span class="citation">(<a href="#ref-czaja2018" role="doc-biblioref">Czaja 2018</a>)</span> entre otras. Mencionamos estas en particular al ser propiedades que están presentes en la propuesta acá descrita.</p>
+<ol style="list-style-type: decimal">
+<li><p>Fiabilidad o la llamada tolerancia a fallos: en caso de fallar un componente del sistema los otros se deben mantener en funcionamiento.</p></li>
+<li><p>Compartir recursos: un conjunto de usuarios pueden compartir recursos como archivos o base de datos.</p></li>
+<li><p>Concurrencia: poder ejecutar varios trabajos en simultáneo.</p></li>
+<li><p>Escalable: al ser incrementada la escala del sistema se debe mantener en funcionamiento el sistema sin mayores contratiempos.</p></li>
+</ol>
+<div id="contenedores" class="section level3" number="2.9.1">
+<h3><span class="header-section-number">2.9.1</span> Contenedores:</h3>
+<p>Un contenedor es una abstracción de una aplicación que se crea en un ambiente virtual, en el cual se encuentran “empaquetados” todos los componentes (sistema operativo, librerías, dependencias, etc.), que una aplicación necesita para poder ejecutarse. En su diseño se tiene presente que sean ligeros y que con otros contenedores pueden compartir el <em>kernel</em>, usando un sistema de múltiples capas, que también pueden ser compartidas entre diversos contenedores, ahorrando espacio en disco del <em>host</em> donde se alojan los contenedores.</p>
+<p>El uso de los contenedores permite crear, distribuir y colocar en producción aplicaciones de software de una forma sencilla, segura y reproducible. También a cada contenedor se le puede realizar una asignación de recursos (memoria, cpu, almacenamiento) que garantice un óptimo funcionamiento de la aplicación que contienen.</p>
+<p>Es importante señalar que el uso de esta tecnología añade un entorno de seguridad al estar cada contenedor en una ambiente isolado.</p>
+<p>Para cada contenedor es necesario usar una imagen donde se definen las dependencias necesarias para su funcionamiento.</p>
+</div>
+<div id="orquestador" class="section level3" number="2.9.2">
+<h3><span class="header-section-number">2.9.2</span> Orquestador:</h3>
+<p>Al tener diversos contenedores, donde cada uno aloja una aplicación distinta, puede resultar necesario que todos se integren en un sistema. Para que esta integración sea viable es necesario contar con un orquestador. Su uso permitirá lograr altos grados de portabilidad y reproducibilidad, pudiendo colocarlos en la nube o en centros de datos garantizando que se pueda hacer el <em>deploy</em> de forma sencilla y fiel a lo que se implementó en el ambiente de desarrollo.</p>
+<p>En el caso de la Solución propuesta se adoptará el uso de Docker Compose como orquestador y en el Capítulo que contiene la Propuesta Técnica <a href="propuesta-técnica.html#propuestatec">3.1</a> serán expuestas las funcionalidades de cada contenedor y se apreciará la integración que brindará el orquestador.</p>
+</div>
+</div>
+<div id="tendencias-actuales-sistemas-de-información" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> Tendencias actuales Sistemas de Información:</h2>
+<p>Si bien anteriormente las búsquedas de información dentro de un conjunto de textos se procesaban determinando la aparición o no de palabras, o de frases, dentro de un determinado texto, este método ha ido evolucionando para llegar hoy en día a un elevado nivel de abstracción, donde a partir de la necesidad de obtener una determinada información, es decir, de aquello que necesitamos buscar que antes consistía en hacer <em>match</em> con un objeto de información, hemos pasado de los motores de búsqueda ( <em>search engines</em> ) a los motores de respuestas ( <em>answering engines</em> ) <span class="citation">(<a href="#ref-balog2018" role="doc-biblioref">Balog 2018</a>)</span>, donde el sistema ante un determinada consulta del usuario va a retornar una serie de resultados enriquecidos, mostrando la identificación de entidades, hechos y cualquier otro dato estructurado que esté de forma explícita, o incluso implícita, mencionado dentro de los textos que conforman el corpus.</p>
+<p>Para lograr la generación de estos resultados se han tenido que conformar las llamadas bases de conocimiento o <em>knowlodege bases</em>, que son repositorios donde previo a la búsqueda de la información dentro del sistema, se logra ir estructurando la organización de la información alrededor de objetos o datos específicos que se denominan <strong>entidades</strong>. Estos conceptos y métodos se asocian directamente a los que también se proponen, de manera más amplia, en la denominada <em>web semántica</em><a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> .</p>
+<p>De ejemplo de <em>knowledge bases</em> se puede mencionar a DBpedia, que se encuentra en la dirección <a href="www.dbpedia.com">www.www.dbpedia.org.com</a> y es un proyecto en donde puede acceder a una red global y unificada de grafos de conocimiento, la cual cubre más de 20 idiomas y principalmente genera sus grafos de conocimiento a partir de las publicaciones del Proyecto Wikipedia.</p>
+<div id="temas-en-proceso-de-investigación" class="section level4" number="2.10.0.1">
+<h4><span class="header-section-number">2.10.0.1</span> Temas en proceso de investigación:</h4>
+<p>Por estar aún en curso esta investigación a continuación se mencionan algunos temas que se está evaluando incluir en este marco teórico</p>
+<ul>
+<li><p>Métodos usados para el almacenamiento o la indexación como crear agrupamientos <em>(clusters)</em> de aquellos documentos que compartan algunas características, por ejemplo, en la temática que aborden. Otra de las innovaciones que se están añadiendo a los sistemas de recuperación de información, es generar resúmenes con técnicas de procesamiento de lenguaje natural soportadas en el uso de arquitecturas de aprendizaje profundo <em>(deep learning)</em> .</p></li>
+<li><p>Resultados ante una búsqueda personalizados: al existir mecanismos como la sesión de usuario o las <em>cookies</em> que guardan información contextual, permitiendo que ante un mismo <em>query</em> en distintos equipos, los resultados sean distintos en función de la persona que hizo la búsqueda.</p></li>
+<li><p>En cuanto al estado del arte existen distintas librerías y modelos de representación de documentos, palabras y caracteres. Algunos de estos modelos son fastext, word2vec, GPT3. Para este momento aún estamos haciendo la evaluación del uso de ellos para nuestra investigación, por lo cual, sólo los mencionamos referencialmente en este Antepryoecto.</p></li>
+</ul>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-miningt2012" class="csl-entry">
+Aggarwal, Charu C., y ChengXiang Zhai, eds. 2012b. <em>Mining text data</em>. New York Heidelberg: Springer. <a href="https://doi.org/10.1007/978-1-4614-3223-4">https://doi.org/10.1007/978-1-4614-3223-4</a>.
+</div>
+<div id="ref-balog2018" class="csl-entry">
+Balog, Krisztian. 2018. <em>Entity-Oriented Search</em>. 1st ed. 2018. The Information Retrieval Series 39. Cham: Springer International Publishing : Imprint: Springer. <a href="https://doi.org/10.1007/978-3-319-93935-3">https://doi.org/10.1007/978-3-319-93935-3</a>.
+</div>
+<div id="ref-distribu2012" class="csl-entry">
+Coulouris, George F., ed. 2012. <em>Distributed systems: concepts and design</em>. 5th ed. Boston: Addison-Wesley.
+</div>
+<div id="ref-czaja2018" class="csl-entry">
+Czaja, Ludwik. 2018. <em>Introduction to Distributed Computer Systems: Principles and Features</em>. 1st ed. 2018. Lecture Notes en Networks y Systems 27. Cham: Springer International Publishing : Imprint: Springer. <a href="https://doi.org/10.1007/978-3-319-72023-4">https://doi.org/10.1007/978-3-319-72023-4</a>.
+</div>
+<div id="ref-eisenstein2019" class="csl-entry">
+Eisenstein, Jacob. 2019. <em>Introduction to natural language processing</em>. Adaptive computation y machine learning. Cambridge, Massachusetts: The MIT Press.
+</div>
+<div id="ref-fredkin1960" class="csl-entry">
+Fredkin, Edward. 1960. <span>«Trie Memory»</span>. <em>Communications of the ACM</em> 3 (9): 490-99. <a href="https://doi.org/10.1145/367390.367400">https://doi.org/10.1145/367390.367400</a>.
+</div>
+<div id="ref-goodrich2013" class="csl-entry">
+Goodrich, Michael T., Roberto Tamassia, y Michael H. Goldwasser. 2013. <em>Data structures and algorithms in Python</em>. Hoboken, NJ: Wiley.
+</div>
+<div id="ref-knuth1997" class="csl-entry">
+Knuth, Donald Ervin. 1997. <em>The art of computer programming</em>. 3rd ed. Reading, Mass: Addison-Wesley.
+</div>
+<div id="ref-kraft2017" class="csl-entry">
+Kraft, Donald H., y Erin Colvin. 2017. <span>«Fuzzy Information Retrieval»</span>. <em>Synthesis Lectures on Information Concepts, Retrieval, and Services</em> 9 (1): i-63. <a href="https://doi.org/10.2200/s00752ed1v01y201701icr055">https://doi.org/10.2200/s00752ed1v01y201701icr055</a>.
+</div>
+<div id="ref-Mahapatra2011" class="csl-entry">
+Mahapatra, Ajit Kumar, y Sitanath Biswas. 2011. <span>«Inverted indexes: Types and techniques»</span>. <em>International Journal of Computer Science Issues</em> 8 (julio).
+</div>
+<div id="ref-manning2008" class="csl-entry">
+Manning, Christopher D., Prabhakar Raghavan, y Hinrich Schütze. 2008. <em>Introduction to information retrieval</em>. New York: Cambridge University Press.
+</div>
+<div id="ref-segev2021" class="csl-entry">
+Segev, Elad. 2021. <em>Semantic Network Analysis in Social Sciences</em>. Routledge. <a href="https://doi.org/10.4324/9781003120100">https://doi.org/10.4324/9781003120100</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p>Precision: la fracción, o porcentaje, de los documentos recuperados que son relevantes en la búsqueda efectuada.<a href="teorico.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>Recall: la fracción, o porcentaje, de los documentos relevantes en la colección que fueron recuperados por el sistema.<a href="teorico.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>En el vínculo <a href="https://github.com/postgrespro/rum" class="uri">https://github.com/postgrespro/rum</a> se tiene acceso a la explicación e implementación de este índice para PostgreSQL.<a href="teorico.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>este índice fue presentado en la Postgres Conference en el año 2014 <a href="https://www.pgcon.org/2014/schedule/attachments/318_pgcon-2014-vodka.pdf" class="uri">https://www.pgcon.org/2014/schedule/attachments/318_pgcon-2014-vodka.pdf</a><a href="teorico.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p><strong>AnCora</strong> es un corpus del <strong>catalán (AnCora-CA)</strong> y del <strong>español (AnCora-ES)</strong> con diferentes niveles de anotación como lema y categoría morfológica, constituyentes y funciones sintácticas, estructura argumental y papeles temáticos, clase semántica verbal, tipo denotativo de los nombres deverbales, sentidos de WordNet nominales, entidades nombradas (NER), relaciones de correferencia (<a href="http://clic.ub.edu/corpus/es/ancora" class="uri">http://clic.ub.edu/corpus/es/ancora</a>)<span class="math display">\[&lt;http://clic.ub.edu/corpus/es/ancora&gt;\]</span><a href="teorico.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://nlp.lsi.upc.edu/freeling/node/1" class="uri">https://nlp.lsi.upc.edu/freeling/node/1</a><a href="teorico.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>Se basa en la idea de añadir <a href="https://es.wikipedia.org/wiki/Metadato" title="Metadato">metadatos</a> <a href="https://es.wikipedia.org/wiki/Sem%C3%A1ntica" title="Semántica">semánticos</a> y <a href="https://es.wikipedia.org/wiki/Ontolog%C3%ADa_(Inform%C3%A1tica)" title="Ontología (Informática)">ontológicos</a> a la <a href="https://es.wikipedia.org/wiki/World_Wide_Web" title="World Wide Web"><em>World Wide Web</em></a><em>.</em> Esas informaciones adicionales —que describen el contenido, el significado y la relación de los datos— se deben proporcionar de manera formal, para que así sea posible evaluarlas automáticamente por máquinas de procesamiento. Tomado de <a href="https://es.wikipedia.org/wiki/Web_sem%C3%A1ntica" title="Web Semántica">Wikipedia</a><a href="teorico.html#fnref12" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduccion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="propuesta-técnica.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "whatsapp"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"lib_dir": "book_assets",
+"split_by": "section",
+"config": {
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+}
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

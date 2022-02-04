@@ -1,4 +1,8 @@
 delete_merged_file: true
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Capítulo "
+    refs: "Referencias "
+  label:
+    fig: "Figura "
+    references: "Referencias "

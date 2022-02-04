@@ -34,7 +34,7 @@ bookdown::pdf_book:
     before_body: latex/portada.tex
     in_header: latex/preamble.tex
 
-  latex_engine: lualatex
+  latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
   fig_width: 7 #default

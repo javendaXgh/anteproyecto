@@ -1162,6 +1162,27 @@
             "title": "Shiny: Web application framework for r",
             "title-short": "Shiny",
             "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Inmon",
+                    "given": "William H."
+                }
+            ],
+            "edition": "3rd ed",
+            "id": "inmon2002",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "publisher": "J. Wiley",
+            "publisher-place": "New York",
+            "title": "Building the data warehouse",
+            "type": "book"
         }
     ],
     "project_biblios": [

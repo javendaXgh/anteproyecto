@@ -38,18 +38,15 @@ flextable::set_flextable_defaults(big.mark = '.',decimal.mark = ',')
 
 # Resumen: {.unnumbered}
 
-Se presenta la propuesta de un sistema denominado **Solución Sistema Complementario Saber UCV**  para hacer búsquedas de texto completo sobre los resúmenes de las tesis que se encuentran alojadas en el repositorio institucional Saber UCV (www.saber.ucv.ve). 
+Se presenta la propuesta de un sistema denominado **Solución Sistema Complementario Saber UCV (SSCSU)** para hacer procesos de Recuperación de Información sobre los Resúmenes, tanto de las Tesis como de los Trabajos Especiales de Grado (TEG), que se encuentran alojados en el repositorio institucional Saber UCV (www.saber.ucv.ve).
 
-Se aplican técnicas de Procesamiento de Lenguaje Natural (NLP), de Minería de Texto y de indexación en base de datos sobre los textos y se muestran los resultados con tablas interactivas, visualizaciones con gráficos y gráfos de coocurrencias de palabras.
+Se aplican técnicas de Procesamiento de Lenguaje Natural (NLP), de Minería de Texto y de indexación en base de datos sobre los textos.
 
-Esta propuesta se basa principalmente en que mediante la búsqueda de palabras o frases se genere un (*query*) y con la técnica conocida como "*full text search*" se puedan extraer los trabajos en que se encuentran contenidas tales palabras y a partir de ahí enriquecer la experiencia del usuario con la presentación de la información recuperada.
+Esta propuesta se basa en que mediante la búsqueda de palabras o frases, aplicando filtros y determinando la granularidad, se genere un (*query*) con el que se puedan recuperar los trabajos en que se encuentran contenidas tales palabras y  a partir de ahí enriquecer la experiencia del usuario con la presentación de la información recuperada en tablas interactivas, visualizaciones con gráficos y grafos de coocurrencia de palabras.
 
-La aplicación se diseña como un sistema distribuido bajo la arquitectura cliente-servidor en distintos contenedores soportando cada uno un proceso para el funcionamiento, teniendo entre los principales el de base de datos, el servidor de la aplicación y otro con los distintos procesamientos que son efectuados sobre los textos.
+La aplicación se diseña como un sistema distribuido bajo la arquitectura cliente-servidor y se soporta en el uso de contenedores, donde en cada uno se ejecuta un proceso para el funcionamiento de la SSCSU, siendo los principales el de la base de datos, el servidor de la aplicación y otro con los distintos procesamientos que son efectuados sobre los textos.
 
-También se propone un algoritmo que permite clasificar las tesis por el área académica donde cursó estudios el autor del correspondiente trabajo y así resolver el problema  que actualmente presenta  Saber UCV donde no están disponibles estas clasificaciones.
-
-
-'`
+También se propone una rutina que permite clasificar las Tesis y los TEG por el área académica donde cursó estudios el autor del correspondiente trabajo y así se solventa la carencia que actualmente presenta Saber UCV, donde no están disponibles estas clasificaciones. '`
 
 ```{=tex}
 \clearpage
@@ -63,63 +60,73 @@ También se propone un algoritmo que permite clasificar las tesis por el área a
 
 # Introducción {#introduccion}
 
-En este Capítulo se presenta la propuesta \@ref(propuesta) denominada **Solución Sistema Complementario Saber UCV** junto con el objetivo principal de la misma \@ref(objetivo). Posteriormente se introducen los sistemas de recuperación de información \@ref(intro) y se presenta el repositorio institucional Saber UCV \@ref(saber) junto con la exposición donde se muestran los principales problemas \@ref(problema) que tiene el Sistema que son los que motivan la presentación de esta Solución. Igualmente se hace un repaso a investigaciones realizadas \@ref(antecedentes) en la Universidad Central de Venezuela que parcialmente han abordado problemas similares al que acá presentaremos. Finalmente se expone la estructura \@ref(estructura) por capítulos de este Anteproyecto.
+En este Capítulo se presenta la Propuesta \@ref(propuesta) denominada **Solución Sistema Complementario Saber UCV (SSCSU)**. Posteriormente se introducen los **Sistemas de Recuperación de Información** \@ref(intro) y el repositorio institucional de documentos electrónicos **Saber UCV** \@ref(saber). Seguidamente se delimitan los documentos de Saber UCV con los que se trabajará en \@ref(corpus). En  \@ref(requerimiento) se expone el requerimiento inicial efectuado dentro del Postgrado de Ciencias de la Computación que motivó la realización de este desarrollo y se muestran los impedimentos y limitaciones en \@ref(problema), dadas las características de **Saber UCV**, que era necesario superar para cumplir con el requerimiento y poder desarrollar esta Propuesta. Igualmente se hace un repaso a investigaciones llevadas a cabo \@ref(antecedentes) en la Universidad Central de Venezuela, que parcialmente han abordado problemas y soluciones similares a la que acá se presenta. Finalmente se detalla la estructura \@ref(estructura) por capítulos de este Anteproyecto.
 
 ## Propuesta: {#propuesta}
 
-En este trabajo se formula la propuesta de una Solución que permite realizar **busquedas de texto completo** sobre los Resúmenes de las Tesis que están alojadas en el repositorio institucional de documentos digitales Saber U.C.V. de la Universidad Central de Venezuela. 
+En este trabajo se formula la propuesta de una Solución que permite realizar procesos de **Recuperación de Información** \@ref(infret) sobre los Resúmenes, tanto de las Tesis como de los Trabajos Especiales de Grado, que están alojados en el repositorio institucional de documentos digitales "Saber U.C.V." de la Universidad Central de Venezuela.
 
-La propuesta se basa en el desarrollo e implementación de un sistema distribuido con arquitectura cliente-servidor que funcionará como una aplicación web y recibirá el nombre del **Solución Sistema Complementario Saber UCV (SSCSU)**, a la cual se accederá por medio de un navegador web y permitirá que ante la formulación de un ***query*** que contendrá una frase y la selección de distintos parámetros y granularidades como el intervalo de fechas, la selección de la(s) facultad(es) y/o escuela(s)-postgrado(s) donde se generó la investigación, sean recuperados del Sistema los textos que cumplen con las restricciones establecidas. Los resultados se mostrarán con distintos gráficos, tablas interactivas, coocurrencias de palabras \@ref(coocurrencia) y recomendaciones de documentos basados en las similitudes que pueda presentar un documento \@ref(similitud) con los otros.
+La propuesta se basa en el desarrollo e implementación de un sistema distribuido con una arquitectura cliente-servidor, disponiendo de una aplicación web donde el cliente accede usando el navegador web. Al usuario se le permitirá hacer la formulación de una consulta para filtrar, dentro de un conjunto de textos, aquellos que cumplen las condiciones definidas.
 
-El SSCSU será desarrollado basándose en los principios que definen a los Sistema de Recuperación de Información \@ref(SRI)  y se usará el *Corpus* [^index-1] definido en \@ref(corpus) sobre el cual serán aplicadas técnicas de Minería de Texto \@ref(textmin) y de Procesamiento de Lenguaje Natural \@ref(nlproc), para detectar relaciones y extraer conocimiento [@miningt2012c]. La implementación se hará en contenedores recayendo en cada uno de estos componentes los procesos principales del Sistema: gestor de base de datos, servidor de la aplicación, procesamientos de textos entre otros.
+La consulta, a la cual denominaremos el **query**, estará definida por: una frase, la selección de diversos criterios para el filtrado de los datos y la selección de la granularidad [^index-1], *eg.* un intervalo de fechas, la selección de la(s) facultad(es) y/o escuela(s)-postgrado(s) donde se generó la investigación. Al ejecutar la consulta serán recuperados del Sistema los textos que cumplen con las restricciones establecidas. Los resultados se mostrarán con distintos gráficos, tablas interactivas, grafos de coocurrencia de palabras \@ref(coocurrencia) y recomendaciones de documentos, basados en las similitudes que pueda presentar un documento con los otros \@ref(similitud). La propuesta descrita recibirá el nombre de **Solución Sistema Complementario Saber UCV (SSCSU)**.
 
-[^index-1]: Conjunto cerrado de textos o de datos destinado a la investigación científica.
+[^index-1]: En la inteligencia de negocios el término granularidad hace referencia al nivel de detalle, o sumarización de las unidades de datos que reposan en el *data warehouse* , a más detalle, menos es la granularidad y a menor detalle implica una mayor granularidad [@inmon2002]. En el campo de la recuperación de información este término se contextualiza en el nivel de detalle al que llegará la recuperación dentro de un texto, pudiendo ser por ejemplo dentro de un documento la búsqueda de una ocurrencia, dentro de un capítulo, de una sección, de un párrafo o de una oración. Una de las formas en que serán representados los resultados obtenidos, mediante la coocurrencia de palabras, mostrará distintas granularidades tanto en parrafos como en el texto completo del resumen de la tesis. Igualmente se asocia la granularidad a la restricción que se podrá seleccionar para hacer la búsqueda, delimitando si se quiere buscar dentro de todas las facultades, en alguna de ellas, o sólo documentos dentro producidos dentro de una escuela y/o postgrado.
 
-Uno de los aspectos relevantes a resolver es realizar la clasificación de las Tesis por área de conocimiento, asociándolos a la escuela o el postgrado donde curso estudios el autor de cada investigación. Actualmente esta información no está disponible para el público ni en el repositorio Saber UCV.
+La SSCSU será desarrollada basándose en los principios que definen a los Sistemas de Recuperación de Información \@ref(SRI) y se conformará un conjunto delimitado de documentos con los resumenes, lo cual en la literatura especializada se denomina el *Corpus* \@ref(corpus). Sobre este conjunto serán aplicadas técnicas de Minería de Texto \@ref(textmin) y de Procesamiento de Lenguaje Natural \@ref(nlproc), para detectar relaciones entre los elementos y extraer conocimiento de los mismos [@miningt2012c].
 
-Previo a la implementación de la Solución se realizará una investigación documental para generar un listado con todas las etiquetas candidatas con que las que se ejecutará el proceso de clasificación. La rutina que se propone incluye la lectura de los archivos adjuntos en distintos formatos y el uso de diversas técnicas y algoritmos que permitan generar la correcta clasificación de los documentos.
+La implementación del Sistema se hará mediante el uso de contenedores encargados de sustentar los procesos medulares y complementarios. Entre los procesos medulares se encuentran los de gestión de la base de datos, el servidor de la aplicación y el de procesamientos de los textos [^index-2]. En la propuesta técnica \@ref(propuestatec) se darán los detalles de las procesos que tendrán encargados ejecutar cada uno de los contenedores.
 
-También el SSCSU permitirá obtener indicadores cuantitativos sobre los trabajos que reposan en Saber UCV,pudiendo establecer distintas dimensiones y granularidades para la obtención de estas cifras. 
+[^index-2]: La creación de los contenedores y la integración de estos se hará mediante el uso de *Docker* y *Docker Compose* respectivamente
 
-El SSCSU contará con una base de datos estructurada indexada \@ref(bd) y estará diseñado para actualizarse periódicamente, incorporando así los nuevos trabajos que sean ingresados en Saber UCV. 
+Uno de los aspectos relevantes a resolver para implementar este Sistema, es realizar la clasificación de las Tesis por área de conocimiento, asociándose a la facultad, escuela o el postgrado, donde cursó estudios el autor de cada investigación. Se destaca que actualmente esta información no está disponible para el público ni en el repositorio Saber UCV. Se pretende que el proceso de clasificación sea realizado con una elevada precisión, derivando en un beneficio para la comunidad de investigadores.
 
-El desarrollo de esta propuesta dará solución a los problemas planteados en \@ref(problema) y se podrá convertir en una aplicación de utilidad para la comunidad universitaria y en general para los investigadores que usan como fuente de información los documentos que reposan en Saber UCV.
+Previo a la ejecución de lo antes descrito se realizará una investigación documental para generar un listado con todas las etiquetas candidatas con las que se ejecutará el proceso de clasificación. Para esto se usarán principalmente los listados de carreras de pre y post grados disponibles en las páginas oficiales de la Universidad y sus facultades. La extracción de las etiquetas se hará valiéndose de identificadores en el código HTML y CSS de estas. El procedimiento propuesto implica la facilidad de poder reproducir el código de extracción de tales valores y hacer futuras actualizaciones, siempre y cuando se mantenga la estructura en las páginas web mencionadas.
 
+El proceso de clasificación, adicional a la necesidad de contar con las etiquetas, lleva a que se tengan que descargar los archivos anexos a cada uno de los Resúmenes, estando estos documentos en formato *Portable Document Format* (PDF), word, entre otros. Una vez descargados se hace la lectura de estos archivos, resolviendo otra diversidad de problemas como las codificaciones (*file encodings*) de estos, el tipo de información que pueden tener (texto o imagen) y que algunos resúmenes están compuestos por más de un archivo, haciendo necesario la consolidación de los mismos. Todo esto finalmente lleva a la extracción de un trozo de texto para poder lograr el emparejamiento con la etiqueta correcta. Lo antes descrito lleva a que sea necesario contar con diversas herramientas de procesamientos de archivos y algoritmos de tratamiento de textos, para lograr el objetivo de ejecutar la clasificación con la debida precisión.
 
-## Objetivo General: {#objetivo}
+También la SSCSU permitirá obtener indicadores cuantitativos sobre los trabajos que reposan en Saber UCV, pudiendo establecer distintos criterios de filtrado, para la obtención de estas cifras. Entre estos indicadores podemos mencionar la cantidad de documentos que cumplen con el criterio del ***query*** por año de elaboración de la Tesis o el TEG, o la cantidad de documentos totales recuperados por área del conocimiento: facultad, postgrado y escuela.
 
-Generar un sistema de recuperación de información que funcione bajo una arquitectura distribuida cliente-servidor, que permita clasificar los trabajos que reposan en Saber UCV y a los usuarios finales generar consultas de "búsqueda de texto completo" sobre los textos que constituyen el *Corpus* mediante el acceso a una página web.
+La SSCSU contará con una base de datos estructurada indexada mediante un "tsvector" el cual es un tipo de datos nativo del manejador de base de datos que usaremos (PostgreSQL) y que permite representar y guardar los documentos de una forma optimizada para la búsqueda de texto. En \@ref(invind) se desarrolla el genérico de este tipo de estructura.
 
+El Sistema propuesto tiene que poder acoplarse periódicamente a Saber U.C.V. para realizar la descarga, clasificación e incorporación al *Corpus* de los nuevos documentos que estén disponibles en el repositorio oficial y por ello estará diseñado para actualizarse periódicamente, incorporando así los nuevos trabajos.
+
+Un aspecto que también se toma en cuenta en el diseño de la SSCSU es la usabilidad y la experiencia del usuario al interactuar con él. Para esto, previendo la complejidad que pueda representar el uso del Sistema, en la interfaz gráfica que visualiza el usuario, se incorporarán ventanas emergentes que sirvan para explicar las funcionalidades de cada una de las áreas de interacción.
+
+A modo resumen, el objetivo de esta investigación es construir un sistema de recuperación de información que funcione bajo una arquitectura distribuida cliente-servidor, que permita clasificar los trabajos que reposan en Saber UCV y a los usuarios finales generar consultas de búsqueda de texto sobre los documentos que constituyen el *Corpus* mediante el acceso a una aplicación web.
 
 ## Sistemas de Recuperación de Información: {#intro}
 
 Es conocida la gran diversidad de información en distintos formatos que tienen a su disposición los investigadores. Ejemplo de esto son libros en las bibliotecas o los documentos que se encuentran accesibles en formatos digitales como artículos publicados en revistas arbitradas, libros, páginas de internet especializadas en algún tema o los repositorios digitales. Es en esta abundancia donde recaen varios de los problemas a los cuales se enfrenta la labor de investigación [@hernándezorallo2004] (p.565), especialmente cuando se realiza la fase exploratoria de selección de aquellos documentos que resultan de mayor interés.
 
-El investigador debe contar con herramientas al enfrentarse al proceso de búsqueda de información siendo una de estas los ***Sistemas de Recuperación de Información (SRI)***, que son los que permiten que el investigador formule, con el nivel de detalle deseado, la búsqueda mediante un texto al cual denominaremos ***query***, siendo el sistema el encargado de detectar la aparición de dicho texto en los documentos que previamente han sido agrupados como un ***Corpus***  [@manning2008]. Conocemos que tal búsqueda se debe ejecutar con ciertos niveles de flexibilidad y no restringirse a la aparición exacta del ***query***. También se puede complementar con distintos criterios a filtrar como un período restringido de fechas o que esté asociado a una determinada clasificación, como por ejemplo un área del conocimiento específica.
+El investigador debe contar con herramientas al enfrentarse al proceso de búsqueda de información siendo una de estas los ***Sistemas de Recuperación de Información (SRI)***, que son los que permiten que el investigador formule, con el nivel de detalle deseado, la búsqueda mediante un texto al cual denominaremos ***query***, siendo el sistema el encargado de detectar la aparición de dicho texto en los documentos que previamente han sido agrupados como un ***Corpus*** [@manning2008]. 
 
+Conocemos que tal búsqueda se debe ejecutar con ciertos niveles de flexibilidad y no restringirse a la aparición exacta del ***query***, permitiendo que en vez de localizar la aparición exacta de una, o varias palabras, sea la raíz de las mismas la que se localice, *eg.* investigamos, investigan, investigaron, tendrá como raiz "*investig*". Caso similar se puede presentar con una palabra que se indique en el ***query*** en plural pero al momento de efectuar la búsqueda, sea el singular el que también sea detectado. Los dos puntos anteriores lo que hacen es ensanchar el espacio de búsqueda para así incrementar las posibles fuentes de información que serán recuperadas y presentadas al investigador.
 
+Por otra parte el espacio de búsqueda se puede estrechar filtrando los documentos que estén comprendidos entre un período restringido de fechas o que esté asociado a una determinada clasificación, como por ejemplo, a un área del conocimiento específica.
 
-Para ilustrar lo anterior usemos el siguiente ejemplo: supongamos que un ingeniero quiere buscar información sobre la "investigación de operaciones" dentro de un ***Corpus*** de textos académicos que contiene diversas áreas de conocimiento. Al hacer el *query* el sistema que usemos va a determinar cuáles documentos dentro del *corpus* hacen mención a ese tema. Es probable que encontrásemos textos asociados a medicina donde la "investigación de operaciones" tiene una semántica distinta a la rama del conocimiento que estudia problemas de optimización que se denomina "investigación de operaciones". Esto es gracias a que en diferentes áreas de estudio se pueden tener comprensiones que divergen sobre una misma búsqueda de términos.
+Para ilustrar lo expuesto en los precedentes párrafos usemos el siguiente ejemplo: supongamos que un ingeniero quiere buscar información sobre la "investigación de operaciones" dentro de un ***Corpus*** de textos académicos que contiene diversas áreas de conocimiento. Al hacer el *query* el sistema que usemos va a determinar cuáles documentos dentro del *corpus* hacen mención a ese tema. Es probable que encontrásemos textos asociados a medicina donde la "investigación de operaciones" tiene una semántica distinta a la rama del conocimiento que estudia problemas de optimización que se denomina "investigación de operaciones". Esto es gracias a que en diferentes áreas de estudio se pueden tener comprensiones que divergen sobre una misma búsqueda de términos.
 
-Visto lo anterior es necesario que el Sistema de Recuperación de Información que usemos permita separar de alguna forma la información recuperada acorde a un contexto de interés del investigador, jerarquizando aquellos documentos que puedan resultar de mayor interés. Incluso, las visualizaciones con las que representemos los resultados obtenidos de un *query* pueden aportar conocimiento en sí mismo haciendo intuitiva la comprensión [@zhang2008] o dando aportes hacia dónde es viable dirigir futuras indagaciones en un proceso que claramente es iterativo [@zhai2016] y adicionalmente el sistema puede generar la recomendación de otros trabajos [@aggarwal2018] que presenten alguna similitud sobre el tema investigado. En la sección \@ref(SRI) se exponen otros detalles relevantes sobre los **SRI**.
+Visto lo anterior, es necesario que el Sistema de Recuperación de Información que usemos permita separar de alguna forma la información recuperada, acorde a un contexto de interés del investigador, jerarquizando aquellos documentos que puedan resultar más provechosos. Incluso, las visualizaciones con las que representemos los resultados obtenidos de un *query*, pueden aportar conocimiento en sí mismo haciendo intuitiva la comprensión [@zhang2008] o dando aportes hacia dónde es viable dirigir futuras indagaciones, en un proceso que claramente es iterativo [@zhai2016]. 
+
+Adicionalmente el sistema puede generar la recomendación de otros trabajos [@aggarwal2018] que presenten alguna similitud sobre el tema investigado. En la sección \@ref(SRI) se exponen otros detalles relevantes sobre los **SRI**.
 
 ## Saber UCV: {#saber}
 
-La Universidad Central de Venezuela cuenta con un Sistema de Recuperación de Información denominado **Saber UCV**, al cual se puede acceder en la dirección [www.saber.ucv.ve](http://saber.ucv.ve/) que funciona a modo de repositorio digital institucional [^index-2] de los distintos documentos de textos académicos generados por la comunidad ucevista. Este sistema fue "creado para alojar, gestionar y difundir de manera gratuita y en texto completo: tesis, artículos de investigación, libros, revistas electrónicas, presentaciones que conforman la producción académica" de esta casa de estudios.
+La Universidad Central de Venezuela cuenta con un Sistema de Recuperación de Información denominado **Saber UCV**, al cual se puede acceder en la dirección [www.saber.ucv.ve](http://saber.ucv.ve/) que funciona a modo de repositorio digital institucional [^index-3] de los distintos documentos de textos académicos generados por la comunidad ucevista. Este sistema fue "creado para alojar, gestionar y difundir de manera gratuita y en texto completo: tesis, artículos de investigación, libros, revistas electrónicas, presentaciones que conforman la producción académica" de esta casa de estudios.
 
-[^index-2]: "base de datos electrónica que aloja una colección de pequeñas unidades de información educativas o actividades que pueden ser accedidas para su obtención y uso" [@lehman2007]
+[^index-3]: "base de datos electrónica que aloja una colección de pequeñas unidades de información educativas o actividades que pueden ser accedidas para su obtención y uso" [@lehman2007]
 
-Saber UCV es una implementación del software de código abierto llamado **DSpace** que fue creado con la finalidad de ser un repositorio digital institucional bibliográfico, para uso académico de colecciones digitales según se indica en la página web oficial del proyecto [https://duraspace.org](https://duraspace.org/dspace/about/). 
+Saber UCV es una implementación del software de código abierto llamado **DSpace** que fue creado con la finalidad de ser un repositorio digital institucional bibliográfico, para uso académico de colecciones digitales según se indica en la página web oficial del proyecto [https://duraspace.org](https://duraspace.org/dspace/about/).
 
-Este software fue diseñado e implementado en un esfuerzo conjunto entre desarrolladores del *Massachusetts Institute of Technology (MIT)* y *Hewlett-Packard Labs (HP Labs)* en el año 2002. En junio de 2021 se lanzó la 7 versión que es la más reciente, no obstante la versión que está implementada en Saber UCV es la 1.7.1. que data del año 2013.
+Este software fue diseñado e implementado en un esfuerzo conjunto entre desarrolladores del *Massachusetts Institute of Technology (MIT)* y *Hewlett-Packard Labs (HP Labs)* en el año 2002. En junio de 2021 se lanzó la 7 versión que es la más reciente, no obstante la versión que está implementada en Saber UCV al mes de noviembre del 2021 es la 1.7.1. que data del año 2013.
 
 ### Delimitación de documentos con los cuales se trabajará:
 
-Si bien en el sitio web están almacenados artículos de prensa, artículos preimpresos y publicados, fotografías, infografías y tesis de distintos niveles académicos es exclusivamente con este último subconjunto con el cual se trabajará.
+Si bien en el sitio web están almacenados artículos de prensa, artículos preimpresos y publicados, fotografías, infografías y tesis de distintos niveles académicos, es exclusivamente con este último subconjunto con el cual se trabajará.
 
 #### Corpus seleccionado: {#corpus}
 
-En la categoría **Tesis** del repositorio se encuentran los trabajos especiales de grado de pre y postgrado junto con las tesis de doctorado. Cada documento de la categoría Tesis, indistintamente del nivel académico al que pertenezca, tiene uno o más archivos anexos en formato *word* o *PDF* donde está contenida la investigación y adicionalmente cada documento cuenta con una ficha en *html*. En nuestra investigación usaremos la denominación "Tesis" indistintamente de si son trabajos especiales de grado de pre y postgrado o tesis de doctorado.
+En la categoría **Tesis** del repositorio se encuentran los trabajos especiales de grado de pre y postgrado junto con las tesis de doctorado. Cada documento de la categoría Tesis, indistintamente del nivel académico al que pertenezca, tiene uno o más archivos anexos en formato *word* o *PDF* donde está contenida la investigación y adicionalmente cada documento cuenta con una ficha en *HTML*. En esta investigación se usará de ahora en adelante la denominación "Tesis", indistintamente de si son trabajos especiales de grado de pre y postgrado o tesis de doctorado.
 
 En esta ficha se muestran ciertos detalles sobre el trabajo seleccionado como lo son: el título, el nombre del autor, las palabras claves, la fecha de publicación y el texto **Resumen**. En la figura \@ref(fig:ficharegistro) podemos ver la ficha que corresponde a un trabajo almacenado en el repositorio. <br>
 
@@ -132,14 +139,15 @@ knitr::include_graphics(rep("images/01-intro/ficha_registro.png"))
 
 <br>
 
-Con los textos **Resumen**, con la **fecha**, el **nombre del autor**, las **palabras claves** de todos los trabajos catalogados como Tesis en el repositorio Saber UCV es con los que conformaremos nuestro ***Corpus***.
+Con los textos **Resumen**, con la **fecha**, el **nombre del autor**, las **palabras claves** de todos los trabajos catalogados como Tesis en el repositorio Saber UCV es con los que se conformará el ***Corpus***.
 
-Para el momento en que se presenta esta Investigación bajo la categoría **Tesis** reposan `r str_replace_all(formatC(dim(readRDS('/Users/josemiguelavendanoinfante/R/TESIS/proyecto_TEG/draw.rds'))[1], format="f", big.mark=",", digits=0),',','.')` documentos distribuidos con las jerarquías que se muestran en el cuadro \@ref(tab:jerarquias).
+Para el momento en que se presenta esta Investigación bajo la categoría **Tesis** reposan `r str_replace_all(formatC(dim(readRDS('/home/jose/josemiguelavendanoinfante/R/TESIS/anteproyecto/draw.rds'))[1], format="f", big.mark=",", digits=0),',','.')` documentos distribuidos con las jerarquías que se muestran en el cuadro \@ref(tab:jerarquias).
 
 ```{r jerarquias, echo=FALSE, warning=FALSE, out.width='60%'}
-datos <- readRDS('/Users/josemiguelavendanoinfante/R/TESIS/proyecto_TEG/draw.rds')
+datos <- readRDS('/home/jose/josemiguelavendanoinfante/R/TESIS/anteproyecto/draw.rds')
 datos <- table(datos$jerarquia)%>%
-  as.data.frame()
+  as.data.frame()%>%
+  mutate(Var1=str_replace_all(Var1,'maestria','maestría'))
 
 names(datos) <- c('jerarquía','cantidad')
 
@@ -153,22 +161,34 @@ flextable::flextable(datos%>%
 La disponibilidad de trabajos en el repositorio por fecha de creación la presentamos en el histograma que se muestra en la figura \@ref(fig:anos) . <br>
 
 ```{r, anos, echo=FALSE, out.width='60%',fig.cap='Cantidad de documentos disponibles por año de elaboración',fig.align='center'}
-p <- gghistogram(readRDS('/Users/josemiguelavendanoinfante/R/TESIS/proyecto_TEG/draw.rds'), x = "fecha", bins = 25, 
+p <- gghistogram(readRDS('/home/jose/josemiguelavendanoinfante/R/TESIS/anteproyecto/draw.rds'), x = "fecha", bins = 25, 
                  fill = "#0073C2FF", color = "#0073C2FF", rug = TRUE)
 ggpar(p,subtitle='Cantidad de documentos disponibles por año de elaboración',ylab='cantidad')
 
 
 ```
 
-Analizando la distribución de la frecuencia de la figura \@ref(fig:anos) por año en que fue generada la investigación es necesario destacar que en el repositorio no se encuentran todas las investigaciones que se han realizado en la historia de la U.C.V. Actualmente se tienen incorporados solo `r dim(readRDS('/Users/josemiguelavendanoinfante/R/TESIS/proyecto_TEG/draw.rds')%>% filter(fecha<='2011-01-01'))[1]` trabajos creados entre 1993 y 2011, siendo a partir de este último año cuando se empiezan a realizar la ingesta de forma periódica y en mayor volumen los trabajos. No obstante también queremos resaltar que desde el 2011 no se encuentran incorporados todos los trabajos generados dentro de la comunidad. Las razones que explican omisiones o retardos en las incorporaciones queda fuera de los objetivos de este trabajo investigarlas.
+Analizando la distribución de la frecuencia de la figura \@ref(fig:anos) por año en que fue generada la investigación es necesario destacar que en el repositorio no se encuentran todas las investigaciones que se han realizado en la historia de la U.C.V. Actualmente se tienen incorporados solo `r dim(readRDS('/home/jose/josemiguelavendanoinfante/R/TESIS/anteproyecto/draw.rds')%>% filter(fecha<='2011-01-01'))[1]` trabajos creados entre 1993 y 2011, siendo a partir de este último año cuando se empieza a realizar la ingesta de forma periódica y en mayor volumen. No obstante también queremos resaltar que desde el 2011 no se encuentran incorporados todos los trabajos generados dentro de la comunidad. Las razones que explican las omisiones o retardos en las incorporaciones queda fuera de los objetivos de este trabajo investigarlas.
 
 #### Archivos complementarios:
 
-Por razones que se expondrán en \@ref(clasificacion) igualmente será necesario trabajar con los documentos anexos que indicamos en \@ref(corpus) que disponen un vínculo de descarga en cada ficha *html*. La descarga y el procesamiento de estos textos será necesario para complementar el corpus descrito en \@ref(corpus).
+Por razones que se expondrán en \@ref(clasificacion) igualmente será necesario trabajar con los documentos anexos que indicamos en \@ref(corpus) que disponen un vínculo de descarga en cada ficha *HTML*. La descarga y el procesamiento de estos textos será necesario para complementar el corpus descrito en \@ref(corpus).
+
+## Requerimiento inicial: {#requerimiento}
+
+Originalmente en la materia *Tópicos Especiales en Sistemas de Información y Gerencia* se hizo un requerimiento para con los trabajos especiales de grado realizados por los alumnos de la Facultad de Ciencias, disponibles en Saber UCV, se hicieran *Mapas de Conocimiento*.
+
+Estos Mapas en un trabajo de [@dueñas2011] se definen como "una metodología que busca encontrar palabras claves como unidad de análisis que permitan establecer cómo se relacionan diferentes campos científicos alrededor de un tema determinado".
+
+Ante esto se buscaron las estrategias que pudiesen satisfacer el requerimiento. Lo primero que se necesitaba era conformar el conjunto de datos, ya que no fue entregado como insumo.
+
+Al realizar la descarga de los documentos con un *web crawler* de diseño propio se pudo apreciar que no era viable separar los documentos de la Facultad de Ciencias al no existir ninguna etiqueta para realizar la selección.
+
+Esto derivó en que fuese necesario diseñar una solución para clasificar los documentos previo a poder generar los Mapas de Conocimiento. En \@ref(clasificacion) se expone con mayor detalle este problema.
 
 ## Planteamiento del Problema: {#problema}
 
-Si bien este repositorio con que cuenta la Universidad sirve para realizar búsqueda de textos mediante procesos de recuperación de información, hay algunas características que pueden ser complementadas y mejoradas.
+El repositorio SABER UCV permite realizar búsqueda de documentos mediante procesos de recuperación de información, no obstante hay algunas características que pueden ser complementadas y mejoradas. A continuación se listan.
 
 ### I. No se posee clasificación de los documentos: {#clasificacion}
 
@@ -176,15 +196,17 @@ El ***Corpus*** que reposa en Saber UCV para ninguno de los documentos posee la 
 
 Tampoco se dispone de un listado con las etiquetas candidatas a asignar a cada uno de los documentos. Según lo investigado no es de conocimiento público un único directorio que contenga los nombres de las carreras de pregrado y de los distintos postgrados, significando esto que es un doble proceso de construcción el que se necesita hacer para realizar la clasificación de los documentos.
 
-Relativo a este problema también surge el determinar cómo se realizará la comparación de cada una de las etiquetas con el texto de cada documento, incluso detectar dónde se localiza el texto con el cual se efectuará la comparación, ya que el texto denominado **Resumen** que vimos en la figura \@ref(fig:ficharegistro) no contiene la información necesaria para extraer dónde fue realizada la investigación (escuela o postgrado), haciendo necesario que sean analizados los documentos anexos a cada ficha que es propiamente el archivo, o los archivos, que componen cada una de las investigaciones.
+Relativo a este problema también surge el determinar cómo se realizará la comparación de cada una de las etiquetas con el texto de cada documento, incluso en detectar dónde se localiza el texto con el cual se efectuará la comparación, ya que el texto denominado **Resumen**, que vimos en la figura \@ref(fig:ficharegistro), no contiene la información necesaria para extraer dónde fue realizada la investigación (escuela o postgrado), haciendo necesario que sean analizados los documentos anexos a cada ficha que es propiamente el archivo, o los archivos, que componen cada una de las investigaciones.
 
-En detalle será necesario consolidar los archivos disponibles para cada investigación, los cuales no necesariamente se encuentran ordenados, por ejemplo por capítulo. Una vez realizada la consolidación será necesario tener el archivo en texto plano teniedo presente que en algunos casos en viable que sean imágenes lo que contiene el archivo PDF procediendo a realizar la lectura OCR [^index-3] para obtener el texto. En este proceso de clasificación también se presentarán otros problemas relativos a los sistemas de *encodings* y a la introducción de caracteres no deseados dentro del texto, lo que será expuesto a detalle en el capítulo que contiene el desarrollo de la propuesta.
+En detalle, se tendrán que consolidar los archivos disponibles para cada investigación, los cuales no necesariamente se encuentran ordenados, por ejemplo por capítulo. Una vez realizada la consolidación se procederá a crear un archivo en texto plano. En algunos casos los documentos no contendrán texto sino imágenes del texto motivando que se tenga que realizar lectura OCR [^index-4] para extraer el texto. 
 
-[^index-3]: OCR:  "*optical character recognition*" traducido como reconocimiento óptico de caracteres
+En este proceso de clasificación también se presentarán otros problemas relativos a los sistemas de codificaciones de los archivos *file encodings* y a la introducción de caracteres no deseados dentro del texto, lo que será expuesto a detalle en el capítulo que contiene el desarrollo de la propuesta.
+
+[^index-4]: OCR: "*optical character recognition*" traducido como reconocimiento óptico de caracteres
 
 ### II. Problemas en los resultados que generan los ***Querys***: {#p2}
 
-Existe un tipo de *query* denominado *"Full Text Search"* o búsqueda de texto completo \@ref(fts) que es donde se manifiesta una de las principales deficiencias que posee el Sistema Saber UCV.Aunque en él se pueden ejecutar búsquedas de texto, los métodos con los que se implementan estas búsquedas llevan a que sean generados una gran cantidad de resultados, en especial al usar más de una palabra en la búsqueda, presumimos que por usar el operador lógico *OR* entre cada una de las palabras solicitadas en el *query*.
+Existe un tipo de *query* denominado *"Full Text Search"* o búsqueda de texto completo que es donde se manifiesta una de las principales deficiencias que posee el Sistema Saber UCV. Aunque en él se pueden ejecutar búsquedas de texto, los métodos con los que se implementan estas búsquedas llevan a que sean generados una gran cantidad de resultados, en especial al usar más de una palabra en la búsqueda, presumimos que por usar el operador lógico *OR* entre cada una de las palabras solicitadas en el *query*.
 
 #### Ejemplo ***Query*** en Saber UCV: {#query}
 
@@ -208,24 +230,21 @@ knitr::include_graphics(rep("images/01-intro/texto_saber.png"))
 
 <br> La cantidad de resultados asciende a 10.449, cifra similar a la cantidad total de trabajos de la categoría "Tesis" que se encuentran en el repositorio, ya que como fue explicado anteriormente el Sistema Saber UCV debe aplicar el operador lógico *OR* entre cada una de las palabras al momento de generar el *query*. A manera de referencia podemos explicar que si hubiésemos querido realizar la búsqueda exacta de la frase, con haberle colocado comillas al inicio y al final obtendríamos la referencia al trabajo que previamente sabemos que es el que queremos encontrar.
 
-Sin embargo el uso de comillas para buscar una frase exacta genera una compensación entre la precisión en la búsqueda, lo cual se motiva en que al ser  exacta, se cierra el umbral para encontrar otros resultados que pudiesen resultar de interés, así que el uso de este método puede presentar considerables desventajas.
+Sin embargo, el uso de comillas para buscar una frase exacta genera una compensación entre la precisión en la búsqueda, lo cual se motiva en que al ser exacta, se cierra el umbral para encontrar otros resultados que pudiesen resultar de interés, así que el uso de este método puede presentar considerables desventajas.
 
-Posterior a evaluaciones realizadas sobre el comportamiento de Saber UCV presumimos que los textos al ser procesados para su estructuración e ingesta en la base de datos no le son aplicadas técnicas con el algoritmo de Porter que permite realizar la extracción del ***stemming*** [^index-4] de cada una de las palabras. La importancia de aplicar este procesamiento será explicado en \@ref(steaming)
+Posterior a evaluaciones realizadas sobre el comportamiento de Saber UCV presumimos que los textos al ser procesados para su estructuración e ingesta en la base de datos no le son aplicadas técnicas con el algoritmo de Porter que permite realizar la extracción de la raíz o (***stemming***) [^index-5] de cada una de las palabras. La importancia de aplicar este procesamiento será explicado en \@ref(steaming).
 
-[^index-4]: proceso heurístico que remueve letras al final de las palabras con el objetivo de encontrar la raíz de la misma.
-
+[^index-5]: proceso heurístico que remueve letras al final de las palabras con el objetivo de encontrar la raíz de la misma.
 
 ## Antecedentes: {#antecedentes}
 
-Se hizo una revisión bibliográfica de trabajos producidos dentro de la Universidad Central de Venezuela que puedan haber realizado investigaciones similares o complementarias a la que proponemos en este desarrollo. De particular interés resultó la "Elaboración de un prototipo de buscador de documentos académicos de la Facultad de Ciencias" [@Sánchez2008], que fue una investigación que implementó el motor de búsqueda y repositorio denominado BUSCONEST 1 que sirve exclusivamente a los documentos de investigación generados en la Facultad de Ciencias de la U.C.V. Este sistema sí cuenta con los trabajos clasificados por área del conocimiento donde fueron generados, no obstante no resuelve el problema planteado sobre el resto de documentos que reposan en Saber UCV.
+Se hizo una revisión bibliográfica de trabajos producidos dentro de la Universidad Central de Venezuela que puedan haber realizado investigaciones similares o complementarias a la que proponemos en este desarrollo. De particular interés resultó la "Elaboración de un prototipo de buscador de documentos académicos de la Facultad de Ciencias" [@Sánchez2008], que fue una investigación que implementó el motor de búsqueda y repositorio denominado **BUSCONEST 1** que sirve exclusivamente a los documentos de investigación generados en la Facultad de Ciencias de la U.C.V. Este sistema sí cuenta con los trabajos clasificados por área del conocimiento donde fueron generados, no por contar con una rutina para la clasificación o por disponer de una etiqueta, sino por ser otra la fuente de los datos, en este caso el sistema de datos de la Biblioteca de la Facultad de Ciencias. Con lo analizado se comprende que no se resuelve el problema de clasificar el resto de documentos que reposan en Saber UCV.
 
 Posteriormente [@guevara2015] presenta otra propuesta de motor de búsqueda con una versión modificada de BUSCONEST 1, denominada BUSCONEST 2, no obstante sólo se basa sobre textos producidos en la Facultad de Ciencias y en ninguno de estos desarrollos se realizan procesos de minería de texto.
 
 Otra investigación que podemos señalar es "Sistema de recomendación para el Buscador Académico Venezolano" [@rodríguezlaguna2016]. En ella se señalan algunos repositorios digitales institucionales que se encuentran en Venezuela y se hace una propuesta de unificación de todos los contenidos y así poder generar recomendaciones de investigaciones a partir de una determinada búsqueda.
 
 Evaluando estos antecedentes consideramos que nuestra propuesta resuelve el problema de la clasificación de documentos y permite efectuar las búsquedas sobre todo el conjunto de textos, así que podemos tener en perspectiva que nuestro desarrollo no solapará las propuestas mencionadas y generará un valor agregado favoreciendo a la actividad de investigación.
-
-
 
 ## Estructura del Trabajo: {#estructura}
 

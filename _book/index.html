@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Aplicación Web para Recuperación de Información sobre un Sistema Distribuido</title>
+  <title>Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea</title>
   <meta name="description" content="Proyecto de Trabajo Especial de Grado" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Aplicación Web para Recuperación de Información sobre un Sistema Distribuido" />
+  <meta property="og:title" content="Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea" />
   <meta property="og:type" content="book" />
   
   <meta property="og:image" content="/images/UCV.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Aplicación Web para Recuperación de Información sobre un Sistema Distribuido" />
+  <meta name="twitter:title" content="Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea" />
   
   <meta name="twitter:description" content="Proyecto de Trabajo Especial de Grado" />
   <meta name="twitter:image" content="/images/UCV.png" />
@@ -24,7 +24,7 @@
 <meta name="author" content="José Miguel Avendaño Infante" />
 
 
-<meta name="date" content="2021-10-21" />
+<meta name="date" content="2022-02-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -57,6 +57,28 @@
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -78,14 +100,62 @@
 <li class="chapter" data-level="" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i>___</a></li>
 <li class="chapter" data-level="1" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introduccion.html"><a href="introduccion.html#agradecimientos"><i class="fa fa-check"></i><b>1.1</b> Agradecimientos</a></li>
-<li class="chapter" data-level="1.2" data-path="introduccion.html"><a href="introduccion.html#descripción-del-problema"><i class="fa fa-check"></i><b>1.2</b> Descripción del Problema</a>
+<li class="chapter" data-level="1.1" data-path="introduccion.html"><a href="introduccion.html#propuesta"><i class="fa fa-check"></i><b>1.1</b> Propuesta:</a></li>
+<li class="chapter" data-level="1.2" data-path="introduccion.html"><a href="introduccion.html#intro"><i class="fa fa-check"></i><b>1.2</b> Sistemas de Recuperación de Información:</a></li>
+<li class="chapter" data-level="1.3" data-path="introduccion.html"><a href="introduccion.html#saber"><i class="fa fa-check"></i><b>1.3</b> Saber UCV:</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="introduccion.html"><a href="introduccion.html#i"><i class="fa fa-check"></i><b>1.2.1</b> I</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introduccion.html"><a href="introduccion.html#ii"><i class="fa fa-check"></i><b>1.2.2</b> II</a></li>
+<li class="chapter" data-level="1.3.1" data-path="introduccion.html"><a href="introduccion.html#delimitación-de-documentos-con-los-cuales-se-trabajará"><i class="fa fa-check"></i><b>1.3.1</b> Delimitación de documentos con los cuales se trabajará:</a></li>
 </ul></li>
+<li class="chapter" data-level="1.4" data-path="introduccion.html"><a href="introduccion.html#requerimiento"><i class="fa fa-check"></i><b>1.4</b> Requerimiento inicial:</a></li>
+<li class="chapter" data-level="1.5" data-path="introduccion.html"><a href="introduccion.html#problema"><i class="fa fa-check"></i><b>1.5</b> Planteamiento del Problema:</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="introduccion.html"><a href="introduccion.html#clasificacion"><i class="fa fa-check"></i><b>1.5.1</b> I. No se posee clasificación de los documentos:</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduccion.html"><a href="introduccion.html#p2"><i class="fa fa-check"></i><b>1.5.2</b> II. Problemas en los resultados que generan los <strong><em>Querys</em></strong>:</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="1.6" data-path="introduccion.html"><a href="introduccion.html#antecedentes"><i class="fa fa-check"></i><b>1.6</b> Antecedentes:</a></li>
+<li class="chapter" data-level="1.7" data-path="introduccion.html"><a href="introduccion.html#estructura"><i class="fa fa-check"></i><b>1.7</b> Estructura del Trabajo:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="teorico.html"><a href="teorico.html"><i class="fa fa-check"></i><b>2</b> Marco teórico-referencial:</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="teorico.html"><a href="teorico.html#alghist"><i class="fa fa-check"></i><b>2.1</b> Reseña histórica:</a></li>
+<li class="chapter" data-level="2.2" data-path="teorico.html"><a href="teorico.html#infret"><i class="fa fa-check"></i><b>2.2</b> Recuperación de Información:</a></li>
+<li class="chapter" data-level="2.3" data-path="teorico.html"><a href="teorico.html#SRI"><i class="fa fa-check"></i><b>2.3</b> Sistemas de Recuperación de Información (SRI) :</a></li>
+<li class="chapter" data-level="2.4" data-path="teorico.html"><a href="teorico.html#ejemplos-de-irs"><i class="fa fa-check"></i><b>2.4</b> Ejemplos de IRS:</a></li>
+<li class="chapter" data-level="2.5" data-path="teorico.html"><a href="teorico.html#modelos-de-recuperación-de-información"><i class="fa fa-check"></i><b>2.5</b> Modelos de Recuperación de Información:</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="teorico.html"><a href="teorico.html#recuperación-boleana"><i class="fa fa-check"></i><b>2.5.1</b> Recuperación boleana:</a></li>
+<li class="chapter" data-level="2.5.2" data-path="teorico.html"><a href="teorico.html#invind"><i class="fa fa-check"></i><b>2.5.2</b> Índices Invertidos:</a></li>
+<li class="chapter" data-level="2.5.3" data-path="teorico.html"><a href="teorico.html#rank"><i class="fa fa-check"></i><b>2.5.3</b> Scoring Model:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="teorico.html"><a href="teorico.html#procesamientos-de-texto"><i class="fa fa-check"></i><b>2.6</b> Procesamientos de texto:</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="teorico.html"><a href="teorico.html#nlproc"><i class="fa fa-check"></i><b>2.6.1</b> Procesamiento del Lenguaje Natural (natural language processing- NLP):</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="teorico.html"><a href="teorico.html#textmin"><i class="fa fa-check"></i><b>2.7</b> Minería de Texto:</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="teorico.html"><a href="teorico.html#coocurrencia"><i class="fa fa-check"></i><b>2.7.1</b> Coocurrencia de Palabras:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="teorico.html"><a href="teorico.html#similitud"><i class="fa fa-check"></i><b>2.8</b> Similitud de documentos:</a></li>
+<li class="chapter" data-level="2.9" data-path="teorico.html"><a href="teorico.html#sistemas-distribuidos"><i class="fa fa-check"></i><b>2.9</b> Sistemas Distribuidos:</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="teorico.html"><a href="teorico.html#contenedores"><i class="fa fa-check"></i><b>2.9.1</b> Contenedores:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="teorico.html"><a href="teorico.html#orquestador"><i class="fa fa-check"></i><b>2.9.2</b> Orquestador:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="teorico.html"><a href="teorico.html#tendencias-actuales-sistemas-de-información"><i class="fa fa-check"></i><b>2.10</b> Tendencias actuales Sistemas de Información:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html"><i class="fa fa-check"></i><b>3</b> Propuesta Técnica:</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#propuestatec"><i class="fa fa-check"></i><b>3.1</b> Propuesta Técnica:</a></li>
+<li class="chapter" data-level="3.2" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#objetivogral"><i class="fa fa-check"></i><b>3.2</b> Objetivo:</a></li>
+<li class="chapter" data-level="3.3" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#objetivosespe"><i class="fa fa-check"></i><b>3.3</b> Objetivos Específicos</a></li>
+<li class="chapter" data-level="3.4" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#esquemas"><i class="fa fa-check"></i><b>3.4</b> Esquema de la Aplicación WEB:</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#cliente---servidor"><i class="fa fa-check"></i><b>3.4.1</b> Cliente - Servidor:</a></li>
+<li class="chapter" data-level="3.4.2" data-path="teorico.html"><a href="teorico.html#contenedores"><i class="fa fa-check"></i><b>3.4.2</b> Contenedores:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#factibilidad"><i class="fa fa-check"></i><b>3.5</b> Factibilidad:</a></li>
+<li class="chapter" data-level="3.6" data-path="propuesta-técnica.html"><a href="propuesta-técnica.html#cronograma"><i class="fa fa-check"></i><b>3.6</b> Cronograma:</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
 
@@ -98,7 +168,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Aplicación Web para Recuperación de Información sobre un Sistema Distribuido</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea</a>
           </h1>
         </div>
 
@@ -107,16 +177,18 @@
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Aplicación Web para Recuperación de Información sobre un Sistema Distribuido</h1>
+<h1 class="title">Sistema Complementario Saber UCV (SCSU): recuperación de datos desde PDF, clasificación y construcción de un repositorio en línea</h1>
 <h2 class="subtitle"><em>Caso de Estudio Repositorio www.saber.ucv.ve</em></h2>
 <p class="author"><em>José Miguel Avendaño Infante</em></p>
-<p class="date"><em>2021-10-21</em></p>
+<p class="date"><em>2022-02-03</em></p>
 </div>
 <div id="resumen" class="section level1 unnumbered">
 <h1>Resumen:</h1>
-<p>Se presenta una propuesta de aplicación web distribuida para implementar un Sistema de Recuperación de Información (<em>information retrieval</em>) mediante técnicas de Procesamiento de Lenguaje Natural (NLP), de indexación en base de datos y visualizaciones con gráficos y gráfos de coocurrencias de palabras para los trabajos especiales de pre y postgrado realizados por los estudiantes de la Universidad Central de Venezuela que se encuentran alojados en el repositorio www.saber.ucv.ve.</p>
-<p>Esta propuesta se basa principalmente en que mediante la búsqueda de palabras o frases se genere un (<em>query</em>), y mediante la técnica conocida como “<em>full text search</em>” se puedan extraer los trabajos en que se encuentran contenidas tales palabras y a partir de ahí enriquecer la experiencia del usuario con la presentación de la información recuperada.</p>
-<p>La aplicación se diseña como un sistema distribuido en distintos contenedores soportando cada uno un proceso para el funcionamiento, teniendo entre los principales el de base de datos, el servidor de la aplicación y otro con los distintos procesamientos que son efectuados sobre los textos.</p>
+<p>Se presenta la propuesta de un sistema denominado <strong>Solución Sistema Complementario Saber UCV (SSCSU)</strong> para hacer procesos de Recuperación de Información sobre los Resúmenes, tanto de las Tesis como de los Trabajos Especiales de Grado (TEG), que se encuentran alojados en el repositorio institucional Saber UCV (www.saber.ucv.ve).</p>
+<p>Se aplican técnicas de Procesamiento de Lenguaje Natural (NLP), de Minería de Texto y de indexación en base de datos sobre los textos.</p>
+<p>Esta propuesta se basa en que mediante la búsqueda de palabras o frases, aplicando filtros y determinando la granularidad, se genere un (<em>query</em>) con el que se puedan recuperar los trabajos en que se encuentran contenidas tales palabras y a partir de ahí enriquecer la experiencia del usuario con la presentación de la información recuperada en tablas interactivas, visualizaciones con gráficos y grafos de coocurrencia de palabras.</p>
+<p>La aplicación se diseña como un sistema distribuido bajo la arquitectura cliente-servidor y se soporta en el uso de contenedores, donde en cada uno se ejecuta un proceso para el funcionamiento de la SSCSU, siendo los principales el de la base de datos, el servidor de la aplicación y otro con los distintos procesamientos que son efectuados sobre los textos.</p>
+<p>También se propone una rutina que permite clasificar las Tesis y los TEG por el área académica donde cursó estudios el autor del correspondiente trabajo y así se solventa la carencia que actualmente presenta Saber UCV, donde no están disponibles estas clasificaciones.</p>
 </div>
             </section>
 
@@ -183,6 +255,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
